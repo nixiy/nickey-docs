@@ -1,5 +1,5 @@
-title: nickey-docs
-description: Nickey44 documentation
+title: Nickey44 Docs
+description: Nickey44のビルド・セットアップガイド
 url: https://nixiy.github.io
 baseurl: /nickey-docs
 
@@ -9,6 +9,9 @@ kramdown:
   input: GFM
 
 repository: nixiy/nickey-docs
+
+header_pages:
+  - nickey44/index.md
 
 exclude:
   - Gemfile

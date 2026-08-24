@@ -1,9 +1,8 @@
 ---
 layout: default
-title: nickey-docs
 ---
 
-# nickey-docs
+# Nickey44 Docs
 
 Nickey44のドキュメントです。
 
