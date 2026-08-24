@@ -2,6 +2,8 @@
 
 Nickey44のドキュメントを管理するリポジトリです。
 
+公開ページ: [Nickey44 ビルドガイド](https://nixiy.github.io/nickey-docs/nickey44/)
+
 ## Contents
 
 - [Nickey44 ビルドガイド](nickey44/)
