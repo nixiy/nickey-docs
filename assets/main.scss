@@ -3,6 +3,26 @@
 
 @import "minima";
 
+// Make article sections easy to distinguish while preserving the H2/H3 hierarchy.
+.page-content > .wrapper > h2 {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #c9d1d9;
+  color: #1f2933;
+}
+
+.page-content > .wrapper > h3 {
+  margin-top: 2rem;
+  padding: 0.35rem 0 0.35rem 0.8rem;
+  border-left: 0.3rem solid #8ca5bc;
+  color: #334e68;
+}
+
+.page-content > .wrapper > h2,
+.page-content > .wrapper > h3 {
+  scroll-margin-top: 1.5rem;
+}
+
 .video-embed {
   position: relative;
   width: 100%;
