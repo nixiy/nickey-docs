@@ -1,0 +1,18 @@
+title: nickey-docs
+description: Nickey44 documentation
+url: https://nixiy.github.io
+baseurl: /nickey-docs
+
+theme: minima
+markdown: kramdown
+kramdown:
+  input: GFM
+
+repository: nixiy/nickey-docs
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - serve.ps1
+  - vendor

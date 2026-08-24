@@ -1,8 +1,17 @@
 # nickey-docs
 
-NixKey / NixPad 関連のドキュメントを管理するリポジトリです。
+Nickey44のドキュメントを管理するリポジトリです。
 
 ## Contents
 
-ドキュメントは準備ができ次第、順次追加します。
+- [Nickey44 ビルドガイド](nickey44/)
 
+## Local preview
+
+RubyとBundlerを用意した後、PowerShellで次を実行します。
+
+```powershell
+.\serve.ps1
+```
+
+起動後、<http://127.0.0.1:4000/nickey44/> を開いてください。
