@@ -31,23 +31,64 @@
     return id;
   };
 
-  const sections = headings.map((heading, index) => ({
-    heading,
-    id: makeId(heading, index),
-    level: Number(heading.tagName.slice(1)),
-    label: heading.textContent.trim(),
-  }));
+  let h2Number = 0;
+  let h3Number = 0;
+  const sections = headings.map((heading, index) => {
+    const level = Number(heading.tagName.slice(1));
+
+    if (level === 2) {
+      h2Number += 1;
+      h3Number = 0;
+    } else {
+      h3Number += 1;
+    }
+
+    return {
+      heading,
+      id: makeId(heading, index),
+      level,
+      number: level === 2 ? `${h2Number}` : `${h2Number}.${h3Number}`,
+      label: heading.textContent.trim(),
+    };
+  });
 
   lists.forEach((list) => {
-    sections.forEach(({ id, level, label }) => {
+    let currentH2Item = null;
+    let sublist = null;
+
+    sections.forEach(({ id, level, number, label }) => {
       const item = document.createElement("li");
       const link = document.createElement("a");
+      const numberLabel = document.createElement("span");
+      const textLabel = document.createElement("span");
       item.className = `toc-level-${level}`;
       link.href = `#${id}`;
-      link.textContent = label;
       link.dataset.tocTarget = id;
+      numberLabel.className = "toc-number";
+      numberLabel.textContent = number;
+      textLabel.textContent = label;
+      link.append(numberLabel, textLabel);
       item.append(link);
-      list.append(item);
+
+      if (level === 2) {
+        list.append(item);
+        currentH2Item = item;
+        sublist = null;
+        return;
+      }
+
+      if (!currentH2Item) {
+        list.append(item);
+        return;
+      }
+
+      if (!sublist) {
+        sublist = document.createElement("ol");
+        sublist.className = "toc-sublist";
+        currentH2Item.append(sublist);
+      }
+
+      sublist.append(item);
     });
   });
 
@@ -67,4 +108,3 @@
 
   sections.forEach(({ heading }) => observer.observe(heading));
 })();
-
