@@ -52,6 +52,13 @@
     };
   });
 
+  sections.forEach(({ heading, number }) => {
+    const numberLabel = document.createElement("span");
+    numberLabel.className = "heading-number";
+    numberLabel.textContent = number;
+    heading.prepend(numberLabel);
+  });
+
   lists.forEach((list) => {
     let currentH2Item = null;
     let sublist = null;
