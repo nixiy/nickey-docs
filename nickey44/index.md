@@ -353,27 +353,23 @@ XIAOカバーとオレンジ色のリセットボタンを用意します。
 
 ### DYA Studioを利用する場合
 
-[DYA Studio](https://studio.dya.cormoran.works/)では、ブラウザからNickey44へ接続し、レイヤーごとのキーマップ確認、キー割り当ての編集、キーボードへの保存ができます。
-
 DYA Studioを使う場合は、左右両方をDYA Studio対応ファームウェア v1.1.0へ更新してください。
 
-![DYA StudioでNickey44のレイヤーを編集している画面](images/firmware/32-dya-studio-keymap.jpg)
-
-[Keyboard Abyss](https://abyss.keyboard-hub.com/)と連携すると、DYA Studioから読み取ったキーマップをオンラインで保存、公開できます。
-
-![Keyboard Abyssで公開したNickey44のキーマップページ](images/firmware/33-keyboard-abyss-keymap.jpg)
+[DYA Studioの使い方]({{ '/guides/dya-studio/' | relative_url }})を確認して、キーマップを編集・保存してください。
 
 ### ⬇️ ファームウェアの書き込み
 
 左右を1台ずつ、データ通信対応のUSB Type-CケーブルでPCへ接続して作業します。
 
-{% include common/xiao-bootloader.md controller="XIAO nRF52840" image="/nickey44/images/firmware/34-xiao-bootloader-drive.jpg" image_alt="XIAOカバー上のリセットボタン位置" %}
+1. 左右それぞれのXIAO nRF52840をUSBでPCへ接続します。
+2. リセットボタンを素早く2回押して、ブートローダードライブを表示します。
+3. 右側には `nickey_r` で始まるファイル、左側には `nickey_l` で始まるファイルをドライブへドラッグ＆ドロップします。
 
-Nickey44では、右側には `nickey_r` で始まるファイル、左側には `nickey_l` で始まるファイルを使用します。
+![XIAOカバー上のリセットボタン位置](images/firmware/34-xiao-bootloader-drive.jpg)
 
 ![右用と左用のUF2ファームウェアファイル](images/firmware/35-firmware-files.jpg)
 
-{% include common/uf2-write.md %}
+コピー後はドライブが自動的に閉じ、キーボードが再起動します。ブートローダーモードとUF2書き込みの詳しい説明は、[Firmwareの書き込み方法]({{ '/guides/firmware/' | relative_url }})を確認してください。
 
 ### 🔗 左右間の接続テスト
 
@@ -389,9 +385,9 @@ PCやスマートフォンでBluetoothデバイスの追加画面を開き、`ni
 
 ### Bluetoothレイヤー
 
-{% include common/bluetooth-operations.md %}
-
 ![BT0からBT4、BT CLR、BT CLR ALLを配置したBluetoothレイヤー](images/bluetooth/45-bluetooth-layer.jpg)
+
+初回ペアリングでは、レイヤー3で未登録のBluetoothスロットを選択してから、PCやスマートフォンのデバイス一覧で`nickey`を選択します。`BT0`～`BT4`、`BT CLR`、`BT CLR ALL`の詳しい操作は、[Bluetoothの操作・ペアリング]({{ '/guides/bluetooth/' | relative_url }})を確認してください。
 
 ### 🔍 デバイス一覧に表示されない場合
 
@@ -409,7 +405,9 @@ XIAOのLEDが点滅したら、もう一度デバイス側からペアリング�
 
 ## ✅ キー入力テスト
 
-{% include common/keyboard-input-test.md image="/nickey44/images/firmware/38-key-input-test.jpg" image_alt="オンラインキーボードテストでキー入力を確認している画面" %}
+組み立て後は[キーボードテスト](https://www.onlinemictest.com/ja/keyboard-test)などを使い、すべてのキーが入力できることを確認します。
+
+![オンラインキーボードテストでキー入力を確認している画面](images/firmware/38-key-input-test.jpg)
 
 ## 🗺️ デフォルトキーマップ
 
@@ -422,9 +420,11 @@ XIAOのLEDが点滅したら、もう一度デバイス側からペアリング�
 
 ## ✍️ キーマップを変更する（任意）
 
-{% include common/github-keymap-customization.md repository_name="nixiy/zmk-config-nickey" repository_url="https://github.com/nixiy/zmk-config-nickey" controller="XIAO" fork_image="/nickey44/images/firmware/39-github-fork-button.jpg" fork_image_alt="GitHubリポジトリ画面のForkボタン" editor_image="/nickey44/images/firmware/40-keymap-editor.jpg" editor_image_alt="ZMK Keymap EditorでNickey44の配列を編集している画面" actions_image="/nickey44/images/firmware/41-github-actions-tab.jpg" actions_image_alt="GitHubリポジトリのActionsタブ" workflow_image="/nickey44/images/firmware/42-github-actions-run.jpg" workflow_image_alt="成功したGitHub Actionsワークフロー一覧" artifact_image="/nickey44/images/firmware/43-firmware-artifact.jpg" artifact_image_alt="GitHub Actionsのfirmwareアーティファクト" %}
+キーマップの変更は、[キーマップの変更方法]({{ '/guides/keymap/' | relative_url }})を参照してください。Nickey44では、[nixiy/zmk-config-nickey](https://github.com/nixiy/zmk-config-nickey)を自分のアカウントへForkし、生成した左右用UF2ファイルを書き込みます。
 
 ## 🧯 トラブルシューティング
+
+USB接続、ブートローダー、Bluetoothに共通する基本的な対処は、[共通トラブルシューティング]({{ '/guides/troubleshooting/' | relative_url }})も確認してください。
 
 ### ⚡ 充電状態を確認する
 
