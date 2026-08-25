@@ -7,7 +7,7 @@ title: Nickey44 ビルドガイド
 
 このページでは、完全ワイヤレス分割キーボード「Nickey44」の組み立てから、ファームウェアの書き込み、Bluetoothペアリング、動作確認までを説明します。
 
-> このガイドは [PotaMegaの元記事](https://nixdesire.com/nickey-buildguide-2/) をGitHub Pages向けに再構成したものです。
+> 旧ブログ版から移行した、Nickey44の最新版ビルドガイドです。
 
 <nav class="toc-panel" data-toc aria-label="ページ内目次">
   <p class="toc-title">目次</p>
@@ -67,9 +67,16 @@ Nickey44の主な特徴は次のとおりです。
   <p>XIAO nRF52840 Plusでは動作しません。必ず無印のXIAO nRF52840を用意してください。</p>
 </div>
 
-### 🛒 入手先の例
+### 別途必要な部品（必須）
 
-- [Seeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble)
+- [Seeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble) × 2（**Plusではなく無印**）
+- [Choc v2キースイッチ](https://shop.beekeeb.jp/collections/choc-v2-%E3%82%AD%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81) × 44
+- [Choc v2／MXステム対応・狭ピッチキーキャップ](https://shop.beekeeb.jp/collections/%E3%82%AD%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97-mx-%E3%83%AD%E3%83%BC%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E7%8B%AD%E3%81%84%E3%83%94%E3%83%83%E3%83%81) × 44
+
+### キット付属品の入手先（紛失・破損・個別調達用）
+
+キット付属品を紛失・破損した場合や、部品を個別に調達する場合の参考です。
+
 - [バッテリー 3.7 V / 200 mAh / 601040](https://amzn.to/4tGIAtD)
 - [Choc v2 ホットスワップソケット](https://shop.beekeeb.jp/products/kailh-choc-hotswap-sockets)
 - [M2 4 mm 丸スペーサー](https://shop.yushakobo.jp/products/a0800c2?variant=37665435123873)
@@ -96,12 +103,15 @@ Nickey44の主な特徴は次のとおりです。
 - **はんだ**：部品をPCBへ固定するために使います。[参考商品](https://amzn.to/4f8enzh)
 - **細めのドライバー**：ケースのネジを締めるために使います。[参考商品](https://amzn.to/4vytIxO)
 - **ニッパー**：電源スイッチの余った足を切断するために使います。
+- **PC**：ファームウェアの書き込みに使います。
+- **USB Type-Cケーブル（データ通信対応）**：XIAOをPCへ接続してファームウェアを書き込みます。充電専用ケーブルでは認識されません。
 
 ### 👍 強く推奨
 
 - **フラックス**：はんだ付けする箇所へ先に塗ると、はんだの乗りが良くなります。ペンタイプがおすすめです。[参考商品](https://amzn.to/3T7ey5c)
 - **ピンセット**：スイッチソケットなど細かい部品をつまむために使います。先が曲がったタイプがおすすめです。[参考商品](https://amzn.to/4prI4Pe)
 - **ワイヤーストリッパー**：バッテリーケーブルの被覆をむくために使います。器用な方はニッパーでも代用できますが、ストリッパーの方が楽で確実です。[参考商品](https://amzn.to/4bIaGOj)
+- **テスター**：バッテリー接続前に短絡がないことを確認するために使います。ペンタイプが使いやすくおすすめです。[参考商品](https://amzn.to/4fgAJ05)
 
 ### ✨ あると便利
 
@@ -109,7 +119,7 @@ Nickey44の主な特徴は次のとおりです。
 - **耐熱マット**：机を傷つけず、部品が滑らないようにするために便利です。[参考商品](https://amzn.to/4b0jQpd)
 - **はんだ吸い取り線**：付けすぎたはんだを除去するために使います。あると安心です。[参考商品](https://amzn.to/4ysWx1c)
 - **マスキングテープ**：バッテリーの位置を仮固定するために使います。種類は問いません。
-- **テスター**：はんだブリッジによる短絡がないか確認するために使います。ペンタイプが使いやすくおすすめです。[参考商品](https://amzn.to/4fgAJ05)
+- **7ピンヘッダー**：XIAOの位置決め用治具です。ヘッダー自体ははんだ付けしません。
 - **保護メガネ**：ニッパーで端子を切る際に、飛散する部品から目を守ります。
 - **ケース底面用の滑り止め**：ケース底面の滑り止めとして[GRIPLUS（グリップラス）](https://amzn.to/4ywBbAg)がおすすめです。
 
@@ -218,7 +228,7 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
   <p>LiPoバッテリーは、短絡や不適切な加熱によって発煙・発火する危険があります。必ず片方の線ずつ作業し、異常な発熱、膨張、におい、発煙があれば直ちに作業と使用を中止してください。</p>
 </div>
 
-市販のバッテリー線とJSTコネクタ付きケーブルを、はんだ入り熱収縮チューブで接続します。
+付属のLiPoバッテリーとJSTコネクタ付きケーブルを、はんだ入り熱収縮チューブで接続します。
 
 組み立てライブ配信のVol.1後半でもこの作業を確認できます。また、[Amazonのバッテリー販売ページ](https://www.amazon.co.jp/dp/B0GHR215SF)にも参考動画があります。
 
@@ -246,15 +256,25 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
 ### バッテリーの接続と固定
 
+<div class="callout callout-important" role="note" aria-label="バッテリー接続前の確認">
+  <p class="callout-title">ⓘ バッテリーを接続する前に</p>
+  <ul>
+    <li>電源スイッチをOFFにする</li>
+    <li>バッテリー用パッドがブリッジしていないことを確認する</li>
+    <li>テスターがある場合は、＋／−間が導通していないことを確認する</li>
+    <li>JSTケーブルの極性を確認する</li>
+  </ul>
+</div>
+
 JSTコネクタをPCBのバッテリーソケットへ差し込みます。ケーブルを無理に引っ張らず、極性とコネクタの向きを確認してください。
 
 バッテリーは、ネジ止めの邪魔にならない写真の位置を目安に、マスキングテープで仮固定します。
 
 ![PCB裏面へ接続し、マスキングテープで固定したバッテリー](images/assembly/16-battery-mounted.jpg)
 
-### 電源スイッチカバーの取り付け
+### 電源スイッチカバーの仮合わせ・調整
 
-電源スイッチへ小さなスイッチカバーを取り付けます。
+ここではカバーのはまり具合だけ確認します。最終的な取り付けは、後の組み立て工程で行います。
 
 ![PCBの電源スイッチとオレンジ色のスイッチカバー](images/assembly/17-power-switch-cover-part.jpg)
 
@@ -322,13 +342,20 @@ XIAOカバーとオレンジ色のリセットボタンを用意します。
 - 右側: セントラル。PCやスマートフォンと直接通信します。
 - 左側: ペリフェラル。右側を経由して通信します。
 
-完成品には[標準ファームウェア v1.0.0](https://github.com/nixiy/zmk-config-nickey/tree/main/firmware/v1.0.0)が書き込まれています。
+使用するファームウェアは、用途に応じて選んでください。
+
+| 使い方 | Firmware |
+| --- | --- |
+| 通常利用 | [標準ファームウェア v1.0.0](https://github.com/nixiy/zmk-config-nickey/tree/main/firmware/v1.0.0) |
+| DYA Studioを使う | [DYA Studio対応ファームウェア v1.1.0](https://github.com/nixiy/zmk-config-nickey/tree/main/firmware/v1.1.0) |
+
+> 左右には必ず同じバージョンを書き込んでください。
 
 ### DYA Studioを利用する場合
 
 [DYA Studio](https://studio.dya.cormoran.works/)では、ブラウザからNickey44へ接続し、レイヤーごとのキーマップ確認、キー割り当ての編集、キーボードへの保存ができます。
 
-DYA Studioを使う場合は、左右両方を[DYA Studio対応ファームウェア v1.1.0](https://github.com/nixiy/zmk-config-nickey/tree/main/firmware/v1.1.0)へ更新してください。
+DYA Studioを使う場合は、左右両方をDYA Studio対応ファームウェア v1.1.0へ更新してください。
 
 ![DYA StudioでNickey44のレイヤーを編集している画面](images/firmware/32-dya-studio-keymap.jpg)
 
@@ -338,7 +365,7 @@ DYA Studioを使う場合は、左右両方を[DYA Studio対応ファームウ�
 
 ### ⬇️ ファームウェアの書き込み
 
-左右を1台ずつUSB接続して作業します。
+左右を1台ずつ、データ通信対応のUSB Type-CケーブルでPCへ接続して作業します。
 
 1. XIAO nRF52840をUSBでPCへ接続します。
 2. リセットボタンを素早く2回押します。
@@ -361,6 +388,42 @@ DYA Studioを使う場合は、左右両方を[DYA Studio対応ファームウ�
 
 ![レイヤー1キーと右側XIAOの赤色LEDを示した接続テスト図](images/firmware/36-split-connection-test.jpg)
 
+## 📶 Bluetoothペアリング
+
+PCやスマートフォンでBluetoothデバイスの追加画面を開き、`nickey`を選択します。
+
+![WindowsのBluetoothデバイス追加画面に表示されたnickey](images/bluetooth/44-bluetooth-pairing.jpg)
+
+### Bluetoothレイヤー
+
+レイヤー3にはBluetooth操作を割り当てています。
+
+![BT0からBT4、BT CLR、BT CLR ALLを配置したBluetoothレイヤー](images/bluetooth/45-bluetooth-layer.jpg)
+
+- `BT0`～`BT4`: 最大5台の接続先を選択。未登録のスロットを選ぶとペアリングモードになります。
+- `BT CLR`: 現在選択中のスロットのペアリング情報を消去します。
+- `BT CLR ALL`: すべてのスロットのペアリング情報を消去します。
+
+### 🔍 デバイス一覧に表示されない場合
+
+`BT CLR ALL`を実行して、ペアリング情報を初期化します。
+
+![Nickey44のBluetoothレイヤーでBT CLR ALLに使う3キー](images/bluetooth/45-bluetooth-layer.jpg)
+
+1. レイヤー0でSpace左隣のレイヤー1キーを押したままにする
+2. レイヤー1でレイヤー3キーを押したままにする
+3. レイヤー3で`BT CLR ALL`を押す
+
+![BT CLR ALLを実行するキーの押下順序](images/bluetooth/46-bluetooth-clear-all-order.jpg)
+
+XIAOのLEDが点滅したら、もう一度デバイス側からペアリングしてください。それでも表示されない場合は、`BT1`など別の接続スロットを選んで試します。
+
+## ✅ キー入力テスト
+
+組み立て後は[キーボードテスト](https://www.onlinemictest.com/ja/keyboard-test)などを使い、すべてのキーが入力できることを確認します。
+
+![オンラインキーボードテストでキー入力を確認している画面](images/firmware/38-key-input-test.jpg)
+
 ## 🗺️ デフォルトキーマップ
 
 ![Nickey44の4レイヤー分のデフォルトキーマップ](images/firmware/37-default-keymap.jpg)
@@ -370,13 +433,7 @@ DYA Studioを使う場合は、左右両方を[DYA Studio対応ファームウ�
 - レイヤー2: 記号。文字から連想しやすい位置へ記号を配置
 - レイヤー3: Bluetoothの接続先選択とペアリング情報の消去
 
-### ✅ キー入力テスト
-
-組み立て後は[キーボードテスト](https://www.onlinemictest.com/ja/keyboard-test)などを使い、すべてのキーが入力できることを確認します。
-
-![オンラインキーボードテストでキー入力を確認している画面](images/firmware/38-key-input-test.jpg)
-
-### ✍️ キーマップを変更する
+## ✍️ キーマップを変更する（任意）
 
 GitHubでファームウェアをカスタマイズするには、GitHubアカウントが必要です。持っていない場合は、事前に[GitHubアカウントを作成](https://github.com/signup)してください。
 
@@ -408,36 +465,6 @@ GitHubでファームウェアをカスタマイズするには、GitHubアカ�
 ワークフロー詳細の「Artifacts」からファームウェアをダウンロードして展開し、左右に対応するUF2ファイルを書き込みます。
 
 ![GitHub Actionsのfirmwareアーティファクト](images/firmware/43-firmware-artifact.jpg)
-
-## 📶 Bluetoothペアリング
-
-PCやスマートフォンでBluetoothデバイスの追加画面を開き、`nickey`を選択します。
-
-![WindowsのBluetoothデバイス追加画面に表示されたnickey](images/bluetooth/44-bluetooth-pairing.jpg)
-
-### Bluetoothレイヤー
-
-レイヤー3にはBluetooth操作を割り当てています。
-
-![BT0からBT4、BT CLR、BT CLR ALLを配置したBluetoothレイヤー](images/bluetooth/45-bluetooth-layer.jpg)
-
-- `BT0`～`BT4`: 最大5台の接続先を選択。未登録のスロットを選ぶとペアリングモードになります。
-- `BT CLR`: 現在選択中のスロットのペアリング情報を消去します。
-- `BT CLR ALL`: すべてのスロットのペアリング情報を消去します。
-
-### 🔍 デバイス一覧に表示されない場合
-
-`BT CLR ALL`を実行して、ペアリング情報を初期化します。
-
-![Nickey44のBluetoothレイヤーでBT CLR ALLに使う3キー](images/bluetooth/45-bluetooth-layer.jpg)
-
-1. レイヤー0でSpace左隣のレイヤー1キーを押したままにする
-2. レイヤー1でレイヤー3キーを押したままにする
-3. レイヤー3で`BT CLR ALL`を押す
-
-![BT CLR ALLを実行するキーの押下順序](images/bluetooth/46-bluetooth-clear-all-order.jpg)
-
-XIAOのLEDが点滅したら、もう一度デバイス側からペアリングしてください。それでも表示されない場合は、`BT1`など別の接続スロットを選んで試します。
 
 ## 🧯 トラブルシューティング
 
