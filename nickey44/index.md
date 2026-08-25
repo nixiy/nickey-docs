@@ -67,6 +67,15 @@ Nickey44の主な特徴は次のとおりです。
   <p>XIAO nRF52840 Plusでは動作しません。必ず無印のXIAO nRF52840を用意してください。</p>
 </div>
 
+### 入手先の例
+
+- [Seeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble)
+- [バッテリー 3.7 V / 200 mAh / 601040](https://amzn.to/4tGIAtD)
+- [Choc v2 ホットスワップソケット](https://shop.beekeeb.jp/products/kailh-choc-hotswap-sockets)
+- [M2 4 mm 丸スペーサー](https://shop.yushakobo.jp/products/a0800c2?variant=37665435123873)
+- [M2平ネジ](https://shop.yushakobo.jp/products/a0800s2?variant=37665432535201)
+- [スライドスイッチ ISH-1260-HA-G](https://akizukidenshi.com/catalog/g/g115370/)
+
 ケースを自分で印刷する場合は、[zmk-config-nickeyの3Dモデル](https://github.com/nixiy/zmk-config-nickey/tree/main/model)を利用できます。元記事での印刷条件は、Bambu Lab P1S、積層ピッチ0.12 mm、サポートあり（小さなオーバーハングを無視しない）です。
 
 ![左右のボトムケース、トッププレート、マイコンカバーを仮組みした状態](images/parts/02-case-parts.jpg)
@@ -97,7 +106,7 @@ Nickey44の主な特徴は次のとおりです。
 - はんだ吸い取り線
 - テスター
 - 保護メガネ
-- ケース底面用の滑り止め
+- ケース底面用の滑り止め：ケース底面の滑り止めとして[GRIPLUS（グリップラス）](https://amzn.to/4ywBbAg)がおすすめです。
 
 組み立ての様子は次の動画でも確認できます。Vol.1の後半には、バッテリー線へ熱収縮チューブを取り付ける作業があります。
 
@@ -206,6 +215,8 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
 市販のバッテリー線とJSTコネクタ付きケーブルを、はんだ入り熱収縮チューブで接続します。
 
+組み立てライブ配信のVol.1後半でもこの作業を確認できます。また、[Amazonのバッテリー販売ページ](https://www.amazon.co.jp/dp/B0GHR215SF)にも参考動画があります。
+
 ![LiPoバッテリー、JSTケーブル、はんだ入り熱収縮チューブ](images/battery/12-battery-and-jst-cable.jpg)
 
 1. バッテリー側の片方の線だけを選び、被覆を約5 mmむきます。写真では赤線から作業しています。
@@ -216,7 +227,7 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
    ![はんだ入り熱収縮チューブの中央に合わせた電線](images/battery/14-solder-sleeve-position.jpg)
 
-3. 次の順序で、ヒートガンなどを使ってゆっくり加熱します。
+3. 次の順序で、ライター、ヒートガン、またははんだごてを使ってゆっくり加熱します。ライターを使う場合は炎を近づけすぎず、バッテリー本体やケーブルに長時間当てないでください。バッテリー本体は直接加熱しないでください。
 
    1. 両端の白い部分を収縮させ、線を固定する
    2. 中央を十分に熱し、はんだが溶けて広がることを確認する
@@ -362,7 +373,18 @@ DYA Studioを使う場合は、左右両方を[DYA Studio対応ファームウ�
 
 ### キーマップを変更する
 
-GitHubでファームウェアをカスタマイズする場合は、[nixiy/zmk-config-nickey](https://github.com/nixiy/zmk-config-nickey)を自分のアカウントへForkします。
+GitHubでファームウェアをカスタマイズするには、GitHubアカウントが必要です。持っていない場合は、事前に[GitHubアカウントを作成](https://github.com/signup)してください。
+
+作業の流れは次のとおりです。
+
+1. GitHubアカウントを用意する
+2. [nixiy/zmk-config-nickey](https://github.com/nixiy/zmk-config-nickey)を自分のアカウントへForkする
+3. ZMK Keymap Editorで編集する
+4. GitHub Actionsでビルドする
+5. Artifactsからファームウェアをダウンロードする
+6. XIAOへ左右に対応するUF2ファイルを書き込む
+
+まず、[nixiy/zmk-config-nickey](https://github.com/nixiy/zmk-config-nickey)を自分のアカウントへForkします。
 
 ![GitHubリポジトリ画面のForkボタン](images/firmware/39-github-fork-button.jpg)
 
