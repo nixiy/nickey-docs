@@ -1,6 +1,8 @@
 ---
 layout: default
 title: DYA Studioの使い方
+description: DYA Studioで対応キーボードのキーマップを確認・編集・保存する方法
+image: /nickey44/images/firmware/32-dya-studio-keymap.jpg
 permalink: /guides/dya-studio/
 ---
 

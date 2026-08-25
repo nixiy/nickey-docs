@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Bluetoothの操作・ペアリング
+description: ZMK Firmwareを使うキーボードのBluetooth操作とペアリングの基本
+image: /nickey44/images/bluetooth/44-bluetooth-pairing.jpg
 permalink: /guides/bluetooth/
 ---
 

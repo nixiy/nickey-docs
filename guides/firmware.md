@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Firmwareの書き込み方法
+description: XIAO nRF52840搭載キーボードへUF2形式のFirmwareを書き込む基本手順
+image: /nickey44/images/firmware/34-xiao-bootloader-drive.jpg
 permalink: /guides/firmware/
 ---
 

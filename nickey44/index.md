@@ -1,11 +1,15 @@
 ---
 layout: default
 title: Nickey44 ビルドガイド
+description: 完全ワイヤレス分割キーボード、Nickey44の組み立て・Firmware書き込み・Bluetoothペアリングのガイド
+image: /assets/images/nickey-hero.jpg
 ---
 
 # Nickey44 ビルドガイド
 
 このページでは、完全ワイヤレス分割キーボード「Nickey44」の組み立てから、ファームウェアの書き込み、Bluetoothペアリング、動作確認までを説明します。
+
+![白いNickey44分割キーボードとキースイッチ]({{ '/assets/images/nickey-hero.jpg' | relative_url }})
 
 > 旧ブログ版から移行した、Nickey44の最新版ビルドガイドです。
 

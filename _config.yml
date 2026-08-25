@@ -1,5 +1,7 @@
-title: Nickey44 Docs
-description: Nickey44のビルド・セットアップガイド
+title: Nickey Docs
+description: Nickeyシリーズのビルド・セットアップガイド
+image: /assets/images/nickey-hero.jpg
+lang: ja
 url: https://nixiy.github.io
 baseurl: /nickey-docs
 

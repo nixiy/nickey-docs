@@ -1,6 +1,8 @@
 ---
 layout: default
 title: キーマップの変更方法
+description: GitHub、ZMK Keymap Editor、GitHub Actionsを使ったキーマップ変更の基本手順
+image: /nickey44/images/firmware/40-keymap-editor.jpg
 permalink: /guides/keymap/
 ---
 

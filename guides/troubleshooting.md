@@ -1,6 +1,8 @@
 ---
 layout: default
 title: 共通トラブルシューティング
+description: XIAO搭載キーボードの接続・Firmware書き込み・Bluetoothに共通する基本的な対処
+image: /nickey44/images/firmware/34-xiao-bootloader-drive.jpg
 permalink: /guides/troubleshooting/
 ---
 
