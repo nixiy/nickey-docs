@@ -232,6 +232,18 @@ a:focus-visible {
   letter-spacing: 0.02em;
 }
 
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.github-link-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
 .page-content {
   padding: 3rem 0 5rem;
 }
@@ -421,5 +433,9 @@ table tr:nth-child(even) {
 
   .site-nav .menu-icon > svg path {
     fill: var(--text);
+  }
+
+  .site-nav .github-link {
+    display: flex;
   }
 }

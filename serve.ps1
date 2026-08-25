@@ -12,4 +12,4 @@ if ($LASTEXITCODE -ne 0) {
     }
 }
 
-jekyll serve --livereload --baseurl=
+jekyll serve --livereload --baseurl /
