@@ -367,20 +367,13 @@ DYA Studioを使う場合は、左右両方をDYA Studio対応ファームウェ
 
 左右を1台ずつ、データ通信対応のUSB Type-CケーブルでPCへ接続して作業します。
 
-1. XIAO nRF52840をUSBでPCへ接続します。
-2. リセットボタンを素早く2回押します。
-3. ブートローダードライブがエクスプローラーに表示されることを確認します。
+{% include common/xiao-bootloader.md controller="XIAO nRF52840" image="/nickey44/images/firmware/34-xiao-bootloader-drive.jpg" image_alt="XIAOカバー上のリセットボタン位置" %}
 
-   ![XIAOカバー上のリセットボタン位置](images/firmware/34-xiao-bootloader-drive.jpg)
+Nickey44では、右側には `nickey_r` で始まるファイル、左側には `nickey_l` で始まるファイルを使用します。
 
-4. 対応するUF2ファイルをドライブへドラッグ＆ドロップします。
+![右用と左用のUF2ファームウェアファイル](images/firmware/35-firmware-files.jpg)
 
-   - 右側には `nickey_r` で始まるファイル
-   - 左側には `nickey_l` で始まるファイル
-
-   ![右用と左用のUF2ファームウェアファイル](images/firmware/35-firmware-files.jpg)
-
-コピー後はドライブが自動的に閉じ、キーボードが再起動します。
+{% include common/uf2-write.md %}
 
 ### 🔗 左右間の接続テスト
 
@@ -396,13 +389,9 @@ PCやスマートフォンでBluetoothデバイスの追加画面を開き、`ni
 
 ### Bluetoothレイヤー
 
-レイヤー3にはBluetooth操作を割り当てています。
+{% include common/bluetooth-operations.md %}
 
 ![BT0からBT4、BT CLR、BT CLR ALLを配置したBluetoothレイヤー](images/bluetooth/45-bluetooth-layer.jpg)
-
-- `BT0`～`BT4`: 最大5台の接続先を選択。未登録のスロットを選ぶとペアリングモードになります。
-- `BT CLR`: 現在選択中のスロットのペアリング情報を消去します。
-- `BT CLR ALL`: すべてのスロットのペアリング情報を消去します。
 
 ### 🔍 デバイス一覧に表示されない場合
 
@@ -420,9 +409,7 @@ XIAOのLEDが点滅したら、もう一度デバイス側からペアリング�
 
 ## ✅ キー入力テスト
 
-組み立て後は[キーボードテスト](https://www.onlinemictest.com/ja/keyboard-test)などを使い、すべてのキーが入力できることを確認します。
-
-![オンラインキーボードテストでキー入力を確認している画面](images/firmware/38-key-input-test.jpg)
+{% include common/keyboard-input-test.md image="/nickey44/images/firmware/38-key-input-test.jpg" image_alt="オンラインキーボードテストでキー入力を確認している画面" %}
 
 ## 🗺️ デフォルトキーマップ
 
@@ -435,36 +422,7 @@ XIAOのLEDが点滅したら、もう一度デバイス側からペアリング�
 
 ## ✍️ キーマップを変更する（任意）
 
-GitHubでファームウェアをカスタマイズするには、GitHubアカウントが必要です。持っていない場合は、事前に[GitHubアカウントを作成](https://github.com/signup)してください。
-
-作業の流れは次のとおりです。
-
-1. GitHubアカウントを用意する
-2. [nixiy/zmk-config-nickey](https://github.com/nixiy/zmk-config-nickey)を自分のアカウントへForkする
-3. ZMK Keymap Editorで編集する
-4. GitHub Actionsでビルドする
-5. Artifactsからファームウェアをダウンロードする
-6. XIAOへ左右に対応するUF2ファイルを書き込む
-
-まず、[nixiy/zmk-config-nickey](https://github.com/nixiy/zmk-config-nickey)を自分のアカウントへForkします。
-
-![GitHubリポジトリ画面のForkボタン](images/firmware/39-github-fork-button.jpg)
-
-[ZMK Keymap Editor](https://nickcoutsos.github.io/keymap-editor/)を使うと、ブラウザ上でキー割り当てを変更できます。事前設定については、ファームウェアリポジトリのREADMEも確認してください。
-
-![ZMK Keymap EditorでNickey44の配列を編集している画面](images/firmware/40-keymap-editor.jpg)
-
-変更を保存した後は、GitHubリポジトリの「Actions」を開きます。
-
-![GitHubリポジトリのActionsタブ](images/firmware/41-github-actions-tab.jpg)
-
-成功を示す緑のチェックが付いた最新のワークフローを選びます。
-
-![成功したGitHub Actionsワークフロー一覧](images/firmware/42-github-actions-run.jpg)
-
-ワークフロー詳細の「Artifacts」からファームウェアをダウンロードして展開し、左右に対応するUF2ファイルを書き込みます。
-
-![GitHub Actionsのfirmwareアーティファクト](images/firmware/43-firmware-artifact.jpg)
+{% include common/github-keymap-customization.md repository_name="nixiy/zmk-config-nickey" repository_url="https://github.com/nixiy/zmk-config-nickey" controller="XIAO" fork_image="/nickey44/images/firmware/39-github-fork-button.jpg" fork_image_alt="GitHubリポジトリ画面のForkボタン" editor_image="/nickey44/images/firmware/40-keymap-editor.jpg" editor_image_alt="ZMK Keymap EditorでNickey44の配列を編集している画面" actions_image="/nickey44/images/firmware/41-github-actions-tab.jpg" actions_image_alt="GitHubリポジトリのActionsタブ" workflow_image="/nickey44/images/firmware/42-github-actions-run.jpg" workflow_image_alt="成功したGitHub Actionsワークフロー一覧" artifact_image="/nickey44/images/firmware/43-firmware-artifact.jpg" artifact_image_alt="GitHub Actionsのfirmwareアーティファクト" %}
 
 ## 🧯 トラブルシューティング
 
