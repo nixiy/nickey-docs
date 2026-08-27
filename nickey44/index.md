@@ -5,13 +5,15 @@ description: 完全ワイヤレス分割キーボード、Nickey44の組み立�
 image: /assets/images/nickey-hero.jpg
 ---
 
-# Nickey44 ビルドガイド
-
-このページでは、完全ワイヤレス分割キーボード「Nickey44」の組み立てから、ファームウェアの書き込み、Bluetoothペアリング、動作確認までを説明します。
-
-![白いNickey44分割キーボードとキースイッチ]({{ '/assets/images/nickey-hero.jpg' | relative_url }})
-
-> 旧ブログ版から移行した、Nickey44の最新版ビルドガイドです。
+<header class="guide-hero">
+  <p class="eyebrow">Build guide</p>
+  <h1>Nickey44 ビルドガイド</h1>
+  <p class="guide-hero-lede">完全ワイヤレス分割キーボードNickey44の組み立てから、Firmwareの書き込み、Bluetoothペアリング、動作確認までを説明します。</p>
+  <ul class="spec-tags" aria-label="Nickey44の主な仕様">
+    <li>Wireless</li><li>44 keys</li><li>Choc v2</li><li>17 mm pitch</li><li>ZMK</li>
+  </ul>
+  <img src="{{ '/assets/images/nickey-hero.jpg' | relative_url }}" alt="白いNickey44分割キーボードとキースイッチ">
+</header>
 
 <nav class="toc-panel" data-toc aria-label="ページ内目次">
   <p class="toc-title">目次</p>
@@ -24,8 +26,9 @@ image: /assets/images/nickey-hero.jpg
 </aside>
 
 <script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/build-guide.js' | relative_url }}" defer></script>
 
-## ⌨️ Nickey44について
+## Nickey44について
 
 Nickey44の主な特徴は次のとおりです。
 
@@ -45,7 +48,7 @@ Nickey44の主な特徴は次のとおりです。
 5. ファームウェアを書き込む
 6. Bluetooth接続とキー入力を確認する
 
-## 🧩 部品一覧
+<h2 class="step-header" data-step="01" data-toc-label="部品を確認する">部品を確認する</h2>
 
 ![Nickey44キットに含まれる基板、ソケット、バッテリー、ケーブル、ケース部品](images/parts/01-parts.jpg)
 
@@ -99,9 +102,9 @@ Nickey44の主な特徴は次のとおりです。
 - XIAOリセットボタン × 2
 - 電源スイッチカバー × 2
 
-## 🧰 必要な道具
+## 必要な道具
 
-### ✅ 必須
+### 必須
 
 - **はんだごて**：XIAO、ソケット、電源スイッチをはんだ付けするために使います。[参考商品](https://amzn.to/4wbCkvz)
 - **はんだ**：部品をPCBへ固定するために使います。[参考商品](https://amzn.to/4f8enzh)
@@ -110,14 +113,14 @@ Nickey44の主な特徴は次のとおりです。
 - **PC**：ファームウェアの書き込みに使います。
 - **USB Type-Cケーブル（データ通信対応）**：XIAOをPCへ接続してファームウェアを書き込みます。充電専用ケーブルでは認識されません。
 
-### 👍 強く推奨
+### 強く推奨
 
 - **フラックス**：はんだ付けする箇所へ先に塗ると、はんだの乗りが良くなります。ペンタイプがおすすめです。[参考商品](https://amzn.to/3T7ey5c)
 - **ピンセット**：スイッチソケットなど細かい部品をつまむために使います。先が曲がったタイプがおすすめです。[参考商品](https://amzn.to/4prI4Pe)
 - **ワイヤーストリッパー**：バッテリーケーブルの被覆をむくために使います。器用な方はニッパーでも代用できますが、ストリッパーの方が楽で確実です。[参考商品](https://amzn.to/4bIaGOj)
 - **テスター**：バッテリー接続前に短絡がないことを確認するために使います。ペンタイプが使いやすくおすすめです。[参考商品](https://amzn.to/4fgAJ05)
 
-### ✨ あると便利
+### あると便利
 
 - **はんだごてスタンド**：はんだごてを安全に置くために使います。[参考商品](https://amzn.to/4posS5k)
 - **耐熱マット**：机を傷つけず、部品が滑らないようにするために便利です。[参考商品](https://amzn.to/4b0jQpd)
@@ -128,7 +131,7 @@ Nickey44の主な特徴は次のとおりです。
 
 組み立ての様子は次の動画でも確認できます。Vol.1の後半には、バッテリー線へ熱収縮チューブを取り付ける作業があります。
 
-### 📺 組み立てライブ配信 Vol.1
+### 組み立てライブ配信 Vol.1
 
 <div class="video-embed">
   <iframe
@@ -143,7 +146,7 @@ Nickey44の主な特徴は次のとおりです。
 
 [YouTubeでVol.1を見る](https://www.youtube.com/watch?v=srst_7mpgqU)
 
-### 📺 組み立てライブ配信 Vol.2
+### 組み立てライブ配信 Vol.2
 
 <div class="video-embed">
   <iframe
@@ -158,9 +161,9 @@ Nickey44の主な特徴は次のとおりです。
 
 [YouTubeでVol.2を見る](https://www.youtube.com/watch?v=h0ucaMpeFN0)
 
-## 🔥 はんだ付け
+## 組み立て工程
 
-### XIAO nRF52840の取り付け
+<h3 class="step-header" data-step="02" data-toc-label="XIAO nRF52840の取り付け">XIAO nRF52840の取り付け</h3>
 
 XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッド、左右7か所ずつ、合計14か所をはんだ付けします。
 
@@ -189,7 +192,7 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 
 キーボードとしての動作に不要なほかのスルーホールは、はんだ付けしなくてもかまいません。
 
-### Choc v2ソケットの取り付け
+<h3 class="step-header" data-step="03" data-toc-label="Choc v2ソケットの取り付け">Choc v2ソケットの取り付け</h3>
 
 Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
@@ -207,7 +210,7 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
 ![すべてのChoc v2ソケットを取り付けたPCB裏面](images/soldering/09-sockets-complete.jpg)
 
-### 電源スイッチの取り付け
+<h3 class="step-header" data-step="04" data-toc-label="電源スイッチの取り付け">電源スイッチの取り付け</h3>
 
 電源スイッチは**PCBの裏側**から差し込み、スライド部がPCBの外側を向くようにします。
 
@@ -224,7 +227,7 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
   <p>切断した端子は勢いよく飛ぶことがあります。保護メガネを着用し、人や壊れやすい物へ向けないでください。</p>
 </div>
 
-## 🔋 バッテリーとケーブルの接続
+<h2 class="step-header" data-step="05" data-toc-label="バッテリーとケーブルの接続">バッテリーとケーブルの接続</h2>
 
 <div class="callout callout-warning" role="alert" aria-label="LiPoバッテリーの警告">
   <p class="callout-title">⚠ LiPoバッテリーの取り扱い</p>
@@ -255,7 +258,7 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
 ![収縮と中央のはんだ付けが完了したバッテリー線](images/battery/15-solder-sleeve-complete.jpg)
 
-## 🛠️ ケースへの取り付け
+<h2 class="step-header" data-step="06" data-toc-label="ケースへの取り付け">ケースへの取り付け</h2>
 
 ### バッテリーの接続と固定
 
@@ -338,7 +341,7 @@ XIAOカバーとオレンジ色のリセットボタンを用意します。
 
 ![ケースへ組み込んだNickey44片側](images/assembly/31-assembled-keyboard.jpg)
 
-## 💾 ZMK Firmware
+<h2 class="step-header" data-step="07" data-toc-label="Firmwareの書き込み">Firmwareの書き込み</h2>
 
 設定ファイルと詳しいカスタマイズ方法は、[nixiy/zmk-config-nickey](https://github.com/nixiy/zmk-config-nickey)にあります。
 
@@ -360,7 +363,7 @@ DYA Studioを使う場合は、左右両方をDYA Studio対応ファームウェ
 
 [DYA Studioの使い方]({{ '/guides/dya-studio/' | relative_url }})を確認して、キーマップを編集・保存してください。
 
-### ⬇️ ファームウェアの書き込み
+### ファームウェアの書き込み
 
 左右を1台ずつ、データ通信対応のUSB Type-CケーブルでPCへ接続して作業します。
 
@@ -374,13 +377,13 @@ DYA Studioを使う場合は、左右両方をDYA Studio対応ファームウェ
 
 コピー後はドライブが自動的に閉じ、キーボードが再起動します。ブートローダーモードとUF2書き込みの詳しい説明は、[Firmwareの書き込み方法]({{ '/guides/firmware/' | relative_url }})を確認してください。
 
-### 🔗 左右間の接続テスト
+### 左右間の接続テスト
 
 左右へ正しいファームウェアを書き込むと、自動的に接続されます。左側でレイヤー1キーを押している間、右側XIAOのLEDが赤く点灯すれば左右間の通信は成功です。
 
 ![レイヤー1キーと右側XIAOの赤色LEDを示した接続テスト図](images/firmware/36-split-connection-test.jpg)
 
-## 📶 Bluetoothペアリング
+<h2 class="step-header" data-step="08" data-toc-label="Bluetoothペアリング">Bluetoothペアリング</h2>
 
 PCやスマートフォンでBluetoothデバイスの追加画面を開き、`nickey`を選択します。
 
@@ -392,7 +395,7 @@ PCやスマートフォンでBluetoothデバイスの追加画面を開き、`ni
 
 初回ペアリングでは、レイヤー3で未登録のBluetoothスロットを選択してから、PCやスマートフォンのデバイス一覧で`nickey`を選択します。`BT0`～`BT4`、`BT CLR`、`BT CLR ALL`の詳しい操作は、[Bluetoothの操作・ペアリング]({{ '/guides/bluetooth/' | relative_url }})を確認してください。
 
-### 🔍 デバイス一覧に表示されない場合
+### デバイス一覧に表示されない場合
 
 `BT CLR ALL`を実行して、ペアリング情報を初期化します。
 
@@ -406,13 +409,13 @@ PCやスマートフォンでBluetoothデバイスの追加画面を開き、`ni
 
 XIAOのLEDが点滅したら、もう一度デバイス側からペアリングしてください。それでも表示されない場合は、`BT1`など別の接続スロットを選んで試します。
 
-## ✅ キー入力テスト
+<h2 class="step-header" data-step="09" data-toc-label="キー入力テスト">キー入力テスト</h2>
 
 組み立て後は[キーボードテスト](https://www.onlinemictest.com/ja/keyboard-test)などを使い、すべてのキーが入力できることを確認します。
 
 ![オンラインキーボードテストでキー入力を確認している画面](images/firmware/38-key-input-test.jpg)
 
-## 🗺️ デフォルトキーマップ
+## デフォルトキーマップ
 
 ![Nickey44の4レイヤー分のデフォルトキーマップ](images/firmware/37-default-keymap.jpg)
 
@@ -421,15 +424,15 @@ XIAOのLEDが点滅したら、もう一度デバイス側からペアリング�
 - レイヤー2: 記号。文字から連想しやすい位置へ記号を配置
 - レイヤー3: Bluetoothの接続先選択とペアリング情報の消去
 
-## ✍️ キーマップを変更する（任意）
+## キーマップを変更する（任意）
 
 キーマップの変更は、[キーマップの変更方法]({{ '/guides/keymap/' | relative_url }})を参照してください。Nickey44では、[nixiy/zmk-config-nickey](https://github.com/nixiy/zmk-config-nickey)を自分のアカウントへForkし、生成した左右用UF2ファイルを書き込みます。
 
-## 🧯 トラブルシューティング
+## トラブルシューティング
 
 USB接続、ブートローダー、Bluetoothに共通する基本的な対処は、[共通トラブルシューティング]({{ '/guides/troubleshooting/' | relative_url }})も確認してください。
 
-### ⚡ 充電状態を確認する
+### 充電状態を確認する
 
 USB接続中にXIAOの充電LEDが緑色に点灯すれば、充電されています。カバー装着時はLEDが見えにくいことがあります。
 
@@ -440,11 +443,11 @@ USB接続中にXIAOの充電LEDが緑色に点灯すれば、充電されてい�
   <p>電源スイッチがONのときだけ充電されます。OFFの状態では充電されません。</p>
 </div>
 
-### 🔌 有線接続する
+### 有線接続する
 
 右側のXIAOをUSBでPCへ接続すると、有線キーボードとして使用できます。左右間は無線で繋がります。
 
-### 🧩 左右が接続できなくなった
+### 左右が接続できなくなった
 
 ファームウェアの変更後などに左右間の接続が復旧しない場合は、設定リセット用ファームウェアを挟んで書き直します。
 
@@ -457,7 +460,9 @@ USB接続中にXIAOの充電LEDが緑色に点灯すれば、充電されてい�
 3. 左側へ `settings_reset` で始まるUF2を書き込む
 4. 左側へ `nickey_l` で始まるUF2を書き込む
 
-## 🎉 完成
+<section class="complete-section" aria-labelledby="complete-title">
+  <p class="complete-kicker">Complete</p>
+  <h2 id="complete-title">Nickey44 完成！</h2>
 
 左右の接続、Bluetoothペアリング、全キーの入力を確認できれば完成です。
 
@@ -465,8 +470,16 @@ USB接続中にXIAOの充電LEDが緑色に点灯すれば、充電されてい�
 
 不具合や不明点は、[Nickey Discordサーバー](https://discord.com/invite/SE8h8wK3)で相談できます。
 
-### 🔗 関連リンク
+<div class="complete-actions">
+  <a href="{{ '/guides/troubleshooting/' | relative_url }}">トラブルシューティング</a>
+  <a href="https://discord.com/invite/SE8h8wK3">Discord</a>
+  <a href="https://booth.pm/ja/items/8178906">BOOTH</a>
+</div>
 
-- 🛍️ **BOOTH（購入ページ）:** [Nickey44 - BOOTH](https://booth.pm/ja/items/8178906)
+### 関連リンク
+
+- **BOOTH（購入ページ）:** [Nickey44 - BOOTH](https://booth.pm/ja/items/8178906)
 - 📝 **開発記（なぜ44キーなのか）:** [「Nickey44」を設計した理由。理想の44キーと40%レイアウトの最適解を求めた開発記](https://nixdesire.com/nickey44-review/)
 - 📖 **紹介記事（詳細解説）:** [デスクの上を、最も美しく。パームレスト不要の極薄設計と完全ワイヤレスが融合した分割40%自作キーボード『Nickey44』](https://nixdesire.com/nickey44-introduction/)
+
+</section>
