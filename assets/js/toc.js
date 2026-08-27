@@ -48,16 +48,14 @@
       id: makeId(heading, index),
       level,
       number: level === 2 ? `${h2Number}` : `${h2Number}.${h3Number}`,
-      label: heading.dataset.tocLabel || heading.textContent.trim(),
-      step: heading.dataset.step,
+      label: heading.textContent.trim(),
     };
   });
 
-  sections.forEach(({ heading, number, step }) => {
-    if (!step) return;
+  sections.forEach(({ heading, number }) => {
     const numberLabel = document.createElement("span");
-    numberLabel.className = "step-number";
-    numberLabel.textContent = `STEP ${step}`;
+    numberLabel.className = "heading-number";
+    numberLabel.textContent = number;
     heading.prepend(numberLabel);
   });
 
@@ -65,7 +63,7 @@
     let currentH2Item = null;
     let sublist = null;
 
-    sections.forEach(({ id, level, number, label, step }) => {
+    sections.forEach(({ id, level, number, label }) => {
       const item = document.createElement("li");
       const link = document.createElement("a");
       const numberLabel = document.createElement("span");
@@ -74,7 +72,7 @@
       link.href = `#${id}`;
       link.dataset.tocTarget = id;
       numberLabel.className = "toc-number";
-      numberLabel.textContent = step ? step : number;
+      numberLabel.textContent = number;
       textLabel.textContent = label;
       link.append(numberLabel, textLabel);
       item.append(link);
