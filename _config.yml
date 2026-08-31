@@ -14,6 +14,7 @@ repository: nixiy/nickey-docs
 
 header_pages:
   - nickey44/index.md
+  - nickey44a/index.md
 
 exclude:
   - Gemfile

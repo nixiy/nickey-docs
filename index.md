@@ -16,6 +16,10 @@ Nickeyシリーズのビルド・セットアップガイドです。
 
 - [Nickey44 ビルドガイド]({{ '/nickey44/' | relative_url }})
 
+## Nickey44A
+
+- [Nickey44A ビルドガイド]({{ '/nickey44a/' | relative_url }})
+
 
 ## 共通ガイド
 
