@@ -53,7 +53,6 @@ Nickey44Aの主な特徴は次のとおりです。
 | 部品 | 数量 | キット付属 | 備考 |
 | --- | ---: | :---: | --- |
 | Nickey44A PCB（左・右） | 各1 | ✅ | |
-| M2 丸スペーサー 4 mm | 10 | ✅ | |
 | M2 ネジ 5 mm | 10 | ✅ | ケース固定に使用 |
 | Choc v2 ホットスワップソケット | 44 | ✅ | |
 | 単4電池用マイナス端子 | 2 | ✅ | |
@@ -79,7 +78,6 @@ Nickey44Aの主な特徴は次のとおりです。
 - [単4電池用マイナス端子（MonotaRO）](https://www.monotaro.com/p/8835/2521/)
 - [単4電池用プラス端子（MonotaRO）](https://www.monotaro.com/p/8835/2512/)
 - [Choc v2 ホットスワップソケット](https://shop.beekeeb.jp/products/kailh-choc-hotswap-sockets)
-- [M2 4 mm 丸スペーサー](https://shop.yushakobo.jp/products/a0800c2?variant=37665435123873)
 - [M2平ネジ](https://shop.yushakobo.jp/products/a0800s2?variant=37665432535201)
 
 ケース一式は次の部品で構成されます。
