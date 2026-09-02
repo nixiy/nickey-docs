@@ -139,19 +139,27 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 
 Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
-1. ソケット1個分の片側パッドに、あらかじめ少量のはんだを盛ります。
 
-   ![Choc v2ソケットの片側パッドへ予備はんだを盛ったPCB](../nickey44/images/soldering/07-socket-first-pad.jpg)
+ソケットには向きがあります。スイッチ中央の軸が入る側を、PCBの八角形のシルクに合わせてください。向きを誤るとキースイッチを取り付けられません。
 
-2. ソケットをピンセットで押さえながら予備はんだを溶かし、位置を固定します。
+<div class="callout callout-important" role="note" aria-label="重要">
+  <p class="callout-title">ⓘ 重要</p>
+  <p>一部のソケットは周囲のスペースの都合で向きが回転しています。はんだ付けしやすくするため、必ず次の写真の順で取り付けてください。</p>
+</div>
 
-   ![八角形のシルクに軸側を合わせたChoc v2ソケット](../nickey44/images/soldering/08-socket-positioning.jpg)
+   ![通常の向きのChoc v2ソケット](../nickey44a/images/chocv2/03-socket-orientation.jpg)
 
-3. 反対側の端子もはんだ付けします。すべてのソケットで繰り返してください。
+1. 先に、通常の向きのソケットを取り付けます。
 
-ソケットには向きがあります。スイッチ中央の軸が入る側を、PCBの八角形のシルクへ合わせてください。詳しくは[「Kailh Choc ソケットの方向について」](https://scrapbox.io/self-made-kbds-ja/Kailh_Choc_%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AE%E6%96%B9%E5%90%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)も参考になります。
+   ![回転した向きのChoc v2ソケットを位置合わせする](../nickey44a/images/chocv2/02-socket-positioning.jpg)
 
-![すべてのChoc v2ソケットを取り付けたPCB裏面](../nickey44/images/soldering/09-sockets-complete.jpg)
+2. 次に、回転した向きのソケットを取り付けます。
+
+   ![すべてのChoc v2ソケットを取り付けたPCB裏面](../nickey44a/images/chocv2/01-socket-orientation-on-pcb.jpg)
+
+各ソケットは、片側のパッドに少量のはんだを予備はんだし、ソケットをピンセットで押さえてそのはんだを溶かし、位置を固定します。位置を確認してから、反対側の端子もはんだ付けしてください。
+
+はんだ付け後は、端子の浮きや端子間のはんだブリッジがないことを確認します。ソケットの向きについては、[「Kailh Choc ソケットの方向について」](https://scrapbox.io/self-made-kbds-ja/Kailh_Choc_%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AE%E6%96%B9%E5%90%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)も参考にしてください。
 
 ### 単4電池端子の取り付け
 
