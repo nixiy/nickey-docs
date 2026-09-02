@@ -48,7 +48,7 @@ Nickey44Aの主な特徴は次のとおりです。
 
 ## 🧩 部品一覧
 
-![部品一覧](../nickey44a/images/A7V09510.JPG)
+![部品一覧](../nickey44a/images/parts-layout.jpg)
 
 
 組み立てる前に、部品の種類と数量を確認してください。
@@ -118,15 +118,15 @@ Nickey44Aの主な特徴は次のとおりです。
 
 XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッド、左右7か所ずつ、合計14か所をはんだ付けします。
 
-![XIAO nRF52840のはんだ付け箇所を赤点で示したPCB](../nickey44/images/soldering/03-xiao-solder-points.jpg)
+![XIAO nRF52840のはんだ付け箇所を赤点で示したPCB](../nickey44a/images/xiao/01-xiao-solder-points.jpg)
 
 位置決めには7ピンヘッダーを利用できます。ヘッダーは治具として使うだけなので、ヘッダー自体ははんだ付けしません。
 
-![PCB、XIAO nRF52840、位置決め用7ピンヘッダー](../nickey44/images/soldering/04-xiao-alignment-header.jpg)
+![PCB、XIAO nRF52840、位置決め用7ピンヘッダー](../nickey44a/images/xiao/02-xiao-alignment-header.jpg)
 
 7ピンヘッダーを差し込んでXIAOの位置を合わせ、反対側の端子を数か所はんだ付けします。位置が固定できたらヘッダーを外し、残りの端子をはんだ付けしてください。
 
-![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44/images/soldering/05-xiao-positioned.jpg)
+![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a/images/xiao/04-xiao-aligned-on-pcb.jpg)
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
@@ -170,7 +170,26 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
 ネジを締めすぎてケースやPCBを傷めないようにしてください。
 
-<!-- TODO: Nickey44Aのケース組み立て・電池カバー装着写真と手順を追加 -->
+### PCBをケースに組み付ける
+
+<div class="callout callout-important" role="note" aria-label="重要">
+  <p class="callout-title">ⓘ 重要</p>
+  <p>この手順を実施することで、電源スイッチのピン折れを回避することができます。</p>
+</div>
+
+電源スイッチのピンに負荷をかけないよう、次の順でPCBをケースに収めます。
+
+1. XIAO側からPCBをケースに差し込み、ケースの縁に沿わせます。
+
+   ![XIAO側からケースに差し込んだPCB](../nickey44/assembly/01-pcb-position-xiao-side.jpg)
+
+2. PCBを少し持ち上げながら、電源スイッチのピンをケースの穴にまっすぐ合わせます。
+
+   ![電源スイッチのピンをケースの穴に合わせる](../nickey44/assembly/02-pcb-align-power-switch.jpg)
+
+3. 電源スイッチのピンが穴に入った状態を保ち、PCB全体を水平に押し込んでケースに収めます。
+
+   ![ケースに収まったPCB](../nickey44/assembly/03-pcb-seated-in-case.jpg)
 
 ## 💾 ZMK Firmware
 
