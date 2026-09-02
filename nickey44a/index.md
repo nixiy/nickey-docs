@@ -128,10 +128,10 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 
 ![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a/images/xiao/04-xiao-aligned-on-pcb.jpg)
 
-<div class="callout callout-important" role="note" aria-label="重要">
-  <p class="callout-title">ⓘ 重要</p>
-  <p>Nickey44AではXIAO裏面のBAT/GNDスルーホールを使用しません。BAT/GNDスルーホールへはんだを流す必要はありません。通常の側面キャスタレーション端子（左右7端子、合計14端子）のみをはんだ付けしてください。</p>
-</div>
+このスルーホールPINは開発者向けオプションです、通常の利用でははんだ付けする必要はありません。
+
+![alt text](images/xiao/05-xiao-solder-pads.jpg)
+
 
 端子間をはんだでつなぐ「ブリッジ」を起こさないよう、十分に確認してください。
 
@@ -181,15 +181,15 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
 1. XIAO側からPCBをケースに差し込み、ケースの縁に沿わせます。
 
-   ![XIAO側からケースに差し込んだPCB](../nickey44/assembly/01-pcb-position-xiao-side.jpg)
+   ![XIAO側からケースに差し込んだPCB](../nickey44a/images/assembly/01-pcb-position-xiao-side.jpg)
 
 2. PCBを少し持ち上げながら、電源スイッチのピンをケースの穴にまっすぐ合わせます。
 
-   ![電源スイッチのピンをケースの穴に合わせる](../nickey44/assembly/02-pcb-align-power-switch.jpg)
+   ![電源スイッチのピンをケースの穴に合わせる](../nickey44a/images/assembly/02-pcb-align-power-switch.jpg)
 
 3. 電源スイッチのピンが穴に入った状態を保ち、PCB全体を水平に押し込んでケースに収めます。
 
-   ![ケースに収まったPCB](../nickey44/assembly/03-pcb-seated-in-case.jpg)
+   ![ケースに収まったPCB](../nickey44a/images/assembly/03-pcb-seated-in-case.jpg)
 
 ## 💾 ZMK Firmware
 
