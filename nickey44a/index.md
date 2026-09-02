@@ -48,6 +48,9 @@ Nickey44Aの主な特徴は次のとおりです。
 
 ## 🧩 部品一覧
 
+![部品一覧](../nickey44a/images/A7V09510.JPG)
+
+
 組み立てる前に、部品の種類と数量を確認してください。
 
 | 部品 | 数量 | キット付属 | 備考 |
@@ -57,9 +60,13 @@ Nickey44Aの主な特徴は次のとおりです。
 | Choc v2 ホットスワップソケット | 44 | ✅ | |
 | 単4電池用マイナス端子 | 2 | ✅ | |
 | 単4電池用プラス端子 | 2 | ✅ | |
+| 6*3mm マグネット | 10 | ✅ | |
 | Seeed Studio XIAO nRF52840 | 2 | ❌ | **Plusではなく無印を使用** |
 | 17 mmピッチ対応キーキャップ | 44 | ❌ | |
 | Choc v2キースイッチ | 44 | ❌ | |
+| ボトムケース | 各1 | ✅ | |
+| トッププレート | 各1 | ✅ | |
+| 電池カバー | 各1 | ✅ | |
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
@@ -79,14 +86,6 @@ Nickey44Aの主な特徴は次のとおりです。
 - [単4電池用プラス端子（MonotaRO）](https://www.monotaro.com/p/8835/2512/)
 - [Choc v2 ホットスワップソケット](https://shop.beekeeb.jp/products/kailh-choc-hotswap-sockets)
 - [M2平ネジ](https://shop.yushakobo.jp/products/a0800s2?variant=37665432535201)
-
-ケース一式は次の部品で構成されます。
-
-- ボトムケース × 2
-- トッププレート × 2
-- 電池カバー × 2
-
-<!-- TODO: Nickey44Aのケース部品写真を追加 -->
 
 ## 🧰 必要な道具
 
