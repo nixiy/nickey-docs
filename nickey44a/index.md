@@ -66,6 +66,7 @@ Nickey44Aの主な特徴は次のとおりです。
 | ボトムケース | 各1 | ✅ | |
 | トッププレート | 各1 | ✅ | |
 | 電池カバー | 各1 | ✅ | |
+| 電源スイッチカバー | 各1 | ✅ | |
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
