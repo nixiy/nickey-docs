@@ -406,7 +406,7 @@ PCやスマートフォンでBluetoothデバイスの追加画面を開き、`ni
 
 ## 🗺️ デフォルトキーマップ
 
-Nickey44A用のキーマップは、[`nickey44a_fix` ブランチのキーマップ図](https://github.com/nixiy/zmk-config-nickey44a/blob/nickey44a_fix/keymap-drawer/nickey44a.svg)を参照してください。
+Nickey44A用のキーマップは、[`main` ブランチのキーマップ図](https://github.com/nixiy/zmk-config-nickey44a/blob/main/keymap-drawer/nickey44a.svg)を参照してください。
 
 ## ✍️ キーマップを変更する（任意）
 
