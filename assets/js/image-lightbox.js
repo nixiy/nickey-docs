@@ -12,10 +12,11 @@
   viewer.setAttribute("aria-modal", "true");
   viewer.setAttribute("aria-label", "画像を拡大表示");
   viewer.innerHTML =
-    '<button class="image-lightbox__close" type="button" aria-label="拡大表示を閉じる">&times;</button><img class="image-lightbox__image" alt="">';
+    '<div class="image-lightbox__panel"><button class="image-lightbox__close" type="button" aria-label="拡大表示を閉じる">&times;</button><img class="image-lightbox__image" alt=""></div>';
   document.body.append(viewer);
 
   const expandedImage = viewer.querySelector("img");
+  const panel = viewer.querySelector(".image-lightbox__panel");
   const closeButton = viewer.querySelector("button");
   let triggerImage = null;
 
@@ -52,7 +53,7 @@
   closeButton.addEventListener("click", close);
   expandedImage.addEventListener("click", close);
   viewer.addEventListener("click", (event) => {
-    if (event.target === viewer) close();
+    if (!panel.contains(event.target)) close();
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") close();
