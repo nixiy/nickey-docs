@@ -374,21 +374,20 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 4. 電池が端子へ正しく接触していることを確認します。
 5. 電池カバーを取り付けます。
 
-   ![電池カバーを取り付ける向き](images/battery/04-battery-cover-alignment.jpg)
    ![開いた状態の電池カバー](images/battery/05-battery-cover-open.jpg)
+   ![電池カバーを取り付ける向き](images/battery/04-battery-cover-alignment.jpg)
    ![取り付け完了した電池カバー](images/battery/06-battery-cover-installed.jpg)
 
-6. マグネットで電池カバーが正常に保持されることを確認します。
-7. 電源スイッチをONにして動作を確認します。
+6. 電源スイッチをONにして動作を確認します。
 
 <!-- TODO: 電池カバー装着後の完成状態の写真を追加 -->
 <!-- TODO: Nickey44Aで推奨する単4電池の種類（アルカリ/Ni-MH等）を確定後に記載 -->
 
 ## 📶 Bluetoothペアリング
 
-PCやスマートフォンでBluetoothデバイスの追加画面を開き、`nickey`を選択します。
+PCやスマートフォンでBluetoothデバイスの追加画面を開き、`nickey44a`を選択します。
 
-初回ペアリングでは、未登録のBluetoothスロットを選択してから、PCやスマートフォンのデバイス一覧で`nickey`を選択します。Bluetoothスロットやペアリング情報の消去は、[Bluetoothの操作・ペアリング]({{ '/guides/bluetooth/' | relative_url }})を確認してください。
+初回ペアリングでは、未登録のBluetoothスロットを選択してから、PCやスマートフォンのデバイス一覧で`nickey44a`を選択します。Bluetoothスロットやペアリング情報の消去は、[Bluetoothの操作・ペアリング]({{ '/guides/bluetooth/' | relative_url }})を確認してください。
 
 ### 🔍 デバイス一覧に表示されない場合
 
@@ -416,7 +415,7 @@ USB接続、ブートローダー、Bluetoothに共通する基本的な対処�
 
 ### 🧩 左右が接続できなくなった
 
-Firmwareの変更後などに左右間の接続が復旧しない場合は、`settings_reset.uf2`を左右両方へ書き込んで接続情報をリセットしてから、左側へ`nickey44a_l.uf2`、右側へ`nickey44a_r.uf2`を書き直します。設定リセット用のビルド対象は、[`nickey44a_fix` ブランチのbuild.yaml](https://github.com/nixiy/zmk-config-nickey44a/blob/nickey44a_fix/build.yaml)で確認できます。
+Firmwareの変更後などに左右間の接続が復旧しない場合は、`settings_reset.uf2`を左右両方へ書き込んで接続情報をリセットしてから、左側へ`nickey44a_l.uf2`、右側へ`nickey44a_r.uf2`を書き直します。
 
 ### 1キーだけ反応しない
 
@@ -449,10 +448,9 @@ Firmwareの変更後などに左右間の接続が復旧しない場合は、`se
 - [ ] 右側の全キーが入力できる
 - [ ] 左右が無線接続される
 - [ ] USB接続で動作する
-- [ ] Bluetoothで`nickey`へ接続できる
+- [ ] Bluetoothで`nickey44a`へ接続できる
 - [ ] 単4電池で動作する
 - [ ] 左右の電源スイッチが正常に機能する
-- [ ] 電池カバーがマグネットで正常に固定される
 
 不具合や不明点は、[Nickey Discordサーバー](https://discord.com/invite/SE8h8wK3)で相談できます。
 
