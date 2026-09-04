@@ -2,11 +2,16 @@
 
 Nickey44のドキュメントを管理するリポジトリです。
 
-公開ページ: [Nickey44 ビルドガイド](https://nixiy.github.io/nickey-docs/nickey44/)
+公開ページ:
+
+- [サイトトップ](https://nixiy.github.io/nickey-docs/)
+- [Nickey44 ビルドガイド](https://nixiy.github.io/nickey-docs/nickey44/)
+- [Nickey44A ビルドガイド](https://nixiy.github.io/nickey-docs/nickey44a/)
 
 ## Contents
 
 - [Nickey44 ビルドガイド](nickey44/)
+- [Nickey44A ビルドガイド](nickey44a/)
 
 ## Local preview
 
