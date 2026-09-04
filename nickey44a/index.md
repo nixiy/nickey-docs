@@ -128,8 +128,11 @@ XIAOは**PCBの表側**へ取り付けます。USB Type-C端子がPCBのUSB用�
 ![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a/images/xiao/04-xiao-aligned-on-pcb.jpg)
 
 
-↓目立つ警告はお知らせみたいな感じにする。
-裏側のスルーホールは開発者向けオプションです。通常ははんだ付け不要です。
+<div class="callout callout-important" role="note" aria-label="重要">
+  <p class="callout-title">ⓘ 重要</p>
+  <p>裏側のスルーホールは開発者向けオプションです。通常ははんだ付け不要です。</p>
+</div>
+
 
 ![alt text](images/xiao/05-xiao-solder-pads.jpg)
 
