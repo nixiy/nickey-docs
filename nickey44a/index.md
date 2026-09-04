@@ -113,31 +113,6 @@ Nickey44Aの主な特徴は次のとおりです。
 
 ## 🔥 はんだ付け
 
-### Seeed Studio XIAO nRF52840の取り付け
-
-XIAOは**PCBの表側**へ取り付けます。USB Type-C端子がPCBのUSB用の切り欠き側を向くことを確認し、マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
-
-![XIAO nRF52840のはんだ付け箇所を赤点で示したPCB](../nickey44a/images/xiao/01-xiao-solder-points.jpg)
-
-位置決めには7ピンヘッダーを利用できます。ヘッダーは治具として使うだけなので、ヘッダー自体ははんだ付けしません。
-
-![PCB、XIAO nRF52840、位置決め用7ピンヘッダー](../nickey44a/images/xiao/02-xiao-alignment-header.jpg)
-
-7ピンヘッダーを差し込んでXIAOの位置を合わせ、反対側の端子を数か所はんだ付けします。位置が固定できたらヘッダーを外し、残りの端子をはんだ付けしてください。
-
-![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a/images/xiao/04-xiao-aligned-on-pcb.jpg)
-
-
-<div class="callout callout-important" role="note" aria-label="重要">
-  <p class="callout-title">ⓘ 重要</p>
-  <p>裏側のスルーホールは開発者向けオプションです。通常ははんだ付け不要です。</p>
-</div>
-
-
-![alt text](images/xiao/05-xiao-solder-pads.jpg)
-
-端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
-
 ### Choc v2ソケットの取り付け
 
 Choc v2ソケットは**PCBの裏側**へ取り付けます。
@@ -188,27 +163,82 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
-  <p>端子は電池を保持する機械部品でもあります。端子が浮いた状態ではんだ付けせず、電池を入れたときに過度な力が掛からないよう、PCBへまっすぐ密着させて取り付けてください。</p>
+  <p>端子は電池を保持する機械部品でもあります。<strong>端子がPCBにまっすぐ密着していること</strong>を確認してから、はんだ付けしてください。端子が浮いた状態で固定すると、電池の着脱時に端子やPCBへ過度な力が掛かります。</p>
 </div>
 
-1. プラス端子とマイナス端子の種類を確認します。
+1. プラス端子とマイナス端子を確認します。端子は出荷時に折り曲げ済みです。**曲げ直したり、向きを変えたりしないでください。**
 
-   ![alt text](images/AAASocket.jpg)
+   ![プラス端子とマイナス端子の形状](images/aaa-terminal/01-terminal-types.jpg)
+   ![折り曲げ済みの単4電池端子](images/aaa-terminal/02-terminal-orientation.jpg)
 
-2. PCB上の極性表示を確認し、端子を取り違えないようにします。
-3. PCBの所定位置へ端子を差し込みます。
+2. PCBの極性表示（`+`／`-`）と端子の形状を照らし合わせます。**プラス端子とマイナス端子を取り違えないでください。**
+3. PCBの裏側から所定の穴へ端子を差し込み、表側へピンを出します。端子がPCBに密着していることを確認します。
 
-   <!-- TODO: PCBへ単4電池端子を差し込んだ状態の写真を追加 -->
+   ![PCBに差し込んだプラス端子](images/aaa-terminal/03-plus-terminal-inserted.jpg)
+   ![PCBに差し込んだマイナス端子](images/aaa-terminal/04-minus-terminal-inserted.jpg)
 
-4. 端子がPCBへ密着し、傾いていないことを確認します。
-5. PCB裏側から端子をはんだ付けします。
+4. PCB表側へ出たピンをペンチで軽く折り曲げ、端子を仮固定します。このときも端子が浮いたり傾いたりしていないことを確認します。
 
-   <!-- TODO: PCB裏側から単4電池端子をはんだ付けした状態の写真を追加 -->
+   ![プラス端子のピンを折り曲げて仮固定した状態](images/aaa-terminal/05-plus-terminal-pins-bent.jpg)
+   ![マイナス端子のピンを折り曲げて仮固定した状態](images/aaa-terminal/06-minus-terminal-pins-bent.jpg)
 
-6. はんだ付け後、端子が傾いていないことを確認します。
-7. 必要に応じて、余分な端子の足をニッパーで整えます。
+5. テスターがある場合は、**はんだ付け前に**電圧を確認します。トッププレートとPCBを重ね、単4電池を仮に装着してください。端子をケースに収めることで、端子と電池の表裏も確認できます。
+
+   ![トッププレートとPCBを重ねて単4電池を仮装着した状態](images/aaa-terminal/07-voltage-test-setup.jpg)
+
+   以下を確認します。
+
+   - 電池端子の`-`と`+`の間：約`1.2～1.5 V`（電池の種類や残量により異なります）
+   - 電源スイッチを`下`へスライド：XIAOの`GND`と`3.3V`の間が`0 V`
+   - 電源スイッチを`上`へスライド：XIAOの`GND`と`3.3V`の間が約`3.3 V`
+
+   <div class="callout callout-important" role="note" aria-label="はんだ付け前の確認">
+     <p class="callout-title">ⓘ はんだ付け前の確認</p>
+     <p>電源スイッチを上へスライドしても約3.3 Vにならない場合は、<strong>はんだ付けを始めないでください。</strong> 電池端子と電池の向きを確認してから、手順3へ戻ります。</p>
+   </div>
+
+6. 確認できたら、電池端子のはんだ付け箇所へフラックスを塗ります。
+
+   ![電池端子のはんだ付け箇所へフラックスを塗った状態](images/aaa-terminal/08-flux-applied.jpg)
+
+7. 電池端子をはんだ付けします。端子は金属製で熱が逃げやすいため、こて先を端子とパッドの両方へ当てて十分に(10-15秒)温めてから、はんだを流し込み保持(5秒くらい)します。はんだがなじんだらこてを離し、**はんだが固まるまで端子を動かさないでください。**
+
+
+   ![プラス端子をはんだ付けしたPCB表側](images/aaa-terminal/09-plus-terminal-soldered-top.jpg)
+   ![マイナス端子をはんだ付けしたPCB表側](images/aaa-terminal/10-minus-terminal-soldered-top.jpg)
+   ![プラス端子をはんだ付けしたPCB裏側](images/aaa-terminal/11-plus-terminal-soldered-bottom.jpg)
+   ![マイナス端子をはんだ付けしたPCB裏側](images/aaa-terminal/12-minus-terminal-soldered-bottom.jpg)
+
+8. 端子がPCBに密着していること、はんだ付け箇所にブリッジや未接合がないことを最終確認します。
 
 <!-- TODO: 単4電池端子取り付け完了後のPCB全体写真を追加 -->
+
+### Seeed Studio XIAO nRF52840の取り付け
+
+XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
+
+![XIAO nRF52840のはんだ付け箇所を赤点で示したPCB](../nickey44a/images/xiao/01-xiao-solder-points.jpg)
+
+位置決めには7ピンヘッダーを利用できます。ヘッダーは治具として使うだけなので、**ヘッダー自体ははんだ付けしません。**
+
+![PCB、XIAO nRF52840、位置決め用7ピンヘッダー](../nickey44a/images/xiao/02-xiao-alignment-header.jpg)
+
+7ピンヘッダーを差し込んでXIAOの位置を合わせ、反対側の端子を数か所はんだ付けします。位置が固定できたらヘッダーを外し、残りの端子をはんだ付けしてください。
+
+![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a/images/xiao/04-xiao-aligned-on-pcb.jpg)
+
+
+<div class="callout callout-important" role="note" aria-label="重要">
+  <p class="callout-title">ⓘ 重要</p>
+  <p>裏側のスルーホールは開発者向けオプションです。通常ははんだ付け不要です。</p>
+</div>
+
+
+![alt text](images/xiao/05-xiao-solder-pads.jpg)
+
+端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
+
+
 
 ## 💾 ZMK Firmware
 
@@ -285,7 +315,7 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 
 左右とも下がOFF、上がONです。
 
-![alt text](images/powerSwitchDirection.jpg)
+![電源スイッチのONとOFFの方向](images/power-switch/01-power-switch-direction.jpg)
 
 ### PCBをケースに組み付ける
 
@@ -328,19 +358,19 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 1. 電源スイッチがOFFであることを確認します。
 2. PCBまたはケースの極性表示を確認します。
 
-   ![alt text](images/AAAConfirm.jpg)
+   ![単4電池の極性表示](images/battery/02-aaa-battery-polarity-reference.jpg)
 
 3. 単4電池を正しい向きで入れます。
 
-   ![alt text](images/backAAA.jpg)
-   ![alt text](images/frontAAA.jpg)
+   ![ケース裏側から見た単4電池の装着状態](images/battery/03-aaa-battery-installed-bottom.jpg)
+   ![ケース表側から見た単4電池の装着状態](images/battery/07-aaa-battery-installed-front.jpg)
 
 4. 電池が端子へ正しく接触していることを確認します。
 5. 電池カバーを取り付けます。
 
-   ![alt text](images/AAACoverComfirm.jpg)
-   ![alt text](images/AAACoverAssembly.jpg)
-   ![alt text](images/AAACoverFinish.jpg)
+   ![電池カバーを取り付ける向き](images/battery/04-battery-cover-alignment.jpg)
+   ![開いた状態の電池カバー](images/battery/05-battery-cover-open.jpg)
+   ![取り付け完了した電池カバー](images/battery/06-battery-cover-installed.jpg)
 
 6. マグネットで電池カバーが正常に保持されることを確認します。
 7. 電源スイッチをONにして動作を確認します。
