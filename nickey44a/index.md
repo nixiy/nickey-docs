@@ -7,6 +7,8 @@ image: /assets/images/nickey44a-hero.jpg
 
 # Nickey44A ビルドガイド
 
+![Nickey44A ロゴ]({{ '/assets/images/nickey44a-logo.png' | relative_url }}){: width="480" }
+
 このページでは、単4電池で動作する完全ワイヤレス分割キーボード「Nickey44A」の組み立てから、Firmwareの書き込み、Bluetoothペアリング、動作確認までを説明します。
 
 ![Nickey44A分割キーボード]({{ '/assets/images/nickey44a-hero.jpg' | relative_url }})
