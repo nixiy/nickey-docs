@@ -294,6 +294,12 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 
 6 × 3 mmのマグネットは、ケースと電池カバーの専用穴へ**圧入**します。接着剤は不要です。
 
+<div class="callout callout-important" role="note" aria-label="重要">
+  <p class="callout-title">ⓘ 重要</p>
+  <p>マグネットをすべて一度に、任意の向きで圧入しないでください。ケース側と電池カバー側が反発しないよう、必ず取り付け済みマグネットへ吸着させて極性を確認してから取り付けます。斜めになった状態で無理に押し込まないでください。</p>
+</div>
+
+
 1. ケースと電池カバーのマグネット用穴を確認します。
 
    ![ケースのマグネット用穴と取り付け前のマグネット](images/magnet/01-case-and-magnets.jpg)
@@ -303,24 +309,21 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
    ![ケースのマグネット用穴に合わせたマグネット](images/magnet/02-magnet-aligned-with-case-hole.jpg)
    ![ケースのマグネット用穴に合わせたマグネットの拡大](images/magnet/03-magnet-aligned-with-case-hole-closeup.jpg)
 
-3. 先に片側のマグネットを圧入します。次に取り付けるマグネットを取り付け済みのマグネットへ吸着させ、吸着している向きを確認します。
+3. 片側のケースのマグネット用穴へ、5個すべてを圧入します。
 
-   ![ケースに最初のマグネットを圧入した状態](images/magnet/04-first-case-magnet-inserted.jpg)
-   ![ケースに収まったマグネット](images/magnet/05-case-magnet-seated.jpg)
+   ![片側のケースに圧入したマグネット](images/magnet/04-first-case-magnet-inserted.jpg)
+   ![片側のケースに収まったマグネット](images/magnet/05-case-magnet-seated.jpg)
 
-4. その向きを維持したまま、対応する穴へ圧入します。すべての組で繰り返します。
+4. 反対側のケースへ取り付けるマグネットを、手順3で圧入したマグネットへ吸着させて極性を確認します。その向きを維持したまま、対応する穴へ圧入します。5組すべてで繰り返します。
 
    ![極性を確認するために重ねたマグネット](images/magnet/06-magnet-stack-for-polarity-check.jpg)
-   ![電池カバーのマグネット用穴に合わせたマグネット](images/magnet/07-magnet-aligned-with-cover-hole.jpg)
+   ![反対側のケースのマグネット用穴に合わせたマグネット](images/magnet/07-magnet-aligned-with-cover-hole.jpg)
 
 5. マグネットが奥まで入り、周囲から大きく飛び出していないことを確認します。
 
-<div class="callout callout-important" role="note" aria-label="重要">
-  <p class="callout-title">ⓘ 重要</p>
-  <p>マグネットをすべて一度に、任意の向きで圧入しないでください。ケース側と電池カバー側が反発しないよう、必ず取り付け済みマグネットへ吸着させて極性を確認してから取り付けます。斜めになった状態で無理に押し込まないでください。</p>
-</div>
+6. ボトム同士を重ねて吸着するか確認します。
 
-![ケースに圧入されたマグネット](images/magnet/08-magnet-installed-flush.jpg)
+   ![ケースに圧入されたマグネット](images/magnet/08-magnet-installed-flush.jpg)
 
 ## 🛠️ ケースへの取り付け
 
