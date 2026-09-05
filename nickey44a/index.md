@@ -346,7 +346,7 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 
    ![ボトムケースに取り付けた電源スイッチカバー](images/assembly/04-power-switch-cover-installed.jpg)
 
-2. XIAO側からPCBをボトムケースに差し込み、ケースの縁に沿わせます。
+2. XIAO側からPCBをボトムケースに差し込み、ケースの縁に沿わせます。この時、電源カバーは下にスライドさせておき、PCB側の電源スイッチも下になっている事を確認してから差し込みます。
 
    ![XIAO側からケースに差し込んだPCB](../nickey44a/images/assembly/01-pcb-position-xiao-side.jpg)
 
