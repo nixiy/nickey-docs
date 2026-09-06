@@ -183,9 +183,9 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 2. PCBの極性表示（`+`／`-`）と端子の形状を照らし合わせます。**プラス端子とマイナス端子を取り違えないでください。**
 3. PCBの裏側から所定の穴へ端子を差し込み、表側へピンを出します。端子がPCBに密着していることを確認します。
 
+   ![電池端子を差し込んだPCB裏側](images/aaa-terminal/16-terminals-installed-back.jpg)
    ![PCBに差し込んだプラス端子](images/aaa-terminal/03-plus-terminal-inserted.jpg)
    ![PCBに差し込んだマイナス端子](images/aaa-terminal/04-minus-terminal-inserted.jpg)
-   ![電池端子を差し込んだPCB裏側](images/aaa-terminal/16-terminals-installed-back.jpg)
 
 4. PCB表側へ出たピンをペンチで軽く折り曲げ、端子を仮固定します。このときも端子が浮いたり傾いたりしていないことを確認します。
 
@@ -252,7 +252,7 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 
 ## 💾 ZMK Firmware
 
-設定ファイルとキーマップは、[nixiy/zmk-config-nickey44a の `nickey44a_fix` ブランチ](https://github.com/nixiy/zmk-config-nickey44a/tree/nickey44a_fix)にあります。リポジトリの[`build.yaml`](https://github.com/nixiy/zmk-config-nickey44a/blob/nickey44a_fix/build.yaml)には、右用・左用・設定リセット用のビルド対象が定義されています。
+設定ファイルとキーマップは、[nixiy/zmk-config-nickey44a の `main` ブランチ](https://github.com/nixiy/zmk-config-nickey44a/tree/main)にあります。
 
 - 右側: セントラル。PCやスマートフォンと直接通信します。
 - 左側: ペリフェラル。右側を経由して通信します。
