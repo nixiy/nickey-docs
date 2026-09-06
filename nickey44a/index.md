@@ -185,6 +185,7 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
    ![PCBに差し込んだプラス端子](images/aaa-terminal/03-plus-terminal-inserted.jpg)
    ![PCBに差し込んだマイナス端子](images/aaa-terminal/04-minus-terminal-inserted.jpg)
+   ![電池端子を差し込んだPCB裏側](images/aaa-terminal/16-terminals-installed-back.jpg)
 
 4. PCB表側へ出たピンをペンチで軽く折り曲げ、端子を仮固定します。このときも端子が浮いたり傾いたりしていないことを確認します。
 
