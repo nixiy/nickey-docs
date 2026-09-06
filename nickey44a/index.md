@@ -115,6 +115,34 @@ Nickey44Aの主な特徴は次のとおりです。
 - **保護メガネ**：ニッパーを使う際に、飛散する部品から目を守ります。
 - **ケース底面用の滑り止め**：ケース底面の滑り止めとして[GRIPLUS（グリップラス）](https://amzn.to/4ywBbAg)がおすすめです。
 
+## キッティング済みケースの分解
+
+内容物忘れ、PCBの湾曲、傷保護のため以下パーツを組み立てて発送しています。
+
+- 左右トッププレート
+- 左右ボトムケース
+- 電源スライドスイッチ
+- M2 x 5mmネジ
+- 電池カバー
+
+これらを一旦分解してから始めて下さい。
+
+1. 5箇所あるM2ネジを外します。
+
+   ![ネジを外したトッププレートとPCB](images/case-disassembly/05-top-plate-and-pcb-separated.jpg)
+
+2. トッププレートを取り外します。
+
+   ![トッププレートを外したボトムケース](images/case-disassembly/03-bottom-case-inside.jpg)
+
+3. 基板ごと押さえて裏返します。
+
+   ![裏返したボトムケース](images/case-disassembly/04-bottom-case-outside.jpg)
+
+4. 電源スライドスイッチの反対側を持ち上げる事で電源スライドスイッチを折らずに取り外すことが出来ます。
+
+   ![PCBからボトムケースを外す](images/case-disassembly/02-remove-bottom-case.jpg)
+
 ## 🔥 はんだ付け
 
 ### Choc v2ソケットの取り付け
