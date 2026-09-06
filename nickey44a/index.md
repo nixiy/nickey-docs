@@ -285,7 +285,7 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 - 右側: セントラル。PCやスマートフォンと直接通信します。
 - 左側: ペリフェラル。右側を経由して通信します。
 
-左右には、**同じビルドから生成された対応するFirmware**を書き込んでください。`nickey44a_fix` ブランチでGitHub Actionsを実行すると、次のUF2ファイルが成果物として生成されます。現時点では標準Firmwareの配布ファイルは配置していません。
+標準Firmwareは、[nixiy/zmk-config-nickey44a の `firmware` ディレクトリ](https://github.com/nixiy/zmk-config-nickey44a/tree/main/firmware)からダウンロードできます。左右には、**同じビルドから生成された対応するFirmware**を書き込んでください。
 
 - 左側: `nickey44a_l.uf2`
 - 右側: `nickey44a_r.uf2`
