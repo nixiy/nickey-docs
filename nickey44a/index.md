@@ -442,7 +442,9 @@ Nickey44A用のキーマップは、[`main` ブランチのキーマップ図](h
 
 ## ✍️ キーマップを変更する（任意）
 
-キーマップの変更は、[キーマップの変更方法]({{ '/guides/keymap/' | relative_url }})を参照してください。Nickey44Aでは、[nixiy/zmk-config-nickey44a](https://github.com/nixiy/zmk-config-nickey44a)を自分のアカウントへForkし、GitHub Actionsで生成したFirmwareを書き込みます。
+キーマップは基本的に、[キーマップの変更方法]({{ '/guides/keymap/' | relative_url }})を参照してZMK Keymap Editorで変更します。Nickey44Aでは、[nixiy/zmk-config-nickey44a](https://github.com/nixiy/zmk-config-nickey44a)を自分のアカウントへForkし、GitHub Actionsで生成したFirmwareを書き込みます。
+
+標準Firmwareでは、[DYA Studio](https://studio.dya.cormoran.works/)に接続して、ブラウザ上からキーマップを変更することもできます。詳しい操作は、[DYA Studioでキーマップを編集する]({{ '/guides/dya-studio/' | relative_url }})を参照してください。
 
 ## 🧯 トラブルシューティング
 
