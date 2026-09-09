@@ -493,7 +493,7 @@ Firmwareの変更後などに左右間の接続が復旧しない場合は、`se
 - [ ] 単4電池で動作する
 - [ ] 左右の電源スイッチが正常に機能する
 
-不具合や不明点は、[Nickey Discordサーバー](https://discord.com/invite/SE8h8wK3)で相談できます。
+不具合や不明点は、[Nickey Discordサーバー](https://discord.gg/3hw3SDU7Eb)で相談できます。
 
 ### 🔗 関連リンク
 
