@@ -62,13 +62,18 @@ Nickey44の主な特徴は次のとおりです。
 | はんだ入り熱収縮チューブ | 4 | ✅ | バッテリー線とJSTケーブルの接続に使用 |
 | スライドスイッチ ISH-1260-HA-G | 2 | ✅ | |
 | Seeed Studio XIAO nRF52840 | 2 | ❌ | **Plusではなく無印を使用** |
-| 動作確認用LiPoバッテリー 3.7 V / 200 mAh / 601040 | 2 | ✅ | |
+| 動作確認用LiPoバッテリー 3.7 V / 200 mAh / 601040 | 2 | ❌ | 2026/10/01 以降のキットには付属しません。別途ご用意ください |
 | 17 mmピッチ対応キーキャップ | 44 | ❌ | |
 | Choc v2キースイッチ | 44 | ❌ | |
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
   <p>XIAO nRF52840 Plusでは動作しません。必ず無印のXIAO nRF52840を用意してください。</p>
+</div>
+
+<div class="callout callout-caution" role="note" aria-label="バッテリーについての注意">
+  <p class="callout-title">⚠ バッテリーについて</p>
+  <p>2026/10/01 以降のキットにはLiPoバッテリーが付属しません。対応するバッテリーを別途ご用意ください。</p>
 </div>
 
 ### 別途必要な部品（必須）
