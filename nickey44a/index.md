@@ -67,7 +67,7 @@ Nickey44Aの主な特徴は次のとおりです。
 | Choc v2キースイッチ | 44 | ❌ | |
 | ボトムケース | 各1 | ✅ | |
 | トッププレート | 各1 | ✅ | |
-| 電池カバー | 各1 | ✅ | |
+| 電池カバー | 各1 | ✅ | 8001 Resin・MJFケースにはPLA製電池カバーを追加付属 |
 | 電源スイッチカバー | 各1 | ✅ | |
 
 <div class="callout callout-important" role="note" aria-label="重要">
@@ -416,6 +416,17 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
    ![開いた状態の電池カバー](images/battery/05-battery-cover-open.jpg)
    ![電池カバーを取り付ける向き](images/battery/04-battery-cover-alignment.jpg)
    ![取り付け完了した電池カバー](images/battery/06-battery-cover-installed.jpg)
+
+<div class="callout callout-important" role="note" aria-label="電池カバーについて">
+  <p class="callout-title">ⓘ 電池カバーについて</p>
+  <p>8001 ResinおよびMJF製ケースでは、素材の剛性や特性の違いにより、電池カバーのフィット感が想定と異なる場合があります。</p>
+  <p>そのため、以下のPLA製電池カバーを追加で付属しています。</p>
+  <ul>
+    <li>8001 Resin：白色のPLA製電池カバー</li>
+    <li>MJF：黒色のPLA製電池カバー</li>
+  </ul>
+  <p>ケースと同じ素材の電池カバー、または付属のPLA製電池カバーのうち、フィット感の好みや使用状況に合わせてお好きな方をご使用ください。</p>
+</div>
 
 6. 電源スイッチをONにして動作を確認します。
 
