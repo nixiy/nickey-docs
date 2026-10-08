@@ -147,7 +147,28 @@ Nickey44Aの主な特徴は次のとおりです。
 
 ## 🔥 はんだ付け
 
-### Seeed Studio XIAO nRF52840の取り付け
+### Seeed Studio XIAOの取り付け
+
+基板のリビジョンに合わせて、取り付けるXIAOを選んでください。
+
+| 基板 | 取り付けるXIAO | 手順 |
+| --- | --- | --- |
+| Rev1 | XIAO nRF52840（無印） | [Rev1：無印の取り付け](#xiao-rev1) |
+| Rev2以降 | XIAO nRF52840 Plus（推奨） | [Rev2以降：Plusの取り付け](#xiao-rev2) |
+
+<h4 id="xiao-rev1">Rev1：XIAO nRF52840（無印）の取り付け</h4>
+
+Rev1の基板には**無印のXIAO nRF52840**を使用します。Plusは使用できません。無印を用意して、[共通のはんだ付け手順](#xiao-soldering)へ進んでください。
+
+<h4 id="xiao-rev2">Rev2以降：XIAO nRF52840 Plusの取り付け</h4>
+
+Rev2以降の基板には**XIAO nRF52840 Plusを推奨**します。Plusを用意して、[共通のはんだ付け手順](#xiao-soldering)へ進んでください。
+
+無印でも通常のNickey44Aとして利用できます。その場合も共通のはんだ付け手順に従ってください。ただし、無印での将来的な追加操作デバイスへの対応はサポート対象外となります。
+
+<h4 id="xiao-soldering">共通のはんだ付け手順</h4>
+
+以下の写真は無印のXIAO nRF52840を使用した例です。
 
 XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
 
