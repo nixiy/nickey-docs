@@ -41,7 +41,7 @@ Nickey44Aの主な特徴は次のとおりです。
 組み立ては、おおむね次の順番で進めます。
 
 1. 部品を確認する
-2. XIAO、ソケット、単4電池端子をはんだ付けする
+2. XIAO、単4電池端子、Choc v2ソケットをはんだ付けする
 3. ケースを閉じる前にFirmwareを書き込み、動作を確認する
 4. マグネットを取り付け、PCBをケースへ組み込む
 5. 単4電池と電池カバーを装着する
@@ -145,54 +145,32 @@ Nickey44Aの主な特徴は次のとおりです。
 
 ## 🔥 はんだ付け
 
-### Choc v2ソケットの取り付け
+### Seeed Studio XIAO nRF52840の取り付け
 
-Choc v2ソケットは**PCBの裏側**へ取り付けます。
+XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
 
-ソケットには向きがあります。スイッチ中央の軸が入る側を、PCBの八角形のシルクに合わせてください。向きを誤るとキースイッチを取り付けられません。
+![XIAO nRF52840のはんだ付け箇所を赤点で示したPCB](../nickey44a/images/xiao/01-xiao-solder-points.jpg)
+
+位置決めには7ピンヘッダーを利用できます。ヘッダーは治具として使うだけなので、**ヘッダー自体ははんだ付けしません。**
+
+![PCB、XIAO nRF52840、位置決め用7ピンヘッダー](../nickey44a/images/xiao/02-xiao-alignment-header.jpg)
+
+7ピンヘッダーを差し込んでXIAOの位置を合わせ、反対側の端子を数か所はんだ付けします。位置が固定できたらヘッダーを外し、残りの端子をはんだ付けしてください。
+
+![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a/images/xiao/04-xiao-aligned-on-pcb.jpg)
+
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
-  <p>一部のソケットは周囲のスペースの都合で向きが回転しています。はんだ付けしやすくするため、必ず次の写真の順で取り付けてください。</p>
+  <p>裏側のスルーホールは開発者向けオプションです。通常ははんだ付け不要です。</p>
 </div>
 
-1. 先に、通常の向きのソケットを取り付けます。
 
-   ![通常の向きのChoc v2ソケット](../nickey44a/images/chocv2/03-socket-orientation.jpg)
+![alt text](images/xiao/05-xiao-solder-pads.jpg)
 
-2. 次に、回転した向きのソケットを取り付けます。
+端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
 
-   ![回転した向きのChoc v2ソケットを位置合わせする](../nickey44a/images/chocv2/02-socket-positioning.jpg)
 
-3. すべてのソケットがPCBのシルクに沿って配置されていることを確認します。
-
-   ![すべてのChoc v2ソケットを取り付けたPCB裏面](../nickey44a/images/chocv2/01-socket-orientation-on-pcb.jpg)
-
-各ソケットは、次の手順ではんだ付けします。
-
-1. PCBの片側のパッドへ、少量の予備はんだをします。
-
-   ![片側のパッドに予備はんだを盛る](images/chocv2/04-pre-tinned-pad.jpg)
-
-2. Choc v2ソケットを、PCBのシルクと向きを確認した正しい位置に置きます。
-
-   ![PCB上の正しい位置にChoc v2ソケットを置く](images/chocv2/05-socket-positioned.jpg)
-
-3. ピンセットなどでソケットをPCBへ押さえながら、予備はんだを再加熱します。
-
-   ![予備はんだを再加熱し、ソケットをPCBへ押さえる](images/chocv2/06-reheat-while-pressing.jpg)
-
-4. ソケットがPCBへ密着した状態で固定されていることを確認します。
-
-5. 反対側の端子をはんだ付けします。
-
-   ![両側の端子をはんだ付けしたChoc v2ソケット](images/chocv2/07-socket-soldered.jpg)
-
-6. ソケットが浮いていないこと、端子間にはんだブリッジがないことを確認します。完成。
-
-   ![すべてのChoc v2ソケットをはんだ付けしたPCB裏面](images/chocv2/08-sockets-soldered-overview.jpg)
-
-ソケットの向きについては、[「Kailh Choc ソケットの方向について」](https://scrapbox.io/self-made-kbds-ja/Kailh_Choc_%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AE%E6%96%B9%E5%90%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)も参考にしてください。
 
 ### 単4電池端子の取り付け
 
@@ -251,32 +229,54 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
 <!-- TODO: 単4電池端子取り付け完了後のPCB全体写真を追加 -->
 
-### Seeed Studio XIAO nRF52840の取り付け
+### Choc v2ソケットの取り付け
 
-XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
+Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
-![XIAO nRF52840のはんだ付け箇所を赤点で示したPCB](../nickey44a/images/xiao/01-xiao-solder-points.jpg)
-
-位置決めには7ピンヘッダーを利用できます。ヘッダーは治具として使うだけなので、**ヘッダー自体ははんだ付けしません。**
-
-![PCB、XIAO nRF52840、位置決め用7ピンヘッダー](../nickey44a/images/xiao/02-xiao-alignment-header.jpg)
-
-7ピンヘッダーを差し込んでXIAOの位置を合わせ、反対側の端子を数か所はんだ付けします。位置が固定できたらヘッダーを外し、残りの端子をはんだ付けしてください。
-
-![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a/images/xiao/04-xiao-aligned-on-pcb.jpg)
-
+ソケットには向きがあります。スイッチ中央の軸が入る側を、PCBの八角形のシルクに合わせてください。向きを誤るとキースイッチを取り付けられません。
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
-  <p>裏側のスルーホールは開発者向けオプションです。通常ははんだ付け不要です。</p>
+  <p>一部のソケットは周囲のスペースの都合で向きが回転しています。はんだ付けしやすくするため、必ず次の写真の順で取り付けてください。</p>
 </div>
 
+1. 先に、通常の向きのソケットを取り付けます。
 
-![alt text](images/xiao/05-xiao-solder-pads.jpg)
+   ![通常の向きのChoc v2ソケット](../nickey44a/images/chocv2/03-socket-orientation.jpg)
 
-端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
+2. 次に、回転した向きのソケットを取り付けます。
 
+   ![回転した向きのChoc v2ソケットを位置合わせする](../nickey44a/images/chocv2/02-socket-positioning.jpg)
 
+3. すべてのソケットがPCBのシルクに沿って配置されていることを確認します。
+
+   ![すべてのChoc v2ソケットを取り付けたPCB裏面](../nickey44a/images/chocv2/01-socket-orientation-on-pcb.jpg)
+
+各ソケットは、次の手順ではんだ付けします。
+
+1. PCBの片側のパッドへ、少量の予備はんだをします。
+
+   ![片側のパッドに予備はんだを盛る](images/chocv2/04-pre-tinned-pad.jpg)
+
+2. Choc v2ソケットを、PCBのシルクと向きを確認した正しい位置に置きます。
+
+   ![PCB上の正しい位置にChoc v2ソケットを置く](images/chocv2/05-socket-positioned.jpg)
+
+3. ピンセットなどでソケットをPCBへ押さえながら、予備はんだを再加熱します。
+
+   ![予備はんだを再加熱し、ソケットをPCBへ押さえる](images/chocv2/06-reheat-while-pressing.jpg)
+
+4. ソケットがPCBへ密着した状態で固定されていることを確認します。
+
+5. 反対側の端子をはんだ付けします。
+
+   ![両側の端子をはんだ付けしたChoc v2ソケット](images/chocv2/07-socket-soldered.jpg)
+
+6. ソケットが浮いていないこと、端子間にはんだブリッジがないことを確認します。完成。
+
+   ![すべてのChoc v2ソケットをはんだ付けしたPCB裏面](images/chocv2/08-sockets-soldered-overview.jpg)
+
+ソケットの向きについては、[「Kailh Choc ソケットの方向について」](https://scrapbox.io/self-made-kbds-ja/Kailh_Choc_%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AE%E6%96%B9%E5%90%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)も参考にしてください。
 
 ## 💾 ZMK Firmware
 
