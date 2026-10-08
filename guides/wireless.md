@@ -1,26 +1,24 @@
 ---
 layout: default
-title: Bluetoothの操作・ペアリング
-description: ZMK Firmwareを使うキーボードのBluetooth操作とペアリングの基本
-image: /nickey44/images/bluetooth/44-bluetooth-pairing.jpg
-permalink: /guides/bluetooth/
+title: 無線接続の操作・ペアリング
+description: ZMK Firmwareを使うキーボードの無線接続操作とペアリングの基本
+image: /nickey44/images/wireless/45-wireless-layer.jpg
+permalink: /guides/wireless/
 ---
 
-# Bluetoothの操作・ペアリング
+# 無線接続の操作・ペアリング
 
-ZMK Firmwareを使うキーボードのBluetooth操作とペアリングの基本です。各操作がどのレイヤー・キーに割り当てられているかは、製品のデフォルトキーマップを確認してください。
+ZMK Firmwareを使うキーボードの無線接続操作とペアリングの基本です。各操作がどのレイヤー・キーに割り当てられているかは、製品のデフォルトキーマップを確認してください。
 
 ## 初回ペアリング
 
-1. キーボードで未登録のBluetoothスロットを選択します。
-2. PCまたはスマートフォンでBluetoothデバイスの追加画面を開きます。
+1. キーボードで未登録の接続先スロットを選択します。
+2. PCまたはスマートフォンの設定から、デバイスの追加・ペアリング画面を開きます。
 3. 表示されたキーボード名を選択してペアリングします。
-
-![WindowsのBluetoothデバイス追加画面の例]({{ '/nickey44/images/bluetooth/44-bluetooth-pairing.jpg' | relative_url }})
 
 表示されるキーボード名は製品によって異なります。
 
-## Bluetooth操作
+## 無線接続の操作
 
 - `BT0`～`BT4`: 最大5台の接続先を選択します。未登録のスロットを選ぶとペアリングモードになります。
 - `BT CLR`: 現在選択中のスロットのペアリング情報を消去します。

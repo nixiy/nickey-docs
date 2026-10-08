@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Nickey44 ビルドガイド
-description: 完全ワイヤレス分割キーボード、Nickey44の組み立て・Firmware書き込み・Bluetoothペアリングのガイド
+description: 完全ワイヤレス分割キーボード、Nickey44の組み立て・Firmware書き込み・無線接続設定のガイド
 image: /assets/images/nickey-hero.jpg
 ---
 
 # Nickey44 ビルドガイド
 
-このページでは、完全ワイヤレス分割キーボード「Nickey44」の組み立てから、ファームウェアの書き込み、Bluetoothペアリング、動作確認までを説明します。
+このページでは、完全ワイヤレス分割キーボード「Nickey44」の組み立てから、ファームウェアの書き込み、無線接続のペアリング、動作確認までを説明します。
 
 ![白いNickey44分割キーボードとキースイッチ]({{ '/assets/images/nickey-hero.jpg' | relative_url }})
 
@@ -29,7 +29,7 @@ image: /assets/images/nickey-hero.jpg
 
 Nickey44の主な特徴は次のとおりです。
 
-- Bluetooth対応
+- 無線接続対応
 - 44キーのオーソリニア配列
 - Choc v2対応のロープロファイル設計
 - 17 mmの狭ピッチ
@@ -43,7 +43,7 @@ Nickey44の主な特徴は次のとおりです。
 3. バッテリーケーブルを接続する
 4. ケースへ組み込む
 5. ファームウェアを書き込む
-6. Bluetooth接続とキー入力を確認する
+6. 無線接続とキー入力を確認する
 
 ## 🧩 部品一覧
 
@@ -385,29 +385,27 @@ DYA Studioを使う場合は、左右両方をDYA Studio対応ファームウェ
 
 ![レイヤー1キーと右側XIAOの赤色LEDを示した接続テスト図](images/firmware/36-split-connection-test.jpg)
 
-## 📶 Bluetoothペアリング
+## 📶 無線接続のペアリング
 
-PCやスマートフォンでBluetoothデバイスの追加画面を開き、`nickey`を選択します。
+PCやスマートフォンの設定からデバイスの追加・ペアリング画面を開き、`nickey`を選択します。
 
-![WindowsのBluetoothデバイス追加画面に表示されたnickey](images/bluetooth/44-bluetooth-pairing.jpg)
+### 無線接続レイヤー
 
-### Bluetoothレイヤー
+![BT0からBT4、BT CLR、BT CLR ALLを配置した無線接続レイヤー](images/wireless/45-wireless-layer.jpg)
 
-![BT0からBT4、BT CLR、BT CLR ALLを配置したBluetoothレイヤー](images/bluetooth/45-bluetooth-layer.jpg)
-
-初回ペアリングでは、レイヤー3で未登録のBluetoothスロットを選択してから、PCやスマートフォンのデバイス一覧で`nickey`を選択します。`BT0`～`BT4`、`BT CLR`、`BT CLR ALL`の詳しい操作は、[Bluetoothの操作・ペアリング]({{ '/guides/bluetooth/' | relative_url }})を確認してください。
+初回ペアリングでは、レイヤー3で未登録の接続先スロットを選択してから、PCやスマートフォンのデバイス一覧で`nickey`を選択します。`BT0`～`BT4`、`BT CLR`、`BT CLR ALL`の詳しい操作は、[無線接続の操作・ペアリング]({{ '/guides/wireless/' | relative_url }})を確認してください。
 
 ### 🔍 デバイス一覧に表示されない場合
 
 `BT CLR ALL`を実行して、ペアリング情報を初期化します。
 
-![Nickey44のBluetoothレイヤーでBT CLR ALLに使う3キー](images/bluetooth/45-bluetooth-layer.jpg)
+![Nickey44の無線接続レイヤーでBT CLR ALLに使う3キー](images/wireless/45-wireless-layer.jpg)
 
 1. レイヤー0でSpace左隣のレイヤー1キーを押したままにする
 2. レイヤー1でレイヤー3キーを押したままにする
 3. レイヤー3で`BT CLR ALL`を押す
 
-![BT CLR ALLを実行するキーの押下順序](images/bluetooth/46-bluetooth-clear-all-order.jpg)
+![BT CLR ALLを実行するキーの押下順序](images/wireless/46-wireless-clear-all-order.jpg)
 
 XIAOのLEDが点滅したら、もう一度デバイス側からペアリングしてください。それでも表示されない場合は、`BT1`など別の接続スロットを選んで試します。
 
@@ -424,7 +422,7 @@ XIAOのLEDが点滅したら、もう一度デバイス側からペアリング�
 - レイヤー0: 通常の文字入力。`Q`、`A`、`Z`の左にTab、Ctrl、Shiftを配置
 - レイヤー1: 矢印、Fn、括弧など。矢印は`H`、`J`、`K`、`L`へ配置
 - レイヤー2: 記号。文字から連想しやすい位置へ記号を配置
-- レイヤー3: Bluetoothの接続先選択とペアリング情報の消去
+- レイヤー3: 無線接続の接続先選択とペアリング情報の消去
 
 ## ✍️ キーマップを変更する（任意）
 
@@ -432,7 +430,7 @@ XIAOのLEDが点滅したら、もう一度デバイス側からペアリング�
 
 ## 🧯 トラブルシューティング
 
-USB接続、ブートローダー、Bluetoothに共通する基本的な対処は、[共通トラブルシューティング]({{ '/guides/troubleshooting/' | relative_url }})も確認してください。
+USB接続、ブートローダー、無線接続に共通する基本的な対処は、[共通トラブルシューティング]({{ '/guides/troubleshooting/' | relative_url }})も確認してください。
 
 ### ⚡ 充電状態を確認する
 
@@ -464,7 +462,7 @@ USB接続中にXIAOの充電LEDが緑色に点灯すれば、充電されてい�
 
 ## 🎉 完成
 
-左右の接続、Bluetoothペアリング、全キーの入力を確認できれば完成です。
+左右の接続、無線接続のペアリング、全キーの入力を確認できれば完成です。
 
 ![組み立てが完了した左右のNickey44](images/completed/49-completed-nickey44.jpg)
 

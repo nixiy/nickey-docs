@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Nickey44A ビルドガイド
-description: 単4電池で動作する完全ワイヤレス分割キーボード、Nickey44Aの組み立て・Firmware書き込み・Bluetoothペアリングのガイド
+description: 単4電池で動作する完全ワイヤレス分割キーボード、Nickey44Aの組み立て・Firmware書き込み・無線接続設定のガイド
 image: /assets/images/nickey44a-hero.jpg
 ---
 
@@ -9,7 +9,7 @@ image: /assets/images/nickey44a-hero.jpg
 
 ![Nickey44A ロゴ]({{ '/assets/images/nickey44a-logo.png' | relative_url }}){: width="480" }
 
-このページでは、単4電池で動作する完全ワイヤレス分割キーボード「Nickey44A」の組み立てから、Firmwareの書き込み、Bluetoothペアリング、動作確認までを説明します。
+このページでは、単4電池で動作する完全ワイヤレス分割キーボード「Nickey44A」の組み立てから、Firmwareの書き込み、無線接続のペアリング、動作確認までを説明します。
 
 ![Nickey44A分割キーボード]({{ '/assets/images/nickey44a-hero.jpg' | relative_url }})
 
@@ -31,7 +31,7 @@ image: /assets/images/nickey44a-hero.jpg
 
 Nickey44Aの主な特徴は次のとおりです。
 
-- Bluetooth対応
+- 無線接続対応
 - 44キーのオーソリニア配列
 - Choc v2対応のロープロファイル設計
 - 17 mmの狭ピッチ
@@ -45,7 +45,7 @@ Nickey44Aの主な特徴は次のとおりです。
 3. ケースを閉じる前にFirmwareを書き込み、動作を確認する
 4. マグネットを取り付け、PCBをケースへ組み込む
 5. 単4電池と電池カバーを装着する
-6. Bluetooth接続とキー入力を確認する
+6. 無線接続とキー入力を確認する
 
 ## 🧩 部品一覧
 
@@ -456,15 +456,15 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 <!-- TODO: 電池カバー装着後の完成状態の写真を追加 -->
 <!-- TODO: Nickey44Aで推奨する単4電池の種類（アルカリ/Ni-MH等）を確定後に記載 -->
 
-## 📶 Bluetoothペアリング
+## 📶 無線接続のペアリング
 
-PCやスマートフォンでBluetoothデバイスの追加画面を開き、`nickey44a`を選択します。
+PCやスマートフォンの設定からデバイスの追加・ペアリング画面を開き、`nickey44a`を選択します。
 
-初回ペアリングでは、未登録のBluetoothスロットを選択してから、PCやスマートフォンのデバイス一覧で`nickey44a`を選択します。Bluetoothスロットやペアリング情報の消去は、[Bluetoothの操作・ペアリング]({{ '/guides/bluetooth/' | relative_url }})を確認してください。
+初回ペアリングでは、未登録の接続先スロットを選択してから、PCやスマートフォンのデバイス一覧で`nickey44a`を選択します。接続先スロットやペアリング情報の消去は、[無線接続の操作・ペアリング]({{ '/guides/wireless/' | relative_url }})を確認してください。
 
 ### 🔍 デバイス一覧に表示されない場合
 
-`BT CLR ALL`を実行して、ペアリング情報を初期化します。詳しいキー操作は、[Bluetoothの操作・ペアリング]({{ '/guides/bluetooth/' | relative_url }})を確認してください。
+`BT CLR ALL`を実行して、ペアリング情報を初期化します。詳しいキー操作は、[無線接続の操作・ペアリング]({{ '/guides/wireless/' | relative_url }})を確認してください。
 
 ## ✅ キー入力テスト
 
@@ -482,7 +482,7 @@ Nickey44A用のキーマップは、[`main` ブランチのキーマップ図](h
 
 ## 🧯 トラブルシューティング
 
-USB接続、ブートローダー、Bluetoothに共通する基本的な対処は、[共通トラブルシューティング]({{ '/guides/troubleshooting/' | relative_url }})も確認してください。
+USB接続、ブートローダー、無線接続に共通する基本的な対処は、[共通トラブルシューティング]({{ '/guides/troubleshooting/' | relative_url }})も確認してください。
 
 ### 🔌 有線接続する
 
@@ -523,7 +523,7 @@ Firmwareの変更後などに左右間の接続が復旧しない場合は、`se
 - [ ] 右側の全キーが入力できる
 - [ ] 左右が無線接続される
 - [ ] USB接続で動作する
-- [ ] Bluetoothで`nickey44a`へ接続できる
+- [ ] 無線接続で`nickey44a`へ接続できる
 - [ ] 単4電池で動作する
 - [ ] 左右の電源スイッチが正常に機能する
 

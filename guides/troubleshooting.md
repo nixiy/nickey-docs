@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 共通トラブルシューティング
-description: XIAO搭載キーボードの接続・Firmware書き込み・Bluetoothに共通する基本的な対処
+description: XIAO搭載キーボードの接続・Firmware書き込み・無線接続に共通する基本的な対処
 image: /nickey44/images/firmware/34-xiao-bootloader-drive.jpg
 permalink: /guides/troubleshooting/
 ---
@@ -20,6 +20,6 @@ permalink: /guides/troubleshooting/
 
 ブートローダードライブが表示されていることと、製品・左右に対応するUF2ファイルを選んでいることを確認してください。コピー後はドライブが自動的に閉じます。
 
-## Bluetoothで見つからない
+## 無線接続で見つからない
 
-キーボード側で未登録のBluetoothスロットを選択し、端末側の古いペアリング情報を削除してから再試行してください。詳細は[Bluetoothの操作・ペアリング]({{ '/guides/bluetooth/' | relative_url }})を参照してください。
+キーボード側で未登録の接続先スロットを選択し、端末側の古いペアリング情報を削除してから再試行してください。詳細は[無線接続の操作・ペアリング]({{ '/guides/wireless/' | relative_url }})を参照してください。
