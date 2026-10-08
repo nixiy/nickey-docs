@@ -62,7 +62,7 @@ Nickey44Aの主な特徴は次のとおりです。
 | 単4電池用マイナス端子 | 2 | ✅ | |
 | 単4電池用プラス端子 | 2 | ✅ | |
 | 6*3mm マグネット | 10 | ✅ | |
-| Seeed Studio XIAO nRF52840 / nRF52840 Plus | 2 | ❌ | **Rev2以降の基板ではPlusを推奨** |
+| Seeed Studio XIAO nRF52840 / nRF52840 Plus | 2 | ❌ | **Ver2以降の基板ではPlusを推奨** |
 | 17 mmピッチ対応キーキャップ | 44 | ❌ | |
 | Choc v2キースイッチ | 44 | ❌ | |
 | ボトムケース | 各1 | ✅ | |
@@ -72,14 +72,14 @@ Nickey44Aの主な特徴は次のとおりです。
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
-  <p>Rev2以降の基板では、Seeed Studio XIAO nRF52840 Plusを推奨します。無印のSeeed Studio XIAO nRF52840でも通常のNickey44Aとして利用できますが、将来的な追加操作デバイスへの対応はサポート対象外となります。</p>
-  <p>Rev2より前の基板ではPlusは使用できません。無印のSeeed Studio XIAO nRF52840を用意してください。</p>
+  <p>Ver2以降の基板では、Seeed Studio XIAO nRF52840 Plusを推奨します。無印のSeeed Studio XIAO nRF52840でも通常のNickey44Aとして利用できますが、将来的な追加操作デバイスへの対応はサポート対象外となります。</p>
+  <p>Ver2より前の基板ではPlusは使用できません。無印のSeeed Studio XIAO nRF52840を用意してください。</p>
 </div>
 
 ### 別途必要な部品（必須）
 
-- Seeed Studio XIAO nRF52840 Plus × 2（**Rev2以降の基板で推奨**。無印も通常のNickey44Aとして利用可能）
-  - [無印のSeeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble)（Rev2より前の基板はこちらを使用）
+- Seeed Studio XIAO nRF52840 Plus × 2（**Ver2以降の基板で推奨**。無印も通常のNickey44Aとして利用可能）
+  - [無印のSeeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble)（Ver2より前の基板はこちらを使用）
 - [Choc v2キースイッチ](https://shop.beekeeb.jp/collections/choc-v2-%E3%82%AD%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81) × 44
 - [Choc v2／MXステム対応・狭ピッチキーキャップ](https://shop.beekeeb.jp/collections/%E3%82%AD%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97-mx-%E3%83%AD%E3%83%BC%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E7%8B%AD%E3%81%84%E3%83%94%E3%83%83%E3%83%81) × 44
 - 単4電池 × 2
@@ -149,20 +149,20 @@ Nickey44Aの主な特徴は次のとおりです。
 
 ### Seeed Studio XIAOの取り付け
 
-基板のリビジョンに合わせて、取り付けるXIAOを選んでください。
+基板のバージョンに合わせて、取り付けるXIAOを選んでください。
 
 | 基板 | 取り付けるXIAO | 手順 |
 | --- | --- | --- |
-| Rev1 | XIAO nRF52840（無印） | [Rev1：無印の取り付け](#xiao-rev1) |
-| Rev2以降 | XIAO nRF52840 Plus（推奨） | [Rev2以降：Plusの取り付け](#xiao-rev2) |
+| Ver1 | XIAO nRF52840（無印） | [Ver1：無印の取り付け](#xiao-ver1) |
+| Ver2以降 | XIAO nRF52840 Plus（推奨） | [Ver2以降：Plusの取り付け](#xiao-ver2) |
 
-<h4 id="xiao-rev1">Rev1：XIAO nRF52840（無印）の取り付け</h4>
+<h4 id="xiao-ver1">Ver1：XIAO nRF52840（無印）の取り付け</h4>
 
-Rev1の基板には**無印のXIAO nRF52840**を使用します。Plusは使用できません。無印を用意して、[共通のはんだ付け手順](#xiao-soldering)へ進んでください。
+Ver1の基板には**無印のXIAO nRF52840**を使用します。Plusは使用できません。無印を用意して、[共通のはんだ付け手順](#xiao-soldering)へ進んでください。
 
-<h4 id="xiao-rev2">Rev2以降：XIAO nRF52840 Plusの取り付け</h4>
+<h4 id="xiao-ver2">Ver2以降：XIAO nRF52840 Plusの取り付け</h4>
 
-Rev2以降の基板には**XIAO nRF52840 Plusを推奨**します。Plusを用意して、[共通のはんだ付け手順](#xiao-soldering)へ進んでください。
+Ver2以降の基板には**XIAO nRF52840 Plusを推奨**します。Plusを用意して、[共通のはんだ付け手順](#xiao-soldering)へ進んでください。
 
 無印でも通常のNickey44Aとして利用できます。その場合も共通のはんだ付け手順に従ってください。ただし、無印での将来的な追加操作デバイスへの対応はサポート対象外となります。
 
