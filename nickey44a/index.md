@@ -480,6 +480,10 @@ Nickey44A用のキーマップは、[`main` ブランチのキーマップ図](h
 
 標準Firmwareでは、[DYA Studio](https://studio.dya.cormoran.works/)に接続して、ブラウザ上からキーマップを変更することもできます。詳しい操作は、[DYA Studioでキーマップを編集する]({{ '/guides/dya-studio/' | relative_url }})を参照してください。
 
+## 🛠️ カスタム（拡張デバイス）
+
+Nickey44Aには、拡張でトラックパッドやトラックポイントを取り付けることができます。改造方法や対応Firmwareの書き込み方法は、[Nickey44A カスタム]({{ '/nickey44a/custom/' | relative_url }})にまとめています（記事準備中）。
+
 ## 🧯 トラブルシューティング
 
 USB接続、ブートローダー、無線接続に共通する基本的な対処は、[共通トラブルシューティング]({{ '/guides/troubleshooting/' | relative_url }})も確認してください。

@@ -517,3 +517,69 @@ table tr:nth-child(even) {
     display: flex;
   }
 }
+
+// Board-version tabs used by custom guides.
+.version-tabs {
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.version-tabs__list {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-raised);
+}
+
+.version-tabs__list[hidden],
+.version-tabs__panel[hidden] { display: none; }
+
+.version-tabs__list button {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.version-tabs__list button:hover {
+  color: var(--heading);
+  background: var(--surface-soft);
+}
+
+.version-tabs__list button[aria-selected="true"] {
+  color: var(--accent-strong);
+  border-color: var(--border-strong);
+  background: var(--surface-soft);
+}
+
+.version-tabs button:focus-visible,
+.version-tabs__panel:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.version-tabs__panel { padding: clamp(1rem, 3vw, 1.75rem); }
+.version-tabs__panel > :last-child { margin-bottom: 0; }
+.version-tabs__panel h3 { color: var(--heading); }
+.version-tabs__panel h4 {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--heading);
+  font-size: 1.2rem;
+}
+.version-tabs__panel h5 {
+  margin-top: 1.5rem;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
