@@ -62,7 +62,7 @@ Nickey44Aの主な特徴は次のとおりです。
 | 単4電池用マイナス端子 | 2 | ✅ | |
 | 単4電池用プラス端子 | 2 | ✅ | |
 | 6*3mm マグネット | 10 | ✅ | |
-| Seeed Studio XIAO nRF52840 | 2 | ❌ | **Plusではなく無印を使用** |
+| Seeed Studio XIAO nRF52840 / nRF52840 Plus | 2 | ❌ | **Rev2以降の基板ではPlusを推奨** |
 | 17 mmピッチ対応キーキャップ | 44 | ❌ | |
 | Choc v2キースイッチ | 44 | ❌ | |
 | ボトムケース | 各1 | ✅ | |
@@ -72,12 +72,14 @@ Nickey44Aの主な特徴は次のとおりです。
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
-  <p>Seeed Studio XIAO nRF52840 Plusでは動作しません。必ず無印のSeeed Studio XIAO nRF52840を用意してください。</p>
+  <p>Rev2以降の基板では、Seeed Studio XIAO nRF52840 Plusを推奨します。無印のSeeed Studio XIAO nRF52840でも通常のNickey44Aとして利用できますが、将来的な追加操作デバイスへの対応はサポート対象外となります。</p>
+  <p>Rev2より前の基板ではPlusは使用できません。無印のSeeed Studio XIAO nRF52840を用意してください。</p>
 </div>
 
 ### 別途必要な部品（必須）
 
-- [Seeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble) × 2（**Plusではなく無印**）
+- Seeed Studio XIAO nRF52840 Plus × 2（**Rev2以降の基板で推奨**。無印も通常のNickey44Aとして利用可能）
+  - [無印のSeeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble)（Rev2より前の基板はこちらを使用）
 - [Choc v2キースイッチ](https://shop.beekeeb.jp/collections/choc-v2-%E3%82%AD%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81) × 44
 - [Choc v2／MXステム対応・狭ピッチキーキャップ](https://shop.beekeeb.jp/collections/%E3%82%AD%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97-mx-%E3%83%AD%E3%83%BC%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E7%8B%AD%E3%81%84%E3%83%94%E3%83%83%E3%83%81) × 44
 - 単4電池 × 2
