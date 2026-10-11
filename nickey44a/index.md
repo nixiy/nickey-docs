@@ -7,7 +7,7 @@ image: /assets/images/nickey44a-hero.jpg
 
 # Nickey44A ビルドガイド
 
-![Nickey44A ロゴ]({{ '/assets/images/nickey44a-logo.png' | relative_url }}){: width="480" }
+![Nickey44A ロゴ]({{ '/assets/images/nickey44a-logo.png' | relative_url }}){: .nickey44a-logo width="480" }
 
 このページでは、単4電池で動作する完全ワイヤレス分割キーボード「Nickey44A」の組み立てから、Firmwareの書き込み、無線接続のペアリング、動作確認までを説明します。
 
@@ -149,25 +149,9 @@ Nickey44Aの主な特徴は次のとおりです。
 
 ### Seeed Studio XIAOの取り付け
 
-基板のバージョンに合わせて、取り付けるXIAOを選んでください。
+基板のバージョンをタブで選んで、対応するXIAOとはんだ付け手順を確認してください。
 
-| 基板 | 取り付けるXIAO | 手順 |
-| --- | --- | --- |
-| Ver1 | XIAO nRF52840（無印） | [Ver1：無印の取り付け](#xiao-ver1) |
-| Ver2以降 | XIAO nRF52840 Plus（推奨） | [Ver2以降：Plusの取り付け](#xiao-ver2) |
-
-<h4 id="xiao-ver1">Ver1：XIAO nRF52840（無印）の取り付け</h4>
-
-Ver1の基板には**無印のXIAO nRF52840**を使用します。Plusは使用できません。無印を用意して、[共通のはんだ付け手順](#xiao-soldering)へ進んでください。
-
-<h4 id="xiao-ver2">Ver2以降：XIAO nRF52840 Plusの取り付け</h4>
-
-Ver2以降の基板には**XIAO nRF52840 Plusを推奨**します。Plusを用意して、[共通のはんだ付け手順](#xiao-soldering)へ進んでください。
-
-無印でも通常のNickey44Aとして利用できます。その場合も共通のはんだ付け手順に従ってください。ただし、無印での将来的な追加操作デバイスへの対応はサポート対象外となります。
-
-<h4 id="xiao-soldering">共通のはんだ付け手順</h4>
-
+{% capture xiao_soldering_steps %}
 以下の写真は無印のXIAO nRF52840を使用した例です。
 
 XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
@@ -193,7 +177,39 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 
 端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
 
+{% endcapture %}
 
+<div class="version-tabs" id="xiao-soldering" data-version-tabs>
+  <div class="version-tabs__list" aria-label="XIAOを取り付ける基板のバージョン" hidden>
+    <button type="button" id="xiao-tab-ver1" data-version-tab aria-controls="xiao-ver1">Ver1</button>
+    <button type="button" id="xiao-tab-ver2" data-version-tab aria-controls="xiao-ver2">Ver2以降</button>
+  </div>
+
+<div class="version-tabs__panel" id="xiao-ver1" data-version-panel markdown="1">
+
+#### Ver1：XIAO nRF52840（無印）の取り付け
+
+Ver1の基板には**無印のXIAO nRF52840**を使用します。Plusは使用できません。
+
+{{ xiao_soldering_steps }}
+
+</div>
+
+<div class="version-tabs__panel" id="xiao-ver2" data-version-panel markdown="1">
+
+#### Ver2以降：XIAO nRF52840 Plusの取り付け
+
+Ver2以降の基板には**XIAO nRF52840 Plusを推奨**します。
+
+無印でも通常のNickey44Aとして利用できます。ただし、無印での将来的な追加操作デバイスへの対応はサポート対象外となります。
+
+{{ xiao_soldering_steps }}
+
+</div>
+
+</div>
+
+<script src="{{ '/assets/js/version-tabs.js' | relative_url }}" defer></script>
 
 ### 単4電池端子の取り付け
 
@@ -253,6 +269,13 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 <!-- TODO: 単4電池端子取り付け完了後のPCB全体写真を追加 -->
 
 ### Choc v2ソケットの取り付け
+
+<div class="callout callout-important" role="note" aria-label="Ver2以降の基板について">
+  <p class="callout-title">ⓘ Ver2以降の基板について</p>
+  <p>Ver2以降の基板では、Choc v2ソケットはPCBA済み（実装済み）です。この取り付け・はんだ付け工程はスキップして、<a href="#-zmk-firmware">ZMK Firmware</a>へ進んでください。</p>
+</div>
+
+以下の手順は、ソケットが未実装の**Ver1の基板**向けです。
 
 Choc v2ソケットは**PCBの裏側**へ取り付けます。
 

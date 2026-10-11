@@ -306,6 +306,11 @@ a:focus-visible {
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.35);
 }
 
+.page-content img.nickey44a-logo {
+  padding: 1rem;
+  background: #fff;
+}
+
 // Clickable article images open in a distraction-free full-size viewer.
 .page-content img[data-lightbox-image] {
   cursor: zoom-in;
