@@ -26,7 +26,7 @@ Nickey44Aへトラックパッドを追加するためのガイドです。必�
 
 ## 基板バージョン別の手順
 
-基板のバージョンを選んで、改造方法とFirmwareの手順を確認してください。各バージョンの対応条件・手順は準備中です。
+基板裏面下部に記載のバージョンを参照し、改造方法とFirmwareの手順を確認してください。
 
 <div class="version-tabs" data-version-tabs>
   <div class="version-tabs__list" aria-label="基板バージョン" hidden>
@@ -42,13 +42,13 @@ Nickey44Aへトラックパッドを追加するためのガイドです。必�
 
 #### 必要な部品・道具
 
-| 部品 | 型番 | 数量 | 入手先 | 備考 |
+| 部品 | 型番 | 数量 | 入手先例 | 備考 |
 | --- | --- | ---: | --- | --- |
-| トラックパッド本体 | TPS43-201A-S | 2 | [マルツ](https://www.marutsu.co.jp/pc/i/25650684/) | |
+| トラックパッド本体 | TPS43-201A-S | 2 | [マルツ](https://www.marutsu.co.jp/pc/i/25650684/), [DigiKey](https://www.digikey.jp/ja/products/detail/azoteq-pty-ltd/TPS43-201A-S/7164940) | |
 | トラックパッド用プレート | -| 2 | [BOOTH](https://booth.pm/ja/items/4785113) |調達できなければ3DP製のプレートを貼る |
 | 配線・コネクター | ピッチ変換FPC（6ピン） | 2 | [BOOTH](https://booth.pm/ja/items/8265223) | |
 | 電線ケーブル | 太さ30AWG | 1 | [Amazon](https://www.amazon.co.jp/dp/B0CRHVB4JK) |7色入ってるので色分けしやすい |
-| 対応ケース・プレート | 未記載 | 未記載 | boothからDLできるファイル名を記載 | |
+| 対応ケース・プレート | - | - | boothからDLできるファイル名を記載 | |
 
 
 #### 改造方法
@@ -63,16 +63,22 @@ Nickey44Aへトラックパッドを追加するためのガイドです。必�
 
 RST（フレキ側のNRST）とRDYは、基板側のパッドを経由せず、XIAO表面右下の隠しGPIOパッドから直接配線します。
 
-| 信号 | PCB側の接続先 | XIAO側の接続先 | 備考 | 配線色
-| --- | --- | --- | --- |
-| RST（NRST） | - | P0.16 | XIAOから直接配線 | 白色
-| RDY | - | P1.10 | XIAOから直接配線 | 黄色
+| 信号 | XIAO側の接続先 | 配線色 |
+| --- | --- | --- |
+| RST（NRST） | P0.16 | 白⬜️ |
+| RDY | P1.10 | 黄🟨 |
 
 
-| ピン番号 | 1 | 2 | 3 | 4 | 5 | 6 |
-| --- | --- | --- | --- | --- | --- | --- |
-| 基板側 | GND | SDA（P0.09） | SCL（P0.10） | - | - | 3.3V |
-| フレキ側 | SDA | SCL | VDDHI | GND | NRST | RDY |
+**ピン番号は、上の配線写真の向きで左から順に1〜6番です。**
+
+| ピン番号 | 基板側 | フレキ側(配線色) |
+| --- | --- | --- |
+| 1 | GND:黒⬛️ | SDA:緑🟩 |
+| 2 | SDA:緑🟩（P0.09） | SCL:青🟦 |
+| 3 | SCL:青🟦（P0.10） | VDDHI:赤🟥 |
+| 4 | - | GND:黒⬛️ |
+| 5 | - | NRST:白⬜️ |
+| 6 | 3.3V:赤🟥 | RDY:黄🟨 |
 
 <!-- TODO: 取り付け位置、固定方法、配線図、接続先のパッド・ピン名を写真付きで記載 -->
 
@@ -84,12 +90,14 @@ RST（フレキ側のNRST）とRDYは、基板側のパッドを経由せず、X
 
 ##### 対応Firmwareの入手
 
+[TPS43ブランチ](https://github.com/nixiy/zmk-config-nickey44a/tree/tps43) を参照し、ForkしてGithub ActionでFWをビルドして下さい。後日FWのuf.2をリポジトリに置いておきます
+
 <!-- TODO: 配布先、対応バージョン、左右それぞれのUF2ファイル名を記載 -->
 <!-- TODO: 自分でビルドする場合のリポジトリ、ブランチ、設定変更、ビルド対象を記載 -->
 
 ##### Firmwareの書き込み
 
-UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/firmware/' | relative_url }})を参照してください。このカスタム用のFirmwareと左右への書き込み手順は、ここへ追記します。
+UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/firmware/' | relative_url }})を参照してください。
 
 <!-- TODO: 左右への書き込み順序、settings_resetの要否、書き込み後の再接続手順を記載 -->
 
@@ -101,7 +109,7 @@ UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/
 
 #### 必要な部品・道具
 
-| 部品 | 型番 | 数量 | 入手先 | 備考 |
+| 部品 | 型番 | 数量 | 入手先例 | 備考 |
 | --- | --- | ---: | --- | --- |
 | トラックパッド本体 | TPS43-201A-S | 2 | [マルツ](https://www.marutsu.co.jp/pc/i/25650684/) | |
 | トラックパッド用プレート | -| 2 | [BOOTH](https://booth.pm/ja/items/4785113) |調達できなければ3DP製のプレートを貼る |
@@ -145,6 +153,8 @@ UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/
 <script src="{{ '/assets/js/version-tabs.js' | relative_url }}" defer></script>
 
 ## 動作確認・設定
+
+[ジェスチャの割り当て](https://github.com/nixiy/zmk-config-nickey44a/blob/tps43/docs/dual-tps43.md#%E3%82%B8%E3%82%A7%E3%82%B9%E3%83%81%E3%83%A3%E3%81%AE%E5%89%B2%E3%82%8A%E5%BD%93%E3%81%A6) を参考に基本的な操作が行なえます。
 
 <!-- TODO: キー入力とタッチ操作、クリック、スクロールの確認手順を記載 -->
 <!-- TODO: 感度、操作方向、クリック・スクロールの割り当てなど、対応する設定方法を記載 -->
