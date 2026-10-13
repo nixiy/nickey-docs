@@ -580,11 +580,14 @@ table tr:nth-child(even) {
   padding-top: 1rem;
   border-top: 1px solid var(--border);
   color: var(--heading);
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 .version-tabs__panel h5 {
   margin-top: 1.5rem;
   color: var(--text);
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 600;
+  line-height: 1.5;
 }
