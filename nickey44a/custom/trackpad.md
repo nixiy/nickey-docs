@@ -1,20 +1,18 @@
 ---
 layout: default
-title: Nickey44A トラックパッド
+title: Nickey44A トラックパッド化手順
 description: Nickey44Aにトラックパッドを追加するための部品・改造方法・Firmware書き込みのガイド
 image: /nickey44a/custom/images/trackpad-overview.jpg
 permalink: /nickey44a/custom/trackpad/
 ---
 
-# Nickey44A トラックパッド
+# Nickey44A トラックパッド化手順
 
 Nickey44Aへトラックパッドを追加するためのガイドです。必要な部品、取り付け・配線、対応Firmwareの書き込み、動作確認をまとめます。
 
 ![左右にトラックパッドを取り付けたNickey44A]({{ '/nickey44a/custom/images/trackpad-overview.jpg' | relative_url }})
 
 左右にトラックパッドを取り付けた例です。
-
-> このページは現在準備中です。具体的な手順や写真は順次追加します。
 
 ## 対応条件
 <!-- TODO: 対応する基板バージョン、XIAOの種類、デバイス型番、取り付け側、ケースを記載 -->
@@ -115,6 +113,11 @@ XIAOのUSB端子とケースの開口部を合わせ、基板をボトムケー�
 ##### 5. TPS43の向きを確認する
 
 タッチ面が上、緑色の基板面がケースの内側になる向きで取り付けます。写真を参考にFPCと電線を内側へ収め、折り返したときに突っ張ったり、取り付け枠に挟まったりしないことを確認してください。
+
+<div class="callout callout-important" role="note" aria-label="重要">
+  <p class="callout-title">ⓘ 重要</p>
+  <p>次のセクションではめても緩い場合は、トラパ内部ネジ穴上部の土台に両面テープを貼って接着して下さい。</p>
+</div>
 
 ![TPS43を立てて裏面の向きとFPCの収まりを確認している状態]({{ '/nickey44a/custom/images/assembly/05-tps43-orientation.jpg' | relative_url }})
 
