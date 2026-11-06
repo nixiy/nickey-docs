@@ -47,6 +47,21 @@ Nickey44Aの主な特徴は次のとおりです。
 5. 単4電池と電池カバーを装着する
 6. 無線接続とキー入力を確認する
 
+<div class="callout callout-important" role="note" aria-label="基板バージョンの確認">
+  <p class="callout-title">ⓘ 基板裏面のバージョンを確認してください</p>
+  <p>部品の確認・組み立てを始める前に、基板裏面に記載されたバージョンを確認し、対応するタブを選んでください。バージョンによって利用するXiaoの型番が異なるため必ず基板バージョンを確認してから始めて下さい</p>
+</div>
+
+<div class="version-tabs" data-version-tabs data-version-default="build-ver2">
+  <div class="version-tabs__list" aria-label="基板バージョン" hidden>
+    <button type="button" id="build-tab-ver1.1" data-version-tab aria-controls="build-ver1.1">Ver1.1</button>
+    <button type="button" id="build-tab-ver2" data-version-tab aria-controls="build-ver2">Ver2</button>
+  </div>
+
+<div class="version-tabs__panel" id="build-ver1.1" data-version-panel markdown="1">
+
+<!-- Ver1.1 -->
+
 ## 🧩 部品一覧
 
 ![部品一覧](../nickey44a/images/parts-layout.jpg)
@@ -56,13 +71,13 @@ Nickey44Aの主な特徴は次のとおりです。
 
 | 部品 | 数量 | キット付属 | 備考 |
 | --- | ---: | :---: | --- |
-| Nickey44A PCB（左・右） | 各1 | ✅ | |
+| Nickey44A PCB（左・右） | 各1 | ✅ | 昇圧IC、電源スライドスイッチ、ダイオードははんだ済み |
 | M2 ネジ 5 mm | 10 | ✅ | ケース固定に使用 |
-| Choc v2 ホットスワップソケット | 44 | ✅ | **Ver2以降の基板ではPCBA(はんだ付け)済み** |
+| Choc v2 ホットスワップソケット | 44 | ✅ | |
 | 単4電池用マイナス端子 | 2 | ✅ | |
 | 単4電池用プラス端子 | 2 | ✅ | |
 | 6*3mm マグネット | 10 | ✅ | **ボトムケースに装着して出荷** |
-| Seeed Studio XIAO nRF52840 / nRF52840 Plus | 2 | ❌ | **Ver2以降の基板ではPlusを推奨** |
+| Seeed Studio XIAO nRF52840 | 2 | ❌ | |
 | 17 mmピッチ対応キーキャップ | 44 | ❌ | |
 | Choc v2キースイッチ | 44 | ❌ | |
 | ボトムケース | 各1 | ✅ | |
@@ -70,16 +85,10 @@ Nickey44Aの主な特徴は次のとおりです。
 | 電池カバー | 各1 | ✅ | 8001 Resin・MJFケースにはPLA製電池カバーを追加付属 |
 | 電源スイッチカバー | 各1 | ✅ | |
 
-<div class="callout callout-important" role="note" aria-label="重要">
-  <p class="callout-title">ⓘ 重要</p>
-  <p>Ver2以降の基板では、Seeed Studio XIAO nRF52840 Plusを推奨します。無印のSeeed Studio XIAO nRF52840でも通常のNickey44Aとして利用できますが、将来的な追加操作デバイスへの対応はサポート対象外となります。</p>
-  <p>Ver2より前の基板ではPlusは使用できません。無印のSeeed Studio XIAO nRF52840を用意してください。</p>
-</div>
-
 ### 別途必要な部品（必須）
 
-- Seeed Studio XIAO nRF52840 Plus × 2（**Ver2以降の基板で推奨**。無印も通常のNickey44Aとして利用可能）
-  - [無印のSeeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble)（Ver2より前の基板はこちらを使用）
+- Seeed Studio XIAO nRF52840 × 2
+  - [無印のSeeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble)
 - [Choc v2キースイッチ](https://shop.beekeeb.jp/collections/choc-v2-%E3%82%AD%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81) × 44
 - [Choc v2／MXステム対応・狭ピッチキーキャップ](https://shop.beekeeb.jp/collections/%E3%82%AD%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97-mx-%E3%83%AD%E3%83%BC%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E7%8B%AD%E3%81%84%E3%83%94%E3%83%83%E3%83%81) × 44
 - 単4電池 × 2
@@ -179,13 +188,7 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 
 {% endcapture %}
 
-<div class="version-tabs" id="xiao-soldering" data-version-tabs>
-  <div class="version-tabs__list" aria-label="XIAOを取り付ける基板のバージョン" hidden>
-    <button type="button" id="xiao-tab-ver1" data-version-tab aria-controls="xiao-ver1">Ver1</button>
-    <button type="button" id="xiao-tab-ver2" data-version-tab aria-controls="xiao-ver2">Ver2以降</button>
-  </div>
-
-<div class="version-tabs__panel" id="xiao-ver1" data-version-panel markdown="1">
+<div id="xiao-soldering" markdown="1">
 
 #### Ver1：XIAO nRF52840（無印）の取り付け
 
@@ -195,21 +198,249 @@ Ver1の基板には**無印のXIAO nRF52840**を使用します。Plusは使用�
 
 </div>
 
-<div class="version-tabs__panel" id="xiao-ver2" data-version-panel markdown="1">
+### 単4電池端子の取り付け
 
-#### Ver2以降：XIAO nRF52840 Plusの取り付け
+単4電池用の端子をPCBへはんだ付けします。マイナス側には[単4電池用マイナス端子（MonotaRO）](https://www.monotaro.com/p/8835/2521/)、プラス側には[単4電池用プラス端子（MonotaRO）](https://www.monotaro.com/p/8835/2512/)を使用します。
 
-Ver2以降の基板には**XIAO nRF52840 Plusを推奨**します。
+<div class="callout callout-important" role="note" aria-label="重要">
+  <p class="callout-title">ⓘ 重要</p>
+  <p>端子は電池を保持する機械部品でもあります。<strong>端子がPCBにまっすぐ密着していること</strong>を確認してから、はんだ付けしてください。端子が浮いた状態で固定すると、電池の着脱時に端子やPCBへ過度な力が掛かります。</p>
+</div>
 
-無印でも通常のNickey44Aとして利用できます。ただし、無印での将来的な追加操作デバイスへの対応はサポート対象外となります。
+1. プラス端子とマイナス端子を確認します。端子は出荷時に折り曲げ済みです。**曲げ直したり、向きを変えたりしないでください。**
+
+   ![プラス端子とマイナス端子の形状](images/aaa-terminal/01-terminal-types.jpg)
+   ![折り曲げ済みの単4電池端子](images/aaa-terminal/02-terminal-orientation.jpg)
+
+2. PCBの極性表示（`+`／`-`）と端子の形状を照らし合わせます。**プラス端子とマイナス端子を取り違えないでください。**
+3. PCBの裏側から所定の穴へ端子を差し込み、表側へピンを出します。端子がPCBに密着していることを確認します。
+
+   ![電池端子を差し込んだPCB裏側](images/aaa-terminal/16-terminals-installed-back.jpg)
+   ![PCBに差し込んだプラス端子](images/aaa-terminal/03-plus-terminal-inserted.jpg)
+   ![PCBに差し込んだマイナス端子](images/aaa-terminal/04-minus-terminal-inserted.jpg)
+
+4. PCB表側へ出たピンをペンチで軽く折り曲げ、端子を仮固定します。このときも端子が浮いたり傾いたりしていないことを確認します。
+
+   ![プラス端子のピンを折り曲げて仮固定した状態](images/aaa-terminal/05-plus-terminal-pins-bent.jpg)
+   ![マイナス端子のピンを折り曲げて仮固定した状態](images/aaa-terminal/06-minus-terminal-pins-bent.jpg)
+
+5. テスターがある場合は、**はんだ付け前に**電圧を確認します。トッププレートとPCBを重ね、単4電池を仮に装着してください。端子をケースに収めることで、端子と電池の表裏も確認できます。
+
+   ![トッププレートとPCBを重ねて単4電池を仮装着した状態](images/aaa-terminal/07-voltage-test-setup.jpg)
+
+   以下を確認します。
+
+   - 電池端子の`-`と`+`の間：約`1.2～1.5 V`（電池の種類や残量により異なります）
+   - 電源スイッチを`下`へスライド：XIAOの`GND`と`3.3V`の間が`0 V`
+   - 電源スイッチを`上`へスライド：XIAOの`GND`と`3.3V`の間が約`3.3 V`
+
+   <div class="callout callout-important" role="note" aria-label="はんだ付け前の確認">
+     <p class="callout-title">ⓘ はんだ付け前の確認</p>
+     <p>電源スイッチを上へスライドしても約3.3 Vにならない場合は、<strong>はんだ付けを始めないでください。</strong> 電池端子と電池の向きを確認してから、手順3へ戻ります。</p>
+   </div>
+
+6. 確認できたら、電池端子のはんだ付け箇所へフラックスを塗ります。
+
+   ![電池端子のはんだ付け箇所へフラックスを塗った状態](images/aaa-terminal/08-flux-applied.jpg)
+
+7. 電池端子をはんだ付けします。端子は金属製で熱が逃げやすいため、こて先を端子とパッドの両方へ当てて十分に(10-15秒)温めてから、はんだを流し込み保持(5秒くらい)します。はんだがなじんだらこてを離し、**はんだが固まるまで端子を動かさないでください。**
+
+
+   ![プラス端子をはんだ付けしたPCB表側](images/aaa-terminal/09-plus-terminal-soldered-top.jpg)
+   ![マイナス端子をはんだ付けしたPCB表側](images/aaa-terminal/10-minus-terminal-soldered-top.jpg)
+   ![プラス端子をはんだ付けしたPCB裏側](images/aaa-terminal/11-plus-terminal-soldered-bottom.jpg)
+   ![マイナス端子をはんだ付けしたPCB裏側](images/aaa-terminal/12-minus-terminal-soldered-bottom.jpg)
+
+8. 端子がPCBに密着していること、はんだ付け箇所にブリッジや未接合がないことを最終確認します。
+
+<!-- TODO: 単4電池端子取り付け完了後のPCB全体写真を追加 -->
+
+### Choc v2ソケットの取り付け
+
+Choc v2ソケットは**PCBの裏側**へ取り付けます。
+
+ソケットには向きがあります。スイッチ中央の軸が入る側を、PCBの八角形のシルクに合わせてください。向きを誤るとキースイッチを取り付けられません。
+
+<div class="callout callout-important" role="note" aria-label="重要">
+  <p class="callout-title">ⓘ 重要</p>
+  <p>一部のソケットは周囲のスペースの都合で向きが回転しています。はんだ付けしやすくするため、必ず次の写真の順で取り付けてください。</p>
+</div>
+
+1. 先に、通常の向きのソケットを取り付けます。
+
+   ![通常の向きのChoc v2ソケット](../nickey44a/images/chocv2/03-socket-orientation.jpg)
+
+2. 次に、回転した向きのソケットを取り付けます。
+
+   ![回転した向きのChoc v2ソケットを位置合わせする](../nickey44a/images/chocv2/02-socket-positioning.jpg)
+
+3. すべてのソケットがPCBのシルクに沿って配置されていることを確認します。
+
+   ![すべてのChoc v2ソケットを取り付けたPCB裏面](../nickey44a/images/chocv2/01-socket-orientation-on-pcb.jpg)
+
+各ソケットは、次の手順ではんだ付けします。
+
+1. PCBの片側のパッドへ、少量の予備はんだをします。
+
+   ![片側のパッドに予備はんだを盛る](images/chocv2/04-pre-tinned-pad.jpg)
+
+2. Choc v2ソケットを、PCBのシルクと向きを確認した正しい位置に置きます。
+
+   ![PCB上の正しい位置にChoc v2ソケットを置く](images/chocv2/05-socket-positioned.jpg)
+
+3. ピンセットなどでソケットをPCBへ押さえながら、予備はんだを再加熱します。
+
+   ![予備はんだを再加熱し、ソケットをPCBへ押さえる](images/chocv2/06-reheat-while-pressing.jpg)
+
+4. ソケットがPCBへ密着した状態で固定されていることを確認します。
+
+5. 反対側の端子をはんだ付けします。
+
+   ![両側の端子をはんだ付けしたChoc v2ソケット](images/chocv2/07-socket-soldered.jpg)
+
+6. ソケットが浮いていないこと、端子間にはんだブリッジがないことを確認します。完成。
+
+   ![すべてのChoc v2ソケットをはんだ付けしたPCB裏面](images/chocv2/08-sockets-soldered-overview.jpg)
+
+ソケットの向きについては、[「Kailh Choc ソケットの方向について」](https://scrapbox.io/self-made-kbds-ja/Kailh_Choc_%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AE%E6%96%B9%E5%90%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)も参考にしてください。
+
+</div>
+
+<div class="version-tabs__panel" id="build-ver2" data-version-panel markdown="1">
+
+<!-- Ver2: 部品一覧からChoc v2までの既存内容を複製。バージョン固有の内容は今後更新する。 -->
+
+## 🧩 部品一覧
+
+![部品一覧](../nickey44a/images/parts-layout.jpg)
+
+
+組み立てる前に、部品の種類と数量を確認してください。
+
+| 部品 | 数量 | キット付属 | 備考 |
+| --- | ---: | :---: | --- |
+| Nickey44A PCB（左・右） | 各1 | ✅ | chocv2ソケット, 昇圧IC、電源スライドスイッチ、ダイオードははんだ済み |
+| M2 ネジ 5 mm | 10 | ✅ | ケース固定に使用 |
+| 単4電池用マイナス端子 | 2 | ✅ | |
+| 単4電池用プラス端子 | 2 | ✅ | |
+| 6*3mm マグネット | 10 | ✅ | **ボトムケースに装着して出荷** |
+| Seeed Studio XIAO nRF52840 Plus | 2 | ❌ | Plusである点に注意 |
+| 17 mmピッチ対応キーキャップ | 44 | ❌ | |
+| Choc v2キースイッチ | 44 | ❌ | |
+| ボトムケース | 各1 | ✅ | |
+| トッププレート | 各1 | ✅ | |
+| 電池カバー | 各1 | ✅ | 8001 Resin・MJFケースにはPLA製電池カバーを追加付属 |
+| 電源スイッチカバー | 各1 | ✅ | |
+
+### 別途必要な部品（必須）
+
+- Seeed Studio XIAO nRF52840 Plus × 2
+- [Choc v2キースイッチ](https://shop.beekeeb.jp/collections/choc-v2-%E3%82%AD%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81) × 44
+- [Choc v2／MXステム対応・狭ピッチキーキャップ](https://shop.beekeeb.jp/collections/%E3%82%AD%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97-mx-%E3%83%AD%E3%83%BC%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E7%8B%AD%E3%81%84%E3%83%94%E3%83%83%E3%83%81) × 44
+- 単4電池 × 2
+
+### キット付属品の入手先（紛失・破損・個別調達用）
+
+- [単4電池用マイナス端子（MonotaRO）](https://www.monotaro.com/p/8835/2521/)
+- [単4電池用プラス端子（MonotaRO）](https://www.monotaro.com/p/8835/2512/)
+- [Choc v2 ホットスワップソケット](https://shop.beekeeb.jp/products/kailh-choc-hotswap-sockets)
+- [M2平ネジ](https://shop.yushakobo.jp/products/a0800s2?variant=37665432535201)
+
+## 🧰 必要な道具
+
+### ✅ 必須
+
+- **はんだごて**：XIAO、ソケット、単4電池端子をはんだ付けするために使います。[参考商品](https://amzn.to/4wbCkvz)
+- **はんだ**：部品をPCBへ固定するために使います。[参考商品](https://amzn.to/4f8enzh)
+- **細めのドライバー**：ケースのネジを締めるために使います。[参考商品](https://amzn.to/4vytIxO)
+- **ニッパー**：端子などを整えるために使います。
+- **PC**：Firmwareの書き込みに使います。
+- **USB Type-Cケーブル（データ通信対応）**：XIAOをPCへ接続してFirmwareを書き込みます。充電専用ケーブルでは認識されません。
+- **テスター**：はんだ付け後に短絡がないこと、電池の電圧や昇圧回路の動作を確認するために使います。ペンタイプが使いやすくおすすめです。[参考商品](https://amzn.to/4fgAJ05)
+- **フラックス**：はんだ付けする箇所へ先に塗ると、はんだの乗りが良くなります。ペンタイプがおすすめです。[参考商品](https://amzn.to/3T7ey5c)
+- **ペンチ**：単4電池端子を変形させるのに使います。
+
+### 👍 強く推奨
+
+- **ピンセット**：スイッチソケットなど細かい部品をつまむために使います。先が曲がったタイプがおすすめです。[参考商品](https://amzn.to/4prI4Pe)
+
+### ✨ あると便利
+
+- **はんだごてスタンド**：はんだごてを安全に置くために使います。[参考商品](https://amzn.to/4posS5k)
+- **耐熱マット**：机を傷つけず、部品が滑らないようにするために便利です。[参考商品](https://amzn.to/4b0jQpd)
+- **はんだ吸い取り線**：付けすぎたはんだを除去するために使います。あると安心です。[参考商品](https://amzn.to/4ysWx1c)
+- **保護メガネ**：ニッパーを使う際に、飛散する部品から目を守ります。
+- **ケース底面用の滑り止め**：ケース底面の滑り止めとして[GRIPLUS（グリップラス）](https://amzn.to/4ywBbAg)がおすすめです。
+
+## キッティング済みケースの分解
+
+内容物忘れ、PCBの湾曲、傷保護のため以下パーツを組み立てて発送しています。
+
+- 左右トッププレート
+- 左右ボトムケース
+- 電源スライドスイッチ
+- M2 x 5mmネジ
+- 電池カバー
+
+これらを一旦分解してから始めて下さい。
+
+1. 5箇所あるM2ネジを外します。
+
+   ![ネジを外したトッププレートとPCB](images/case-disassembly/05-top-plate-and-pcb-separated.jpg)
+
+2. トッププレートを取り外します。
+
+   ![トッププレートを外したボトムケース](images/case-disassembly/03-bottom-case-inside.jpg)
+
+3. 基板ごと押さえて裏返します。
+
+   ![裏返したボトムケース](images/case-disassembly/04-bottom-case-outside.jpg)
+
+4. 電源スライドスイッチの反対側を持ち上げる事で電源スライドスイッチを折らずに取り外すことが出来ます。
+
+   ![PCBからボトムケースを外す](images/case-disassembly/02-remove-bottom-case.jpg)
+
+## 🔥 はんだ付け
+
+### Seeed Studio XIAOの取り付け
+
+基板のバージョンをタブで選んで、対応するXIAOとはんだ付け手順を確認してください。
+
+{% capture xiao_soldering_steps %}
+以下の写真は無印のXIAO nRF52840を使用した例です。
+
+XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
+
+![XIAO nRF52840のはんだ付け箇所を赤点で示したPCB](../nickey44a/images/xiao/01-xiao-solder-points.jpg)
+
+位置決めには7ピンヘッダーを利用できます。ヘッダーは治具として使うだけなので、**ヘッダー自体ははんだ付けしません。**
+
+![PCB、XIAO nRF52840、位置決め用7ピンヘッダー](../nickey44a/images/xiao/02-xiao-alignment-header.jpg)
+
+7ピンヘッダーを差し込んでXIAOの位置を合わせ、反対側の端子を数か所はんだ付けします。位置が固定できたらヘッダーを外し、残りの端子をはんだ付けしてください。
+
+![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a/images/xiao/04-xiao-aligned-on-pcb.jpg)
+
+
+<div class="callout callout-important" role="note" aria-label="重要">
+  <p class="callout-title">ⓘ 重要</p>
+  <p>裏側のスルーホールは開発者向けオプションです。通常ははんだ付け不要です。</p>
+</div>
+
+
+![alt text](images/xiao/05-xiao-solder-pads.jpg)
+
+端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
+
+{% endcapture %}
+
+<div id="xiao-soldering-ver2" markdown="1">
+
+#### XIAO nRF52840 Plusの取り付け
 
 {{ xiao_soldering_steps }}
 
 </div>
-
-</div>
-
-<script src="{{ '/assets/js/version-tabs.js' | relative_url }}" defer></script>
 
 ### 単4電池端子の取り付け
 
@@ -275,54 +506,11 @@ Ver2以降の基板には**XIAO nRF52840 Plusを推奨**します。
   <p>Ver2以降の基板では、Choc v2ソケットはPCBA済み（実装済み）です。この取り付け・はんだ付け工程はスキップして、<a href="#-zmk-firmware">ZMK Firmware</a>へ進んでください。</p>
 </div>
 
-以下の手順は、ソケットが未実装の**Ver1の基板**向けです。
-
-Choc v2ソケットは**PCBの裏側**へ取り付けます。
-
-ソケットには向きがあります。スイッチ中央の軸が入る側を、PCBの八角形のシルクに合わせてください。向きを誤るとキースイッチを取り付けられません。
-
-<div class="callout callout-important" role="note" aria-label="重要">
-  <p class="callout-title">ⓘ 重要</p>
-  <p>一部のソケットは周囲のスペースの都合で向きが回転しています。はんだ付けしやすくするため、必ず次の写真の順で取り付けてください。</p>
 </div>
 
-1. 先に、通常の向きのソケットを取り付けます。
+</div>
 
-   ![通常の向きのChoc v2ソケット](../nickey44a/images/chocv2/03-socket-orientation.jpg)
-
-2. 次に、回転した向きのソケットを取り付けます。
-
-   ![回転した向きのChoc v2ソケットを位置合わせする](../nickey44a/images/chocv2/02-socket-positioning.jpg)
-
-3. すべてのソケットがPCBのシルクに沿って配置されていることを確認します。
-
-   ![すべてのChoc v2ソケットを取り付けたPCB裏面](../nickey44a/images/chocv2/01-socket-orientation-on-pcb.jpg)
-
-各ソケットは、次の手順ではんだ付けします。
-
-1. PCBの片側のパッドへ、少量の予備はんだをします。
-
-   ![片側のパッドに予備はんだを盛る](images/chocv2/04-pre-tinned-pad.jpg)
-
-2. Choc v2ソケットを、PCBのシルクと向きを確認した正しい位置に置きます。
-
-   ![PCB上の正しい位置にChoc v2ソケットを置く](images/chocv2/05-socket-positioned.jpg)
-
-3. ピンセットなどでソケットをPCBへ押さえながら、予備はんだを再加熱します。
-
-   ![予備はんだを再加熱し、ソケットをPCBへ押さえる](images/chocv2/06-reheat-while-pressing.jpg)
-
-4. ソケットがPCBへ密着した状態で固定されていることを確認します。
-
-5. 反対側の端子をはんだ付けします。
-
-   ![両側の端子をはんだ付けしたChoc v2ソケット](images/chocv2/07-socket-soldered.jpg)
-
-6. ソケットが浮いていないこと、端子間にはんだブリッジがないことを確認します。完成。
-
-   ![すべてのChoc v2ソケットをはんだ付けしたPCB裏面](images/chocv2/08-sockets-soldered-overview.jpg)
-
-ソケットの向きについては、[「Kailh Choc ソケットの方向について」](https://scrapbox.io/self-made-kbds-ja/Kailh_Choc_%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AE%E6%96%B9%E5%90%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)も参考にしてください。
+<script src="{{ '/assets/js/version-tabs.js' | relative_url }}" defer></script>
 
 ## 💾 ZMK Firmware
 

@@ -30,7 +30,10 @@
         tabs[next].focus();
       });
     });
-    select(0);
+    const defaultIndex = tabs.findIndex((tab) =>
+      tab.getAttribute('aria-controls') === group.dataset.versionDefault
+    );
+    select(defaultIndex >= 0 ? defaultIndex : 0);
     list.hidden = false;
   });
 })();
