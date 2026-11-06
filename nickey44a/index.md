@@ -510,7 +510,7 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 
 </div>
 
-<script src="{{ '/assets/js/version-tabs.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/version-tabs.js' | relative_url }}?v=2" defer></script>
 
 ## 💾 ZMK Firmware
 
