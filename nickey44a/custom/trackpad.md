@@ -12,9 +12,6 @@ Nickey44Aへトラックパッドを追加するためのガイドです。必�
 
 ![左右にトラックパッドを取り付けたNickey44A]({{ '/nickey44a/custom/images/trackpad-overview.jpg' | relative_url }})
 
-左右にトラックパッドを取り付けた例です。
-
-## 対応条件
 <!-- TODO: 対応する基板バージョン、XIAOの種類、デバイス型番、取り付け側、ケースを記載 -->
 
 <!-- TODO: 必要な部品を確定し、表の項目・数量・入手先を更新 -->
@@ -46,8 +43,7 @@ Nickey44Aへトラックパッドを追加するためのガイドです。必�
 | トラックパッド用プレート | -| 2 | [BOOTH](https://booth.pm/ja/items/4785113) |調達できなければ3DP製のプレートを貼る |
 | 配線・コネクター | ピッチ変換FPC（6ピン） | 2 | [BOOTH](https://booth.pm/ja/items/8265223) | |
 | 電線ケーブル | 太さ30AWG | 1 | [Amazon](https://www.amazon.co.jp/dp/B0CRHVB4JK) |7色入ってるので色分けしやすい |
-| 対応ケース・プレート | - | - | boothからDLできるファイル名を記載 | |
-
+| 対応ケース・プレート | - | - | 準備中 | |
 
 ### ケース・基板の準備
 
@@ -63,7 +59,6 @@ RST（フレキ側のNRST）とRDYは、基板側のパッドを経由せず、X
 | --- | --- | --- |
 | RST（NRST） | P0.16 | 白⬜️ |
 | RDY | P1.10 | 黄🟨 |
-
 
 **ピン番号は、上の配線写真の向きで左から順に1〜6番です。**
 
@@ -116,7 +111,7 @@ XIAOのUSB端子とケースの開口部を合わせ、基板をボトムケー�
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
-  <p>次のセクションではめても緩い場合は、トラパ内部ネジ穴上部の土台に両面テープを貼って接着して下さい。</p>
+  <p>TPS43を取り付け枠にはめても緩い場合は、トラックパッド内部のネジ穴上部の土台に両面テープを貼って固定してください。</p>
 </div>
 
 ![TPS43を立てて裏面の向きとFPCの収まりを確認している状態]({{ '/nickey44a/custom/images/assembly/05-tps43-orientation.jpg' | relative_url }})
@@ -143,18 +138,12 @@ TPS43とトッププレートが外れないように支えながらケースを
 
 ![底面の固定用ネジを締めたトラックパッド用ケース]({{ '/nickey44a/custom/images/assembly/08-bottom-case-screw-secured.jpg' | relative_url }})
 
-### Firmware
+### 対応Firmwareの入手
 
-#### 対応Firmwareの入手
-
-[TPS43ブランチ](https://github.com/nixiy/zmk-config-nickey44a/tree/tps43) を参照し、ForkしてGithub ActionでFWをビルドして下さい。後日FWのuf.2をリポジトリに置いておきます
+[TPS43ブランチ](https://github.com/nixiy/zmk-config-nickey44a/tree/tps43)のリポジトリをForkし、GitHub ActionsでFirmwareをビルドしてください。ビルド済みUF2ファイルは後日リポジトリに追加予定です。
 
 <!-- TODO: 配布先、対応バージョン、左右それぞれのUF2ファイル名を記載 -->
 <!-- TODO: 自分でビルドする場合のリポジトリ、ブランチ、設定変更、ビルド対象を記載 -->
-
-#### Firmwareの書き込み
-
-UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/firmware/' | relative_url }})を参照してください。
 
 <!-- TODO: 左右への書き込み順序、settings_resetの要否、書き込み後の再接続手順を記載 -->
 
@@ -164,6 +153,8 @@ UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/
 
 <!-- Ver2 -->
 
+取り付け・配線と対応Firmwareの詳細は準備中です。
+
 ### 必要な部品・道具
 
 | 部品 | 型番 | 数量 | 入手先例 | 備考 |
@@ -172,32 +163,18 @@ UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/
 | トラックパッド用プレート | -| 2 | [BOOTH](https://booth.pm/ja/items/4785113) |調達できなければ3DP製のプレートを貼る |
 | 配線・コネクター | ピッチ変換FPC（6ピン） | 2 | [BOOTH](https://booth.pm/ja/items/8265223) | |
 | 電線ケーブル | 太さ30AWG | 1 | [Amazon](https://www.amazon.co.jp/dp/B0CRHVB4JK) |7色入ってるので色分けしやすい |
-| 対応ケース・プレート | 未記載 | 未記載 | boothからDLできるファイル名を記載 | |
+| 対応ケース・プレート | 未記載 | 未記載 | 準備中 | |
 
 <!-- TODO: Ver2以降の対応可否・必要なXIAO・制約を記載 -->
 
-### ケース・基板の準備
-
 <!-- TODO: 分解する箇所、加工や交換が必要な部品、作業前の状態を写真付きで記載 -->
-
-### 取り付け・配線
 
 <!-- TODO: 取り付け位置、固定方法、配線図、接続先のパッド・ピン名を写真付きで記載 -->
 
-### 組み付け前の確認
-
 <!-- TODO: 配線・固定・ケースとの干渉について確認する項目を記載 -->
-
-### Firmware
-
-#### 対応Firmwareの入手
 
 <!-- TODO: 配布先、対応バージョン、左右それぞれのUF2ファイル名を記載 -->
 <!-- TODO: 自分でビルドする場合のリポジトリ、ブランチ、設定変更、ビルド対象を記載 -->
-
-#### Firmwareの書き込み
-
-UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/firmware/' | relative_url }})を参照してください。このカスタム用のFirmwareと左右への書き込み手順は、ここへ追記します。
 
 <!-- TODO: 左右への書き込み順序、settings_resetの要否、書き込み後の再接続手順を記載 -->
 
@@ -207,14 +184,16 @@ UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/
 
 <script src="{{ '/assets/js/version-tabs.js' | relative_url }}" defer></script>
 
+## Firmwareの書き込み
+
+使用している基板バージョンに対応するFirmwareを、上のタブで入手してください。UF2を書き込む基本操作は、[Firmwareの書き込み方法]({{ '/guides/firmware/' | relative_url }})を参照してください。
+
 ## 動作確認・設定
 
 [ジェスチャの割り当て](https://github.com/nixiy/zmk-config-nickey44a/blob/tps43/docs/dual-tps43.md#%E3%82%B8%E3%82%A7%E3%82%B9%E3%83%81%E3%83%A3%E3%81%AE%E5%89%B2%E3%82%8A%E5%BD%93%E3%81%A6) を参考に基本的な操作が行なえます。
 
 <!-- TODO: キー入力とタッチ操作、クリック、スクロールの確認手順を記載 -->
 <!-- TODO: 感度、操作方向、クリック・スクロールの割り当てなど、対応する設定方法を記載 -->
-
-## トラブルシューティング
 
 <!-- TODO: デバイスが反応しない、操作方向が違うなどの症状と対処を記載 -->
 
