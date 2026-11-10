@@ -408,10 +408,6 @@ Nickey44A用のキーマップは、[`main` ブランチのキーマップ図](h
 
 標準Firmwareでは、[DYA Studio](https://studio.dya.cormoran.works/)に接続して、ブラウザ上からキーマップを変更することもできます。詳しい操作は、[DYA Studioでキーマップを編集する]({{ '/guides/dya-studio/' | relative_url }})を参照してください。
 
-## 🛠️ カスタム（拡張デバイス）
-
-Nickey44Aには、拡張でトラックパッドやトラックポイントを取り付けることができます。改造方法や対応Firmwareの書き込み方法は、[Nickey44A カスタム]({{ '/nickey44a/custom/' | relative_url }})にまとめています（記事準備中）。
-
 ## 🧯 トラブルシューティング
 
 USB接続、ブートローダー、無線接続に共通する基本的な対処は、[共通トラブルシューティング]({{ '/guides/troubleshooting/' | relative_url }})も確認してください。
@@ -463,5 +459,5 @@ Firmwareの変更後などに左右間の接続が復旧しない場合は、`se
 
 ### 🔗 関連リンク
 
-- 🛍️ **BOOTH:** [Nickey44A キット版](https://potamega.booth.pm/items/8744351)
-- 🛍️ **BOOTH:** [Nickey44A 完成品](https://potamega.booth.pm/items/8744204)
+- 🛍️ **BOOTH:** [Nickey44A-PAD キット版](https://potamega.booth.pm/items/8984294)
+- 🛍️ **BOOTH:** [Nickey44A-PAD 完成品](https://potamega.booth.pm/items/9020366)
