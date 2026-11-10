@@ -9,8 +9,6 @@ permalink: /nickey44a/custom/
 
 Nickey44Aは、拡張でトラックパッドやトラックポイントを取り付けることができます。このページから、各デバイスの改造方法や対応Firmwareの書き込み方法を確認できます。
 
-> 各記事は現在準備中です。対応部品・配線・Firmwareなどの詳細は順次追加します。
-
 ## カスタム記事
 
 - [トラックパッド]({{ '/nickey44a/custom/trackpad/' | relative_url }})：必要な部品、取り付け・配線、Firmwareの書き込み、動作確認

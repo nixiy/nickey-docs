@@ -19,7 +19,7 @@ Nickeyシリーズのビルド・セットアップガイドです。
 ## Nickey44A
 
 - [Nickey44A ビルドガイド]({{ '/nickey44a/' | relative_url }})
-- [Nickey44A-PAD ビルドガイド（準備中）]({{ '/nickey44a-pad/' | relative_url }})
+- [Nickey44A-PAD ビルドガイド]({{ '/nickey44a-pad/' | relative_url }})
 - [Nickey44A カスタム（トラックパッド・トラックポイント）]({{ '/nickey44a/custom/' | relative_url }})
 
 
