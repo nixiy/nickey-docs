@@ -2,18 +2,16 @@
 layout: default
 title: Nickey44A-PAD ビルドガイド
 description: Nickey44A-PADのビルドガイド（Nickey44Aビルドガイドを複製した編集用の初期版）
-image: /assets/images/nickey44a-hero.jpg
+image: /assets/images/nickey44a-pad-hero.jpg
 ---
 
 # Nickey44A-PAD ビルドガイド
-
-> **準備中:** このページはNickey44Aビルドガイドを複製した初期版です。本文・部品表・画像・Firmware情報は複製元の内容で、Nickey44A-PAD固有の手順や対応条件は未反映です。
 
 ![Nickey44A ロゴ]({{ '/assets/images/nickey44a-logo.png' | relative_url }}){: .nickey44a-logo width="480" }
 
 このページでは、単4電池で動作する完全ワイヤレス分割キーボード「Nickey44A」の組み立てから、Firmwareの書き込み、無線接続のペアリング、動作確認までを説明します。
 
-![Nickey44A分割キーボード]({{ '/assets/images/nickey44a-hero.jpg' | relative_url }})
+![左右にトラックパッドを備えた黒いNickey44A-PAD分割キーボード]({{ '/assets/images/nickey44a-pad-hero.jpg' | relative_url }})
 
 > Nickey44AはNickey44と多くの工程が共通ですが、電源・電池端子・ケースの組み立て方法は異なります。このページの手順に従ってください。
 
@@ -51,40 +49,38 @@ Nickey44Aの主な特徴は次のとおりです。
 
 ## 🧩 部品一覧
 
-![部品一覧](../nickey44a-pad/images/parts-layout.jpg)
+![部品一覧]({{ '/nickey44a-pad/images/parts-layout.jpg' | relative_url }}?v=d3e64e90)
 
 
 組み立てる前に、部品の種類と数量を確認してください。
 
 | 部品 | 数量 | キット付属 | 備考 |
 | --- | ---: | :---: | --- |
-| Nickey44A PCB（左・右） | 各1 | ✅ | |
-| M2 ネジ 5 mm | 10 | ✅ | ケース固定に使用 |
-| Choc v2 ホットスワップソケット | 44 | ✅ | **Ver2以降の基板ではPCBA(はんだ付け)済み** |
+| Nickey44A PCB（左・右） | 各1 | ✅ | ※1 |
+| M2 ネジ 5 mm | 12 | ✅ | |
 | 単4電池用マイナス端子 | 2 | ✅ | |
 | 単4電池用プラス端子 | 2 | ✅ | |
-| 6*3mm マグネット | 10 | ✅ | **ボトムケースに装着して出荷** |
-| Seeed Studio XIAO nRF52840 / nRF52840 Plus | 2 | ❌ | **Ver2以降の基板ではPlusを推奨** |
-| 17 mmピッチ対応キーキャップ | 44 | ❌ | |
-| Choc v2キースイッチ | 44 | ❌ | |
+| 6*3mm マグネット | 10 | ✅ | |
 | ボトムケース | 各1 | ✅ | |
 | トッププレート | 各1 | ✅ | |
-| 電池カバー | 各1 | ✅ | 8001 Resin・MJFケースにはPLA製電池カバーを追加付属 |
+| 電池カバー | 各1 | ✅ | |
 | 電源スイッチカバー | 各1 | ✅ | |
+| FFCケーブル | 2 | ✅️ | |
+| TPS43  | 2 | ✅️ | |
+| TPS43オーバーレイ | 2 | ✅️ | |
+| TPS43変換基板 | 2 | ✅️ | |
+| Seeed Studio XIAO nRF52840 Plus | 2 | ❌ | plusである点に注意 |
+| 17 mmピッチ対応キーキャップ | 44 | ❌ | |
+| Choc v2キースイッチ | 44 | ❌ | |
+| 単4電池 | 2 | ❌ | お好きなもの |
 
-<div class="callout callout-important" role="note" aria-label="重要">
-  <p class="callout-title">ⓘ 重要</p>
-  <p>Ver2以降の基板では、Seeed Studio XIAO nRF52840 Plusを推奨します。無印のSeeed Studio XIAO nRF52840でも通常のNickey44Aとして利用できますが、将来的な追加操作デバイスへの対応はサポート対象外となります。</p>
-  <p>Ver2より前の基板ではPlusは使用できません。無印のSeeed Studio XIAO nRF52840を用意してください。</p>
-</div>
+※1 chocv2ソケット, 昇圧IC、電源スライドスイッチ、ダイオードをはんだ済みです
 
 ### 別途必要な部品（必須）
 
-- Seeed Studio XIAO nRF52840 Plus × 2（**Ver2以降の基板で推奨**。無印も通常のNickey44Aとして利用可能）
-  - [無印のSeeed Studio XIAO nRF52840](https://shop.beekeeb.jp/products/seeed-studio-xiao-nrf52840-xiao-ble)（Ver2より前の基板はこちらを使用）
+- Seeed Studio XIAO nRF52840 Plus × 2
 - [Choc v2キースイッチ](https://shop.beekeeb.jp/collections/choc-v2-%E3%82%AD%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81) × 44
 - [Choc v2／MXステム対応・狭ピッチキーキャップ](https://shop.beekeeb.jp/collections/%E3%82%AD%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97-mx-%E3%83%AD%E3%83%BC%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E7%8B%AD%E3%81%84%E3%83%94%E3%83%83%E3%83%81) × 44
-- 単4電池 × 2
 
 ### キット付属品の入手先（紛失・破損・個別調達用）
 
@@ -119,6 +115,7 @@ Nickey44Aの主な特徴は次のとおりです。
 - **保護メガネ**：ニッパーを使う際に、飛散する部品から目を守ります。
 - **ケース底面用の滑り止め**：ケース底面の滑り止めとして[GRIPLUS（グリップラス）](https://amzn.to/4ywBbAg)がおすすめです。
 
+<!-- ######################################################## -->
 ## キッティング済みケースの分解
 
 内容物忘れ、PCBの湾曲、傷保護のため以下パーツを組み立てて発送しています。
@@ -147,13 +144,19 @@ Nickey44Aの主な特徴は次のとおりです。
 
    ![PCBからボトムケースを外す](images/case-disassembly/02-remove-bottom-case.jpg)
 
+<!-- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ -->
 ## 🔥 はんだ付け
 
 ### Seeed Studio XIAOの取り付け
 
-基板のバージョンをタブで選んで、対応するXIAOとはんだ付け手順を確認してください。
+<div id="xiao-soldering" markdown="1">
 
-{% capture xiao_soldering_steps %}
+<span id="xiao-ver2"></span>
+
+出荷する基板はすべてVer2です。**XIAO nRF52840 Plusを推奨**します。
+
+無印でも通常のNickey44Aとして利用できます。ただし、無印での将来的な追加操作デバイスへの対応はサポート対象外となります。
+
 以下の写真は無印のXIAO nRF52840を使用した例です。
 
 XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
@@ -168,51 +171,11 @@ XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子と
 
 ![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a-pad/images/xiao/04-xiao-aligned-on-pcb.jpg)
 
-
-<div class="callout callout-important" role="note" aria-label="重要">
-  <p class="callout-title">ⓘ 重要</p>
-  <p>裏側のスルーホールは開発者向けオプションです。通常ははんだ付け不要です。</p>
-</div>
-
-
-![alt text](images/xiao/05-xiao-solder-pads.jpg)
-
 端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
 
-{% endcapture %}
-
-<div class="version-tabs" id="xiao-soldering" data-version-tabs>
-  <div class="version-tabs__list" aria-label="XIAOを取り付ける基板のバージョン" hidden>
-    <button type="button" id="xiao-tab-ver1" data-version-tab aria-controls="xiao-ver1">Ver1</button>
-    <button type="button" id="xiao-tab-ver2" data-version-tab aria-controls="xiao-ver2">Ver2以降</button>
-  </div>
-
-<div class="version-tabs__panel" id="xiao-ver1" data-version-panel markdown="1">
-
-#### Ver1：XIAO nRF52840（無印）の取り付け
-
-Ver1の基板には**無印のXIAO nRF52840**を使用します。Plusは使用できません。
-
-{{ xiao_soldering_steps }}
-
 </div>
 
-<div class="version-tabs__panel" id="xiao-ver2" data-version-panel markdown="1">
-
-#### Ver2以降：XIAO nRF52840 Plusの取り付け
-
-Ver2以降の基板には**XIAO nRF52840 Plusを推奨**します。
-
-無印でも通常のNickey44Aとして利用できます。ただし、無印での将来的な追加操作デバイスへの対応はサポート対象外となります。
-
-{{ xiao_soldering_steps }}
-
-</div>
-
-</div>
-
-<script src="{{ '/assets/js/version-tabs.js' | relative_url }}" defer></script>
-
+<!-- ✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️ -->
 ### 単4電池端子の取り付け
 
 単4電池用の端子をPCBへはんだ付けします。マイナス側には[単4電池用マイナス端子（MonotaRO）](https://www.monotaro.com/p/8835/2521/)、プラス側には[単4電池用プラス端子（MonotaRO）](https://www.monotaro.com/p/8835/2512/)を使用します。
@@ -270,73 +233,13 @@ Ver2以降の基板には**XIAO nRF52840 Plusを推奨**します。
 
 <!-- TODO: 単4電池端子取り付け完了後のPCB全体写真を追加 -->
 
-### Choc v2ソケットの取り付け
-
-<div class="callout callout-important" role="note" aria-label="Ver2以降の基板について">
-  <p class="callout-title">ⓘ Ver2以降の基板について</p>
-  <p>Ver2以降の基板では、Choc v2ソケットはPCBA済み（実装済み）です。この取り付け・はんだ付け工程はスキップして、<a href="#-zmk-firmware">ZMK Firmware</a>へ進んでください。</p>
-</div>
-
-以下の手順は、ソケットが未実装の**Ver1の基板**向けです。
-
-Choc v2ソケットは**PCBの裏側**へ取り付けます。
-
-ソケットには向きがあります。スイッチ中央の軸が入る側を、PCBの八角形のシルクに合わせてください。向きを誤るとキースイッチを取り付けられません。
-
-<div class="callout callout-important" role="note" aria-label="重要">
-  <p class="callout-title">ⓘ 重要</p>
-  <p>一部のソケットは周囲のスペースの都合で向きが回転しています。はんだ付けしやすくするため、必ず次の写真の順で取り付けてください。</p>
-</div>
-
-1. 先に、通常の向きのソケットを取り付けます。
-
-   ![通常の向きのChoc v2ソケット](../nickey44a-pad/images/chocv2/03-socket-orientation.jpg)
-
-2. 次に、回転した向きのソケットを取り付けます。
-
-   ![回転した向きのChoc v2ソケットを位置合わせする](../nickey44a-pad/images/chocv2/02-socket-positioning.jpg)
-
-3. すべてのソケットがPCBのシルクに沿って配置されていることを確認します。
-
-   ![すべてのChoc v2ソケットを取り付けたPCB裏面](../nickey44a-pad/images/chocv2/01-socket-orientation-on-pcb.jpg)
-
-各ソケットは、次の手順ではんだ付けします。
-
-1. PCBの片側のパッドへ、少量の予備はんだをします。
-
-   ![片側のパッドに予備はんだを盛る](images/chocv2/04-pre-tinned-pad.jpg)
-
-2. Choc v2ソケットを、PCBのシルクと向きを確認した正しい位置に置きます。
-
-   ![PCB上の正しい位置にChoc v2ソケットを置く](images/chocv2/05-socket-positioned.jpg)
-
-3. ピンセットなどでソケットをPCBへ押さえながら、予備はんだを再加熱します。
-
-   ![予備はんだを再加熱し、ソケットをPCBへ押さえる](images/chocv2/06-reheat-while-pressing.jpg)
-
-4. ソケットがPCBへ密着した状態で固定されていることを確認します。
-
-5. 反対側の端子をはんだ付けします。
-
-   ![両側の端子をはんだ付けしたChoc v2ソケット](images/chocv2/07-socket-soldered.jpg)
-
-6. ソケットが浮いていないこと、端子間にはんだブリッジがないことを確認します。完成。
-
-   ![すべてのChoc v2ソケットをはんだ付けしたPCB裏面](images/chocv2/08-sockets-soldered-overview.jpg)
-
-ソケットの向きについては、[「Kailh Choc ソケットの方向について」](https://scrapbox.io/self-made-kbds-ja/Kailh_Choc_%E3%82%BD%E3%82%B1%E3%83%83%E3%83%88%E3%81%AE%E6%96%B9%E5%90%91%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)も参考にしてください。
-
+<!-- ✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️ -->
 ## 💾 ZMK Firmware
 
-設定ファイルとキーマップは、[nixiy/zmk-config-nickey44a の `main` ブランチ](https://github.com/nixiy/zmk-config-nickey44a/tree/main)にあります。
+設定ファイルとキーマップは、[nixiy/zmk-config-nickey44a-pad の `main` ブランチ](https://github.com/nixiy/zmk-config-nickey44a-pad/tree/main)にあります。
 
-- 右側: セントラル。PCやスマートフォンと直接通信します。
-- 左側: ペリフェラル。右側を経由して通信します。
-
-標準Firmwareは、[nixiy/zmk-config-nickey44a の `firmware` ディレクトリ](https://github.com/nixiy/zmk-config-nickey44a/tree/main/firmware)からダウンロードできます。左右には、**同じビルドから生成された対応するFirmware**を書き込んでください。
-
-- 左側: `nickey44a_l.uf2`
-- 右側: `nickey44a_r.uf2`
+- 右側: `nickey44a_r.uf2` セントラル。PCやスマートフォンと直接通信します。
+- 左側: `nickey44a_l.uf2` ペリフェラル。右側を経由して通信します。 
 - 設定リセット: `settings_reset.uf2`（左右接続やペアリングの接続情報をリセットするときに使用）
 
 ### DYA Studioを利用する場合
