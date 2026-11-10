@@ -153,23 +153,15 @@ Nickey44Aの主な特徴は次のとおりです。
 
 <span id="xiao-ver2"></span>
 
-出荷する基板はすべてVer2です。**XIAO nRF52840 Plusを推奨**します。
-
-無印でも通常のNickey44Aとして利用できます。ただし、無印での将来的な追加操作デバイスへの対応はサポート対象外となります。
-
-以下の写真は無印のXIAO nRF52840を使用した例です。
-
-XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
-
-![XIAO nRF52840のはんだ付け箇所を赤点で示したPCB](../nickey44a-pad/images/xiao/01-xiao-solder-points.jpg)
+XIAOは**PCBの表側**へ取り付けます。
 
 位置決めには7ピンヘッダーを利用できます。ヘッダーは治具として使うだけなので、**ヘッダー自体ははんだ付けしません。**
 
-![PCB、XIAO nRF52840、位置決め用7ピンヘッダー](../nickey44a-pad/images/xiao/02-xiao-alignment-header.jpg)
-
 7ピンヘッダーを差し込んでXIAOの位置を合わせ、反対側の端子を数か所はんだ付けします。位置が固定できたらヘッダーを外し、残りの端子をはんだ付けしてください。
 
-![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a-pad/images/xiao/04-xiao-aligned-on-pcb.jpg)
+![PCBにはんだ付けしたXIAOの端子の拡大写真]({{ '/nickey44a-pad/images/xiao/xiao-soldered.jpg' | relative_url }})
+
+![反対側から見たXIAOのはんだ付け端子の拡大写真]({{ '/nickey44a-pad/images/xiao/xiao-soldered-opposite-side.jpg' | relative_url }})
 
 端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
 
