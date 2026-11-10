@@ -404,41 +404,21 @@ Choc v2ソケットは**PCBの裏側**へ取り付けます。
 
 ### Seeed Studio XIAOの取り付け
 
-基板のバージョンをタブで選んで、対応するXIAOとはんだ付け手順を確認してください。
-
-{% capture xiao_soldering_steps %}
-以下の写真は無印のXIAO nRF52840を使用した例です。
-
-XIAOは**PCBの表側**へ取り付けます。マイコンの金色の端子とPCBのパッドを、左右7か所ずつ合計14か所ではんだ付けします。
-
-![XIAO nRF52840のはんだ付け箇所を赤点で示したPCB](../nickey44a/images/xiao/01-xiao-solder-points.jpg)
-
-位置決めには7ピンヘッダーを利用できます。ヘッダーは治具として使うだけなので、**ヘッダー自体ははんだ付けしません。**
-
-![PCB、XIAO nRF52840、位置決め用7ピンヘッダー](../nickey44a/images/xiao/02-xiao-alignment-header.jpg)
-
-7ピンヘッダーを差し込んでXIAOの位置を合わせ、反対側の端子を数か所はんだ付けします。位置が固定できたらヘッダーを外し、残りの端子をはんだ付けしてください。
-
-![7ピンヘッダーでPCB上に位置決めしたXIAO nRF52840](../nickey44a/images/xiao/04-xiao-aligned-on-pcb.jpg)
-
-
-<div class="callout callout-important" role="note" aria-label="重要">
-  <p class="callout-title">ⓘ 重要</p>
-  <p>裏側のスルーホールは開発者向けオプションです。通常ははんだ付け不要です。</p>
-</div>
-
-
-![alt text](images/xiao/05-xiao-solder-pads.jpg)
-
-端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
-
-{% endcapture %}
-
 <div id="xiao-soldering-ver2" markdown="1">
 
 #### XIAO nRF52840 Plusの取り付け
 
-{{ xiao_soldering_steps }}
+XIAOは**PCBの表側**へ取り付けます。
+
+位置決めには7ピンヘッダーを利用できます。ヘッダーは治具として使うだけなので、**ヘッダー自体ははんだ付けしません。**
+
+7ピンヘッダーを差し込んでXIAOの位置を合わせ、反対側の端子を数か所はんだ付けします。位置が固定できたらヘッダーを外し、残りの端子をはんだ付けしてください。
+
+![PCBにはんだ付けしたXIAOの端子の拡大写真]({{ '/nickey44a-pad/images/xiao/xiao-soldered.jpg' | relative_url }})
+
+![反対側から見たXIAOのはんだ付け端子の拡大写真]({{ '/nickey44a-pad/images/xiao/xiao-soldered-opposite-side.jpg' | relative_url }})
+
+端子間をはんだでつなぐ「ブリッジ」や、はんだ不足がないことを十分に確認してください。
 
 </div>
 
