@@ -15,6 +15,8 @@ image: /assets/images/nickey44a-pad-hero.jpg
 
 > Nickey44AはNickey44と多くの工程が共通ですが、電源・電池端子・ケースの組み立て方法は異なります。このページの手順に従ってください。
 
+> ほぼ変わらない工程についてはNickey44Aの画像を利用する場合がございます。
+
 <nav class="toc-panel" data-toc aria-label="ページ内目次">
   <p class="toc-title">目次</p>
   <ol class="toc-list" data-toc-list></ol>
@@ -303,30 +305,30 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 
    電源スイッチカバーの突起をボトムケース側面の穴へ合わせ、内側から押し込みます。ケース側面からスムーズに動かせることを確認してください。
 
-   ![ボトムケースに取り付けた電源スイッチカバー](images/assembly/04-power-switch-cover-installed.jpg)
+   ![ボトムケース内側の電源スイッチカバーと取り付け位置]({{ '/nickey44a-pad/images/assembly/power-switch-cover-positioned.jpg' | relative_url }})
+
+   ![ボトムケース側面の穴に収めた電源スイッチカバー]({{ '/nickey44a-pad/images/assembly/power-switch-cover-seated.jpg' | relative_url }})
 
 2. XIAO側からPCBをボトムケースに差し込み、ケースの縁に沿わせます。この時、電源カバーは下にスライドさせておき、PCB側の電源スイッチも下になっている事を確認してから差し込みます。
 
-   ![XIAO側からケースに差し込んだPCB](../nickey44a-pad/images/assembly/01-pcb-position-xiao-side.jpg)
+   ![XIAO側からケースに差し込んだPCB]({{ '/nickey44a-pad/images/assembly/pcb-positioned-xiao-side.jpg' | relative_url }})
 
 3. PCBを少し持ち上げながら、電源スイッチのピンをケースの穴にまっすぐ合わせます。
 
-   ![電源スイッチのピンをケースの穴に合わせる](../nickey44a-pad/images/assembly/02-pcb-align-power-switch.jpg)
+   ![電源スイッチのピンをケースの穴に合わせる]({{ '/nickey44a-pad/images/assembly/pcb-aligning-power-switch.jpg' | relative_url }})
 
 4. 電源スイッチのピンが穴に入った状態を保ち、PCB全体を水平に押し込んでケースに収めます。
 
-   ![ケースに収まったPCB](../nickey44a-pad/images/assembly/03-pcb-seated-in-case.jpg)
+   ![ケースに収まったPCB]({{ '/nickey44a-pad/images/assembly/pcb-seated-in-bottom-case.jpg' | relative_url }})
 
-5. ボトムケースへ収めたPCBの上にトッププレートを重ねます。
-6. ボトムケース側のねじ切りを利用して、M2 × 5 mmネジで固定します。ネジを締めすぎてケースやPCBを傷めないようにしてください。
+その後、トッププレートを重ねて表面5箇所、トラパ裏面1箇所をネジ止めします。
 
-   ![トッププレートを重ねてネジで固定したケース](images/assembly/05-top-plate-secured.jpg)
+## トラックパッドの装着
 
-7. Choc v2スイッチの金属ピンが曲がっていないことを確認し、トッププレートとPCBへまっすぐ差し込みます。強い抵抗を感じる場合は無理に押し込まず、ピンの曲がりや位置を確認してください。
+![ケースに収めたPCBとFFCケーブルで接続されたトラックパッド]({{ '/nickey44a-pad/images/tps43/trackpad-case-assembly.jpg' | relative_url }})
+![トラックパッドの片側を取り付け枠にはめ、反対側を浮かせた状態]({{ '/nickey44a-pad/images/tps43/trackpad-partially-seated.jpg' | relative_url }})
 
-8. キーキャップをキースイッチへまっすぐ取り付けます。
-
-   ![キーキャップを取り付けたキーボード](images/assembly/06-keycaps-installed.jpg)
+![取り付け枠に収まったトラックパッド]({{ '/nickey44a-pad/images/tps43/trackpad-seated.jpg' | relative_url }})
 
 ## 🔋 単4電池の装着
 
