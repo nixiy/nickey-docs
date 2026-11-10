@@ -168,6 +168,12 @@ XIAOは**PCBの表側**へ取り付けます。
 </div>
 
 <!-- ✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️ -->
+### TPS43拡張基板の取り付け
+
+![PCBに取り付けたTPS43拡張基板とはんだ付け箇所]({{ '/nickey44a-pad/images/tps43/adapter-board-installed.jpg' | relative_url }})
+
+基板側の6pinに画像の向きでTPS43拡張基板をはんだ付けします。
+
 ### 単4電池端子の取り付け
 
 単4電池用の端子をPCBへはんだ付けします。マイナス側には[単4電池用マイナス端子（MonotaRO）](https://www.monotaro.com/p/8835/2521/)、プラス側には[単4電池用プラス端子（MonotaRO）](https://www.monotaro.com/p/8835/2512/)を使用します。
@@ -226,6 +232,16 @@ XIAOは**PCBの表側**へ取り付けます。
 <!-- TODO: 単4電池端子取り付け完了後のPCB全体写真を追加 -->
 
 <!-- ✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️ -->
+## トラックパッドの取り付け
+
+![FFCケーブルでTPS43拡張基板と接続したトラックパッド]({{ '/nickey44a-pad/images/tps43/trackpad-connected.jpg' | relative_url }})
+
+画像の位置関係でケーブルとトラックパッドを接続します。端子の裏表を間違えるとショートするので気をつけて下さい。
+
+![PCB上に置いたトラックパッドのタッチ面]({{ '/nickey44a-pad/images/tps43/trackpad-touch-surface.jpg' | relative_url }})
+
+ケースへ、トラックパッドの切り欠きが右側に来る向きに装着します。
+
 ## 💾 ZMK Firmware
 
 設定ファイルとキーマップは、[nixiy/zmk-config-nickey44a-pad の `main` ブランチ](https://github.com/nixiy/zmk-config-nickey44a-pad/tree/main)にあります。
@@ -359,18 +375,6 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
    ![開いた状態の電池カバー](images/battery/05-battery-cover-open.jpg)
    ![電池カバーを取り付ける向き](images/battery/04-battery-cover-alignment.jpg)
    ![取り付け完了した電池カバー](images/battery/06-battery-cover-installed.jpg)
-
-<div class="callout callout-important" role="note" aria-label="電池カバーについて">
-  <p class="callout-title">ⓘ 電池カバーについて</p>
-  <p>8001 ResinおよびMJF製ケースでは、素材の剛性や特性の違いにより、電池カバーのフィット感が想定と異なる場合があります。</p>
-  <p>そのため、以下のPLA製電池カバーを追加で付属しています。</p>
-  <ul>
-    <li>8001 Resin：白色のPLA製電池カバー</li>
-    <li>MJF：黒色のPLA製電池カバー</li>
-  </ul>
-  <p>ケースと同じ素材の電池カバー、または付属のPLA製電池カバーのうち、フィット感の好みや使用状況に合わせてお好きな方をご使用ください。</p>
-</div>
-
 6. 電源スイッチをONにして動作を確認します。
 
 <!-- TODO: 電池カバー装着後の完成状態の写真を追加 -->
