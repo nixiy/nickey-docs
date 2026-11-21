@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Nickey44A-PAD ビルドガイド
-description: Nickey44A-PADのビルドガイド（Nickey44Aビルドガイドを複製した編集用の初期版）
+description: Nickey44A-PADの組み立て、TPS43トラックパッドの取り付け、Firmwareの書き込みと動作確認
 image: /assets/images/nickey44a-pad-hero.jpg
 ---
 
@@ -9,11 +9,11 @@ image: /assets/images/nickey44a-pad-hero.jpg
 
 ![Nickey44A ロゴ]({{ '/assets/images/nickey44a-logo.png' | relative_url }}){: .nickey44a-logo width="480" }
 
-このページでは、単4電池で動作する完全ワイヤレス分割キーボード「Nickey44A」の組み立てから、Firmwareの書き込み、無線接続のペアリング、動作確認までを説明します。
+このページでは、単4電池で動作する完全ワイヤレス分割キーボード「Nickey44A-PAD」の組み立てから、TPS43変換基板とトラックパッドの取り付け、Firmwareの書き込み、無線接続のペアリング、動作確認までを説明します。
 
 ![左右にトラックパッドを備えた黒いNickey44A-PAD分割キーボード]({{ '/assets/images/nickey44a-pad-hero.jpg' | relative_url }})
 
-> Nickey44AはNickey44と多くの工程が共通ですが、電源・電池端子・ケースの組み立て方法は異なります。このページの手順に従ってください。
+> Nickey44A-PADはNickey44Aと多くの工程が共通ですが、トラックパッドの取り付けとFirmwareが異なります。このページの手順に従ってください。
 
 > ほぼ変わらない工程についてはNickey44Aの画像を利用する場合がございます。
 
@@ -29,12 +29,15 @@ image: /assets/images/nickey44a-pad-hero.jpg
 
 <script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
 
-## ⌨️ Nickey44Aについて
+<span id="️-nickey44aについて"></span>
 
-Nickey44Aの主な特徴は次のとおりです。
+## ⌨️ Nickey44A-PADについて
+
+Nickey44A-PADの主な特徴は次のとおりです。
 
 - 無線接続対応
-- 44キーのオーソリニア配列
+- 42キーのオーソリニア配列
+- 左右にTPS43トラックパッドを搭載
 - Choc v2対応のロープロファイル設計
 - 17 mmの狭ピッチ
 - ZMK Firmware
@@ -43,11 +46,13 @@ Nickey44Aの主な特徴は次のとおりです。
 組み立ては、おおむね次の順番で進めます。
 
 1. 部品を確認する
-2. XIAO、単4電池端子、Choc v2ソケットをはんだ付けする
-3. ケースを閉じる前にFirmwareを書き込み、動作を確認する
-4. マグネットを取り付け、PCBをケースへ組み込む
-5. 単4電池と電池カバーを装着する
-6. 無線接続とキー入力を確認する
+2. 組み立て済みで届いたケースを分解する
+3. TPS43変換基板、XIAO、単4電池端子をはんだ付けする（Choc v2ソケットは実装済み）
+4. TPS43にオーバーレイを貼り、FFCケーブルで接続する
+5. ケースを閉じる前にFirmwareを書き込み、キーとトラックパッドの動作を確認する
+6. マグネットを取り付け、PCBとトラックパッドをケースへ組み込む
+7. 単4電池と電池カバーを装着する
+8. 無線接続、キー入力とトラックパッドの動作を確認する
 
 ## 🧩 部品一覧
 
@@ -72,8 +77,8 @@ Nickey44Aの主な特徴は次のとおりです。
 | TPS43オーバーレイ | 2 | ✅️ | |
 | TPS43変換基板 | 2 | ✅️ | |
 | Seeed Studio XIAO nRF52840 Plus | 2 | ❌ | plusである点に注意 |
-| 17 mmピッチ対応キーキャップ | 44 | ❌ | |
-| Choc v2キースイッチ | 44 | ❌ | |
+| 17 mmピッチ対応キーキャップ | 42 | ❌ | |
+| Choc v2キースイッチ | 42 | ❌ | |
 | 単4電池 | 2 | ❌ | お好きなもの |
 
 ※1 chocv2ソケット, 昇圧IC、電源スライドスイッチ、ダイオードをはんだ済みです
@@ -81,8 +86,8 @@ Nickey44Aの主な特徴は次のとおりです。
 ### 別途必要な部品（必須）
 
 - Seeed Studio XIAO nRF52840 Plus × 2
-- [Choc v2キースイッチ](https://shop.beekeeb.jp/collections/choc-v2-%E3%82%AD%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81) × 44
-- [Choc v2／MXステム対応・狭ピッチキーキャップ](https://shop.beekeeb.jp/collections/%E3%82%AD%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97-mx-%E3%83%AD%E3%83%BC%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E7%8B%AD%E3%81%84%E3%83%94%E3%83%83%E3%83%81) × 44
+- [Choc v2キースイッチ](https://shop.beekeeb.jp/collections/choc-v2-%E3%82%AD%E3%83%BC%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81) × 42
+- [Choc v2／MXステム対応・狭ピッチキーキャップ](https://shop.beekeeb.jp/collections/%E3%82%AD%E3%83%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%83%97-mx-%E3%83%AD%E3%83%BC%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB-%E7%8B%AD%E3%81%84%E3%83%94%E3%83%83%E3%83%81) × 42
 
 ### キット付属品の入手先（紛失・破損・個別調達用）
 
@@ -117,8 +122,33 @@ Nickey44Aの主な特徴は次のとおりです。
 - **保護メガネ**：ニッパーを使う際に、飛散する部品から目を守ります。
 - **ケース底面用の滑り止め**：ケース底面の滑り止めとして[GRIPLUS（グリップラス）](https://amzn.to/4ywBbAg)がおすすめです。
 
+## キッティング済みケースの分解
+
+ケースが組み立て済みで届いた場合は、はんだ付けを始める前に分解してください。電源スイッチをOFFにし、USBケーブルと電池は外しておきます。
+
+1. トッププレートを固定しているネジを外します。トラックパッド取り付け部の裏側にも固定ネジがある場合は外してください。ネジが残ったまま、無理に引き離さないでください。
+2. トッププレートを取り外します。
+
+   ![トッププレートを外したボトムケース](images/case-disassembly/03-bottom-case-inside.jpg)
+
+3. PCBを支えながらケースを裏返します。
+
+   ![裏返したボトムケース](images/case-disassembly/04-bottom-case-outside.jpg)
+
+4. 電源スイッチの反対側からPCBを持ち上げ、スイッチのピンに力が掛からないようにボトムケースから取り外します。
+
+   ![電源スイッチのピンに注意してPCBとボトムケースを分離する](images/case-disassembly/02-remove-bottom-case.jpg)
+
 <!-- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ -->
 ## 🔥 はんだ付け
+
+### TPS43拡張基板の取り付け
+
+XIAOを取り付ける前にTPS43拡張基板をはんだ付けすると、こて先を当てる場所を確保しやすくなります。
+
+![PCBに取り付けたTPS43拡張基板とはんだ付け箇所]({{ '/nickey44a-pad/images/tps43/adapter-board-installed.jpg' | relative_url }})
+
+基板側の6pinに画像の向きでTPS43拡張基板をはんだ付けします。
 
 ### Seeed Studio XIAOの取り付け
 
@@ -141,12 +171,6 @@ XIAOは**PCBの表側**へ取り付けます。
 </div>
 
 <!-- ✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️ -->
-### TPS43拡張基板の取り付け
-
-![PCBに取り付けたTPS43拡張基板とはんだ付け箇所]({{ '/nickey44a-pad/images/tps43/adapter-board-installed.jpg' | relative_url }})
-
-基板側の6pinに画像の向きでTPS43拡張基板をはんだ付けします。
-
 ### 単4電池端子の取り付け
 
 単4電池用の端子をPCBへはんだ付けします。マイナス側には[単4電池用マイナス端子（MonotaRO）](https://www.monotaro.com/p/8835/2521/)、プラス側には[単4電池用プラス端子（MonotaRO）](https://www.monotaro.com/p/8835/2512/)を使用します。
@@ -168,7 +192,7 @@ XIAOは**PCBの表側**へ取り付けます。
    ![PCBに差し込んだプラス端子](images/aaa-terminal/03-plus-terminal-inserted.jpg)
    ![PCBに差し込んだマイナス端子](images/aaa-terminal/04-minus-terminal-inserted.jpg)
 
-4. PCB表側へ出たピンをペンチで軽く折り曲げ、端子を仮固定します。このときも端子が浮いたり傾いたりしていないことを確認します。
+4. PCB表側へ出たピンをペンチで折り曲げ、端子を仮固定します。このときも端子が浮いたり傾いたりしていないことを確認します。ピンが硬く曲げにくい場合は、PCBをたわませるほどの力を掛けず、いったん手を止めてペンチのつかむ位置を確認してください。
 
    ![プラス端子のピンを折り曲げて仮固定した状態](images/aaa-terminal/05-plus-terminal-pins-bent.jpg)
    ![マイナス端子のピンを折り曲げて仮固定した状態](images/aaa-terminal/06-minus-terminal-pins-bent.jpg)
@@ -207,6 +231,16 @@ XIAOは**PCBの表側**へ取り付けます。
 <!-- ✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️✅️ -->
 ## トラックパッドの取り付け
 
+### オーバーレイを貼る
+
+FFCケーブルを接続する前に、TPS43のタッチ面へオーバーレイを貼ります。
+
+オーバーレイには両面に保護フィルムがあります。白いフィルム側が表、気泡の見える透明なフィルム側が貼り付け面です。透明なフィルムをピンセットなどで端からはがし、タッチ面と位置を合わせて貼り付けてください。表側の保護フィルムも使用前にはがします。
+
+### FFCケーブルを接続する
+
+**TPS43本体側と変換基板側では、コネクタのロックの開け方が異なります。** TPS43本体側は、黒いロック部分を基板と平行に横へ引き出すスライド式です。黒い部分を上に起こさないでください。変換基板側は、ロックを上に起こす式です。ケーブルの着脱前に、それぞれのロックを開けてください。
+
 ![FFCケーブルでTPS43拡張基板と接続したトラックパッド]({{ '/nickey44a-pad/images/tps43/trackpad-connected.jpg' | relative_url }})
 
 画像の位置関係でケーブルとトラックパッドを接続します。端子の裏表を間違えるとショートするので気をつけて下さい。
@@ -219,19 +253,23 @@ XIAOは**PCBの表側**へ取り付けます。
 
 設定ファイルとキーマップは、[nixiy/zmk-config-nickey44a-pad の `main` ブランチ](https://github.com/nixiy/zmk-config-nickey44a-pad/tree/main)にあります。
 
+Firmwareは、PAD用リポジトリの[GitHub Actions](https://github.com/nixiy/zmk-config-nickey44a-pad/actions)で、対象の`main`ブランチのコミットに対応する成功したビルドを開き、Artifactsの`firmware`をダウンロードして展開してください。入手できない場合は、同リポジトリをForkしてビルドします。詳しくは[キーマップの変更方法の手順4・5]({{ '/guides/keymap/' | relative_url }})を参照してください。
+
+`firmware/v1.0.0/`の配布済みUF2はTPS43対応を確認できていないため、このガイドではActionsのビルドを使用します。無印Nickey44A用のFirmwareとファイル名が共通なので、**ファイル名だけで判断せず、PAD用リポジトリのビルドであることを確認してください。**
+
 - 右側: `nickey44a_r.uf2` セントラル。PCやスマートフォンと直接通信します。
 - 左側: `nickey44a_l.uf2` ペリフェラル。右側を経由して通信します。 
 - 設定リセット: `settings_reset.uf2`（左右接続やペアリングの接続情報をリセットするときに使用）
 
 ### DYA Studioを利用する場合
 
-Nickey44A用リポジトリの設定と対応状況を確認してから利用してください。[DYA Studioの使い方]({{ '/guides/dya-studio/' | relative_url }})も参照できます。
+Nickey44A-PAD用リポジトリの設定と対応状況を確認してから利用してください。[DYA Studioの使い方]({{ '/guides/dya-studio/' | relative_url }})も参照できます。
 
 ### ⬇️ Firmwareの書き込み
 
 左右を1台ずつ、データ通信対応のUSB Type-CケーブルでPCへ接続して作業します。
 
-1. 左右それぞれのSeeed Studio XIAO nRF52840をUSBでPCへ接続します。
+1. 左右それぞれのSeeed Studio XIAO nRF52840 PlusをUSBでPCへ接続します。
 2. XIAOのリセットボタンを素早く2回押して、ブートローダードライブを表示します。
 3. 左側には `nickey44a_l.uf2`、右側には `nickey44a_r.uf2` を、それぞれ対応するドライブへドラッグ＆ドロップします。
 
@@ -247,21 +285,26 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 4. 左右それぞれへ対応するFirmwareを書き込みます。
 5. 左右のXIAOが起動することを確認します。
 6. 可能であれば、全キーの入力を確認します。
-7. 問題がなければ、次のケース組み立てへ進みます。
+7. TPS43をケースの外で支えた状態で、左右それぞれのトラックパッドが、使用するFirmwareの割り当てどおりに反応することを確認します。左右で操作の割り当てが異なる場合があるため、[PAD用リポジトリの操作説明](https://github.com/nixiy/zmk-config-nickey44a-pad/blob/main/docs/dual-tps43.md)も確認してください。
+8. キーが動いてもトラックパッドだけが反応しない場合は、下記の「トラックパッドだけ反応しない」を確認します。
+9. 問題がなければ、次のケース組み立てへ進みます。
 
 <!-- TODO: ケース組み立て前にUSB接続して動作確認している写真を追加 -->
 
-## 🧲 電池カバー固定用マグネットの取り付け
+<span id="-電池カバー固定用マグネットの取り付け"></span>
 
-6 × 3 mmのマグネットは、ケースと電池カバーの専用穴へ**圧入**します。接着剤は不要です。
+## 🧲 固定用マグネットの取り付け
+
+6 × 3 mmのマグネットは、左右のケースの専用穴へ**圧入**します。左右のボトム同士を重ねて固定するためのものです。接着剤は不要です。
 
 <div class="callout callout-important" role="note" aria-label="重要">
   <p class="callout-title">ⓘ 重要</p>
-  <p>マグネットをすべて一度に、任意の向きで圧入しないでください。ケース側と電池カバー側が反発しないよう、必ず取り付け済みマグネットへ吸着させて極性を確認してから取り付けます。斜めになった状態で無理に押し込まないでください。</p>
+  <p>マグネットをすべて一度に、任意の向きで圧入しないでください。左右のケースで反発しないよう、必ず取り付け済みマグネットへ吸着させて極性を確認してから取り付けます。斜めになった状態で無理に押し込まないでください。</p>
+  <p>特に、穴の周囲が3か所に分かれた保持部は、押し込み時につぶれないよう注意してください。マグネットが傾いたり、保持部が変形し始めたりしたら、押し込むのをやめてください。</p>
 </div>
 
 
-1. ケースと電池カバーのマグネット用穴を確認します。
+1. 左右のケースのマグネット用穴を確認します。
 
    ![ケースのマグネット用穴と取り付け前のマグネット](images/magnet/01-case-and-magnets.jpg)
 
@@ -328,6 +371,8 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 ![ケースに収めたPCBとFFCケーブルで接続されたトラックパッド]({{ '/nickey44a-pad/images/tps43/trackpad-case-assembly.jpg' | relative_url }})
 ![トラックパッドの片側を取り付け枠にはめ、反対側を浮かせた状態]({{ '/nickey44a-pad/images/tps43/trackpad-partially-seated.jpg' | relative_url }})
 
+トラパの切り欠きが右側になるように装着します。この向きではFFCケーブルがひねられた形になります。向きを変えると、左側はケースに収まらず、右側はXIAOとの間隔が狭くなるため、切り欠きを右側に合わせてください。ケーブルを強く折り曲げたり引っ張ったりせず、ケースとの間に挟まっていないことを確認します。
+
 ![取り付け枠に収まったトラックパッド]({{ '/nickey44a-pad/images/tps43/trackpad-seated.jpg' | relative_url }})
 
 ## 🔋 単4電池の装着
@@ -355,9 +400,9 @@ Nickey44A用リポジトリの設定と対応状況を確認してから利用�
 
 ## 📶 無線接続のペアリング
 
-PCやスマートフォンの設定からデバイスの追加・ペアリング画面を開き、`nickey44a`を選択します。
+PCやスマートフォンの設定からデバイスの追加・ペアリング画面を開き、`Nickey44A-PAD`を選択します。
 
-初回ペアリングでは、未登録の接続先スロットを選択してから、PCやスマートフォンのデバイス一覧で`nickey44a`を選択します。接続先スロットやペアリング情報の消去は、[無線接続の操作・ペアリング]({{ '/guides/wireless/' | relative_url }})を確認してください。
+初回ペアリングでは、未登録の接続先スロットを選択してから、PCやスマートフォンのデバイス一覧で`Nickey44A-PAD`を選択します。接続先スロットやペアリング情報の消去は、[無線接続の操作・ペアリング]({{ '/guides/wireless/' | relative_url }})を確認してください。
 
 ### 🔍 デバイス一覧に表示されない場合
 
@@ -369,11 +414,11 @@ PCやスマートフォンの設定からデバイスの追加・ペアリング
 
 ## 🗺️ デフォルトキーマップ
 
-Nickey44A用のキーマップは、[`main` ブランチのキーマップ図](https://github.com/nixiy/zmk-config-nickey44a/blob/main/keymap-drawer/nickey44a.svg)を参照してください。
+Nickey44A-PAD用のキーマップは、[`main` ブランチのキーマップ図](https://github.com/nixiy/zmk-config-nickey44a-pad/blob/main/keymap-drawer/nickey44a.svg)を参照してください。
 
 ## ✍️ キーマップを変更する（任意）
 
-キーマップは基本的に、[キーマップの変更方法]({{ '/guides/keymap/' | relative_url }})を参照してZMK Keymap Editorで変更します。Nickey44Aでは、[nixiy/zmk-config-nickey44a](https://github.com/nixiy/zmk-config-nickey44a)を自分のアカウントへForkし、GitHub Actionsで生成したFirmwareを書き込みます。
+キーマップは基本的に、[キーマップの変更方法]({{ '/guides/keymap/' | relative_url }})を参照してZMK Keymap Editorで変更します。Nickey44A-PADでは、[nixiy/zmk-config-nickey44a-pad](https://github.com/nixiy/zmk-config-nickey44a-pad)を自分のアカウントへForkし、GitHub Actionsで生成したFirmwareを書き込みます。
 
 標準Firmwareでは、[DYA Studio](https://studio.dya.cormoran.works/)に接続して、ブラウザ上からキーマップを変更することもできます。詳しい操作は、[DYA Studioでキーマップを編集する]({{ '/guides/dya-studio/' | relative_url }})を参照してください。
 
@@ -408,6 +453,14 @@ Firmwareの変更後などに左右間の接続が復旧しない場合は、`se
 - 左右に対応する`nickey44a_l.uf2`／`nickey44a_r.uf2`を書き込んだか
 - 左右の接続情報を`settings_reset`でリセットする必要がないか
 
+### トラックパッドだけ反応しない
+
+キーがすべて入力できても、XIAOとPCBのGNDが接続できておらず、トラックパッドだけが動かない場合があります。
+
+1. PAD用リポジトリのActionsでビルドしたFirmwareを書き込んでいることを確認します。
+2. **USBケーブルと電池を外してから**、FFCケーブルの向き・差し込み状態と、TPS43変換基板のはんだ付けを確認します。
+3. 反応しない側のXIAOの`GND`端子とPCBの`GND`の間をテスターで導通確認します。XIAOの端子にはんだが付いていても、PCB側と接合できていない場合があります。
+
 ### 左右が接続しない
 
 上記「左右が接続できなくなった」の`settings_reset`手順を実施してから、左右それぞれのFirmwareを書き直してください。
@@ -420,7 +473,8 @@ Firmwareの変更後などに左右間の接続が復旧しない場合は、`se
 - [ ] 右側の全キーが入力できる
 - [ ] 左右が無線接続される
 - [ ] USB接続で動作する
-- [ ] 無線接続で`nickey44a`へ接続できる
+- [ ] 無線接続で`Nickey44A-PAD`へ接続できる
+- [ ] 左右のトラックパッドがFirmwareの割り当てどおりに反応する
 - [ ] 単4電池で動作する
 - [ ] 左右の電源スイッチが正常に機能する
 
