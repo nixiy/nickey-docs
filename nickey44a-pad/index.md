@@ -253,9 +253,11 @@ FFCケーブルを接続する前に、TPS43のタッチ面へオーバーレイ
 
 設定ファイルとキーマップは、[nixiy/zmk-config-nickey44a-pad の `main` ブランチ](https://github.com/nixiy/zmk-config-nickey44a-pad/tree/main)にあります。
 
-Firmwareは、PAD用リポジトリの[GitHub Actions](https://github.com/nixiy/zmk-config-nickey44a-pad/actions)で、対象の`main`ブランチのコミットに対応する成功したビルドを開き、Artifactsの`firmware`をダウンロードして展開してください。入手できない場合は、同リポジトリをForkしてビルドします。詳しくは[キーマップの変更方法の手順4・5]({{ '/guides/keymap/' | relative_url }})を参照してください。
+標準のFirmwareは、PAD用リポジトリの[`firmware/v1.0.0/`](https://github.com/nixiy/zmk-config-nickey44a-pad/tree/main/firmware/v1.0.0)からダウンロードしてください。左右のUF2は、TPS43トラックパッド対応版に更新されています。各UF2のファイルページを開き、「Download raw file」から保存します。
 
-`firmware/v1.0.0/`の配布済みUF2はTPS43対応を確認できていないため、このガイドではActionsのビルドを使用します。無印Nickey44A用のFirmwareとファイル名が共通なので、**ファイル名だけで判断せず、PAD用リポジトリのビルドであることを確認してください。**
+無印Nickey44A用のFirmwareとファイル名が共通なので、**ファイル名だけで判断せず、PAD用リポジトリからダウンロードしていることを確認してください。** 更新前のUF2を保存している場合は、左右とも現在の配布ファイルをダウンロードし直してください。
+
+キーマップを変更する場合は、同リポジトリをForkし、[GitHub Actions](https://github.com/nixiy/zmk-config-nickey44a-pad/actions)で生成したFirmwareを使用します。ビルドとArtifactsのダウンロード方法は、[キーマップの変更方法の手順4・5]({{ '/guides/keymap/' | relative_url }})を参照してください。
 
 - 右側: `nickey44a_r.uf2` セントラル。PCやスマートフォンと直接通信します。
 - 左側: `nickey44a_l.uf2` ペリフェラル。右側を経由して通信します。 
@@ -469,7 +471,7 @@ Firmwareの変更後などに左右間の接続が復旧しない場合は、`se
 
 キーがすべて入力できても、XIAOとPCBのGNDが接続できておらず、トラックパッドだけが動かない場合があります。
 
-1. PAD用リポジトリのActionsでビルドしたFirmwareを書き込んでいることを確認します。
+1. PAD用リポジトリの現在の配布UF2、または同リポジトリのActionsでビルドしたTPS43対応Firmwareを書き込んでいることを確認します。以前ダウンロードした配布UF2を使用している場合は、現在の配布ファイルをダウンロードし直してください。
 2. **USBケーブルと電池を外してから**、FFCケーブルの向き・差し込み状態と、TPS43変換基板のはんだ付けを確認します。
 3. 反応しない側のXIAOの`GND`端子とPCBの`GND`の間をテスターで導通確認します。XIAOの端子にはんだが付いていても、PCB側と接合できていない場合があります。
 
