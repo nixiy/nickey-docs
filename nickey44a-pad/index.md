@@ -127,17 +127,22 @@ Nickey44A-PADの主な特徴は次のとおりです。
 ケースが組み立て済みで届いた場合は、はんだ付けを始める前に分解してください。電源スイッチをOFFにし、USBケーブルと電池は外しておきます。
 
 1. トッププレートを固定しているネジを外します。トラックパッド取り付け部の裏側にも固定ネジがある場合は外してください。ネジが残ったまま、無理に引き離さないでください。
+
+   ![トッププレートの固定ネジ5か所を赤丸で示した状態と取り外したネジ](images/case-disassembly/top-plate-screw-positions.jpg)
+
+   ![ケース裏側の固定ネジ1か所を赤丸で示した状態](images/case-disassembly/bottom-case-screw-position.jpg)
+
 2. トッププレートを取り外します。
 
-   ![トッププレートを外したボトムケース](images/case-disassembly/03-bottom-case-inside.jpg)
+   ![取り外したトッププレートとPCBが収まったボトムケース](images/case-disassembly/top-plate-removed.jpg)
 
-3. PCBを支えながらケースを裏返します。
+3. PCBが落ちないように支えながら、ケースを立てます。
 
-   ![裏返したボトムケース](images/case-disassembly/04-bottom-case-outside.jpg)
+   ![PCBを指で支えながらボトムケースを立てた状態](images/case-disassembly/case-held-upright.jpg)
 
-4. 電源スイッチの反対側からPCBを持ち上げ、スイッチのピンに力が掛からないようにボトムケースから取り外します。
+4. 電源スイッチの反対側からPCBを傾け、スイッチのピンに力が掛からないようにボトムケースから取り外します。
 
-   ![電源スイッチのピンに注意してPCBとボトムケースを分離する](images/case-disassembly/02-remove-bottom-case.jpg)
+   ![立てたボトムケースからPCBを傾けて取り外している状態](images/case-disassembly/pcb-tilted-out-of-case.jpg)
 
 <!-- @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ -->
 ## 🔥 はんだ付け
