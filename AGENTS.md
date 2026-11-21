@@ -58,7 +58,34 @@
 - GitHub Pagesの公開先に関係する`_config.yml`の`url`・`baseurl`、既存ページの`permalink`は、明示的な依頼なしに変更しない。
 - リンク先、画像パス、画像と説明文の対応を確認する。存在しない画像やファイルをあるものとして参照しない。
 - 画像の削除、改名、差し替え、一括再圧縮は、明示的な依頼なしに行わない。新規画像を追加する場合は、用途に合う名前と代替テキストを付ける。
+- 新規追加・差し替えする写真は、下記スクリプトで縦横比を維持し、長辺を最大1920pxに縮小する。1920px以下の画像は拡大・再保存しない。この縮小は通常の画像追加・差し替え作業に含めてよい。既存画像の一括変換は、明示的な依頼がある場合のみ行う。
 - `Gemfile`や`Gemfile.lock`、Jekyllプラグイン、JavaScriptライブラリの更新・追加は、明示的な依頼または依頼達成に不可欠な場合に限る。必要な場合は理由を説明する。
+
+### 写真の縮小方法
+
+Python 3.10以降とPillowを使用する。リポジトリのルートでPowerShellから実行する。`python`がPATHにない場合は、利用可能なPython実行ファイルのパスに置き換える。
+
+```powershell
+python -m pip install -r scripts/requirements-images.txt
+
+# 対象と変換後の寸法を確認（ファイルは変更しない）
+python scripts/resize_images.py nickey44a-pad/images
+
+# 指定した画像・ディレクトリを変換して上書き保存
+python scripts/resize_images.py nickey44a-pad/images --write
+
+# 新規追加した1枚だけを変換する場合
+python scripts/resize_images.py nickey44a-pad/images/example.jpg --write
+
+# リポジトリ全体を確認。一括変換を依頼された場合のみ --write を付ける
+python scripts/resize_images.py
+```
+
+- JPEG・PNG・WebPが対象。アニメーション画像、SVG・GIF、生成先の`_site`、依存関係のディレクトリは変換しない。
+- カメラ由来のJPEGにMPO形式の複数画像が含まれる場合は、Web表示に使う先頭の写真を通常のJPEGへ変換する。補助画像は引き継がない。
+- EXIFの向きを適用して縮小し、透明度とICCカラープロファイルを維持する。JPEGは品質90・色差サブサンプリングなし、WebPは品質90で保存する。EXIFなどの撮影メタデータは引き継がない。
+- ファイル名・拡張子・参照URLは維持する。変換結果を確認してから元ファイルを置き換える。
+- 変換後は画像の向き、細部の見やすさ、寸法と容量を確認する。
 
 ## 変更後の確認
 
